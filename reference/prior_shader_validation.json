@@ -1,0 +1,5038 @@
+[
+  {
+    "index": 0,
+    "name": "g_bvh_BuildLeaves",
+    "file": "hlsl\\recovered\\000_g_bvh_BuildLeaves.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "8fdde1d60275c6162f0c16c2e5119f2f6feb825f575f8f7a0e0337d816b43e90",
+    "compiled_sha256": "4e4e4be7825699ea38d9d1a62b7c8a88f9dfc4bd27d1ffe86301104a19d93a75",
+    "operations": 13,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "and": 1,
+      "bfi": 1,
+      "store_structured": 4,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 1,
+    "name": "g_bvh_ComputeTotalBoundsGroupNV",
+    "file": "hlsl\\recovered\\001_g_bvh_ComputeTotalBoundsGroupNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "c86ab3d1a82eef3146cf8fffae95250b7ac1842312b3952a43308606907497ea",
+    "compiled_sha256": "9c3e64a4de72a31bef1ec4719de287f97b76612b5981d6e8f075e0c0232a410a",
+    "operations": 255,
+    "opcodes": {
+      "iadd": 1,
+      "ushr": 1,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_alloc": 60,
+      "mov": 62,
+      "store_structured": 66,
+      "min": 12,
+      "if_z": 5,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 18,
+      "max": 12,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 2,
+    "name": "g_bvh_CalculateMortonCodes",
+    "file": "hlsl\\recovered\\002_g_bvh_CalculateMortonCodes.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "567aae2b7cbb1db68ae5b4284246559d59e1e5409391d2c30cf3215b78356478",
+    "compiled_sha256": "37319991f6d4e93818a7777f0a75e3021ac4f6c438d262d996724431f9f58e4f",
+    "operations": 37,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "add": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 2,
+      "mad": 1,
+      "mul": 2,
+      "round_z": 1,
+      "min": 1,
+      "max": 1,
+      "ftou": 1,
+      "ishl": 4,
+      "xor": 4,
+      "and": 5,
+      "bfi": 1,
+      "iadd": 2,
+      "mov": 2,
+      "else": 1,
+      "endif": 1,
+      "store_uav_typed": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_resource_structured t3, 12",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_resource_structured t3, 12",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 3,
+    "name": "g_bvh_ComputeTotalBoundsGroup",
+    "file": "hlsl\\recovered\\003_g_bvh_ComputeTotalBoundsGroup.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "a3d5260d4d539fd1a85861c1d1727255c89b01b9a22904b9ea7d68697a2121f9",
+    "compiled_sha256": "92b8ce86773648bb505cb93a89dd992362d00373834dcb2d342929b8d4d83842",
+    "operations": 51,
+    "opcodes": {
+      "iadd": 3,
+      "ushr": 3,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "store_structured": 6,
+      "mov": 4,
+      "loop": 2,
+      "uge": 2,
+      "breakc_nz": 2,
+      "sync_g_t": 5,
+      "ult": 2,
+      "if_nz": 2,
+      "ld_structured": 6,
+      "min": 1,
+      "endif": 3,
+      "endloop": 2,
+      "max": 1,
+      "if_z": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 4,
+    "name": "g_bvh_ComputeTotalBounds",
+    "file": "hlsl\\recovered\\004_g_bvh_ComputeTotalBounds.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "bc1247049fcb190c061960cb17cb865c2b033c44e6814618136eccb85c45cc66",
+    "compiled_sha256": "25645f6427d73a005eaf072d9a23718b83b3e73e537c496b9a09177a59a4c222",
+    "operations": 49,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "store_structured": 6,
+      "mov": 4,
+      "loop": 2,
+      "uge": 2,
+      "breakc_nz": 2,
+      "sync_g_t": 5,
+      "ult": 2,
+      "if_nz": 2,
+      "ld_structured": 6,
+      "iadd": 2,
+      "min": 1,
+      "endif": 3,
+      "ushr": 2,
+      "endloop": 2,
+      "max": 1,
+      "if_z": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 5,
+    "name": "g_bvh_BuildHierarchy",
+    "file": "hlsl\\recovered\\005_g_bvh_BuildHierarchy.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "08ae21d7deb964c9963558bef8fbd9eb03186ca9e20df03ca0cca3ef14285f2a",
+    "compiled_sha256": "2e0359d0b034086868e65ecb2b5514236fe5f364053a46df7cc9f088ea28d022",
+    "operations": 63,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 4,
+      "iadd": 5,
+      "mov": 5,
+      "loop": 1,
+      "imm_atomic_or": 2,
+      "ieq": 3,
+      "and": 6,
+      "store_structured": 5,
+      "ret": 3,
+      "endif": 4,
+      "ine": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 2,
+      "or": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 8,
+      "imm_atomic_exch": 2,
+      "imm_atomic_iadd": 2,
+      "else": 2,
+      "min": 1,
+      "max": 1,
+      "endloop": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured_glc u0, 4",
+        "dcl_uav_structured_glc u1, 4",
+        "dcl_uav_structured_glc u2, 16",
+        "dcl_uav_structured_glc u3, 16",
+        "dcl_uav_structured_glc u4, 4",
+        "dcl_uav_structured_glc u5, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured_glc u0, 4",
+        "dcl_uav_structured_glc u1, 4",
+        "dcl_uav_structured_glc u2, 16",
+        "dcl_uav_structured_glc u3, 16",
+        "dcl_uav_structured_glc u4, 4",
+        "dcl_uav_structured_glc u5, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 6,
+    "name": "g_bvh_ComputeTotalBoundsAMD",
+    "file": "hlsl\\recovered\\006_g_bvh_ComputeTotalBoundsAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "6f9f94695bdea8b45b0ae3d53db83297247417d1b663488135b17b15f4501bbb",
+    "compiled_sha256": "37e9857fffe11bb35c1183c522d9ea85965ed86a44db8804ab770469dd800928",
+    "operations": 103,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_cmp_exch": 30,
+      "min": 12,
+      "if_z": 5,
+      "store_structured": 6,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 18,
+      "max": 12,
+      "mov": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 7,
+    "name": "g_bvh_ComputeTotalBoundsFinalize",
+    "file": "hlsl\\recovered\\007_g_bvh_ComputeTotalBoundsFinalize.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c",
+    "compiled_sha256": "1b08c98264742265eeab1bbfa593b16ba86c711acd8c8dcc98ee6b7d36ef8795",
+    "operations": 25,
+    "opcodes": {
+      "iadd": 3,
+      "ushr": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 3,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "min": 1,
+      "max": 1,
+      "endloop": 1,
+      "store_structured": 3,
+      "add": 2,
+      "div": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 8,
+    "name": "g_bvh_ComputeTotalBoundsGroupAMD",
+    "file": "hlsl\\recovered\\008_g_bvh_ComputeTotalBoundsGroupAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "651b9ef187aafc42c930556c26a287fef40d5ba1a64c92019d5f5d2a1bb0abf7",
+    "compiled_sha256": "a8d076ce68cff340d19a4709fbfdbdb7fc4cdb03e5ece4e325f67f607ab11bf8",
+    "operations": 105,
+    "opcodes": {
+      "iadd": 1,
+      "ushr": 1,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_cmp_exch": 30,
+      "min": 12,
+      "if_z": 5,
+      "store_structured": 6,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 18,
+      "max": 12,
+      "mov": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 9,
+    "name": "g_bvh_ComputeTotalBoundsNV",
+    "file": "hlsl\\recovered\\009_g_bvh_ComputeTotalBoundsNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "6ef2baa5fbf354df93c3f39210c85c3bbd807326094c31117774ec16dc40d1b9",
+    "compiled_sha256": "1115ecd4d19cc54266baafa6670a5bd9d46e93fa2e6fcfce09e56c733423622b",
+    "operations": 253,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_alloc": 60,
+      "mov": 62,
+      "store_structured": 66,
+      "min": 12,
+      "if_z": 5,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 18,
+      "max": 12,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 10,
+    "name": "g_bvh_ComputeTotalBoundsFinalizeNV",
+    "file": "hlsl\\recovered\\010_g_bvh_ComputeTotalBoundsFinalizeNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c",
+    "compiled_sha256": "1b08c98264742265eeab1bbfa593b16ba86c711acd8c8dcc98ee6b7d36ef8795",
+    "operations": 25,
+    "opcodes": {
+      "iadd": 3,
+      "ushr": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 3,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "min": 1,
+      "max": 1,
+      "endloop": 1,
+      "store_structured": 3,
+      "add": 2,
+      "div": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 11,
+    "name": "g_bvh_ComputeTotalBoundsFinalizeAMD",
+    "file": "hlsl\\recovered\\011_g_bvh_ComputeTotalBoundsFinalizeAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c",
+    "compiled_sha256": "1b08c98264742265eeab1bbfa593b16ba86c711acd8c8dcc98ee6b7d36ef8795",
+    "operations": 25,
+    "opcodes": {
+      "iadd": 3,
+      "ushr": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 3,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "min": 1,
+      "max": 1,
+      "endloop": 1,
+      "store_structured": 3,
+      "add": 2,
+      "div": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured u3, 12",
+        "dcl_uav_structured u4, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 12,
+    "name": "g_bvh_ComputeTotalInvEdges",
+    "file": "hlsl\\recovered\\012_g_bvh_ComputeTotalInvEdges.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "c92f6e2c0127a84535ee8e896f841058493405db77b2267cadec8b7c7cf012ad",
+    "compiled_sha256": "e3adf17e7dfa8490067b9092c4035a6a2fdc5e693c52b6f1e845ecd6ef58970a",
+    "operations": 7,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 2,
+      "add": 2,
+      "div": 1,
+      "store_structured": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 12",
+        "dcl_resource_structured t1, 12",
+        "dcl_uav_structured u0, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 12",
+        "dcl_resource_structured t1, 12",
+        "dcl_uav_structured u0, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 13,
+    "name": "g_bvh_CalculateKeyDeltas",
+    "file": "hlsl\\recovered\\013_g_bvh_CalculateKeyDeltas.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "96c7d503369d9e1f32e668c55edfc70e9befb65f162c27f9a9ff58e7878527c9",
+    "compiled_sha256": "2226a74f551b4ab4cc2fdb7ab1b7a1d7c760a25dd38c1798fdd722eca505e2d2",
+    "operations": 10,
+    "opcodes": {
+      "iadd": 2,
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "xor": 1,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 14,
+    "name": "g_Flex_ReorderParticles",
+    "file": "hlsl\\recovered\\014_g_Flex_ReorderParticles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "aa5bcb0065814a2bc01ab5292b987c763f5f61e9a3cb0629901a6b97aac0a0bd",
+    "compiled_sha256": "396596d8881d6183faaed193b9ea3408c22c4548cc32780eb780720255f70288",
+    "operations": 16,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 3,
+      "store_structured": 6,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 4",
+        "dcl_uav_structured u4, 4",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 4",
+        "dcl_uav_structured u4, 4",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 15,
+    "name": "g_Flex_CompactDiffuseParticles",
+    "file": "hlsl\\recovered\\015_g_Flex_CompactDiffuseParticles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "1a2b289b056c640dade0daf4c151106b94728ce93670ac704be39121a816dffd",
+    "compiled_sha256": "8b5d2d7083fe5c0f2746b162fc98df5afe104198ef727eaabe9aeca459a9ea7c",
+    "operations": 14,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ilt": 1,
+      "if_nz": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 3,
+      "lt": 1,
+      "imm_atomic_iadd": 1,
+      "store_structured": 2,
+      "endif": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 16,
+    "name": "g_Flex_CalculateBoundsNV",
+    "file": "hlsl\\recovered\\016_g_Flex_CalculateBoundsNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "a75ffdf7dae998180773f8b098731f2bf6bde467bda99821e5ba0416f9611542",
+    "compiled_sha256": "00cb4ba42c496026ca26c7a1fe2fc34cec266c49b0309b6186a64d7952a726f3",
+    "operations": 237,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_alloc": 60,
+      "mov": 62,
+      "store_structured": 66,
+      "min": 8,
+      "if_z": 5,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 17,
+    "name": "g_Flex_ClampDiffuseParticleCount",
+    "file": "hlsl\\recovered\\017_g_Flex_ClampDiffuseParticleCount.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "559783f1d06e9fe4e366f4018c394d96dc50a2fc7507ebb7202f7eeafd80893b",
+    "compiled_sha256": "5b1729f75ae540e14805c36192bba8023bdef1a98b3a03ad4b6d5fa47fe5778f",
+    "operations": 8,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "itof": 2,
+      "min": 1,
+      "ftoi": 1,
+      "store_structured": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[28], immediateIndexed",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 1, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[28], immediateIndexed",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 18,
+    "name": "g_Flex_CalculateBoundsAMD",
+    "file": "hlsl\\recovered\\018_g_Flex_CalculateBoundsAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "d8272d24dbbc50988d1513a1a836ea7e9a7818248e748b97c8b66e2ac1c1149d",
+    "compiled_sha256": "b451c252b4f9b9aaac6c8061ebc6cca36d721993105b89663ad607f9bfc6fa50",
+    "operations": 87,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_cmp_exch": 30,
+      "min": 8,
+      "if_z": 5,
+      "store_structured": 6,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "mov": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 19,
+    "name": "g_Flex_ClearCellBuckets",
+    "file": "hlsl\\recovered\\019_g_Flex_ClearCellBuckets.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "807463e8ca1ff81336f8596b356f017d7bd913981639e57692fe59c949a6de94",
+    "compiled_sha256": "2c3ec424d2688a3827d06580de63ed09bffc6ddd8e9626b235c47d3dcc9f2173",
+    "operations": 15,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "add": 1,
+      "mul": 1,
+      "ftoi": 1,
+      "bfi": 2,
+      "iadd": 1,
+      "store_structured": 2,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 20,
+    "name": "g_Flex_SmoothPositions",
+    "file": "hlsl\\recovered\\020_g_Flex_SmoothPositions.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "bdeb1d3edea5619866d17edbc9358e0d04dbee56d031019d51dd514a9fb7ebcc",
+    "compiled_sha256": "10feac037284ffb7206bc89880e03633c44343860aaf73269410f689179e7365",
+    "operations": 54,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "and": 2,
+      "mov": 7,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 2,
+      "add": 3,
+      "dp3": 1,
+      "lt": 3,
+      "sqrt": 1,
+      "mul": 7,
+      "mad": 4,
+      "movc": 2,
+      "endloop": 1,
+      "div": 2,
+      "min": 1,
+      "else": 1,
+      "endif": 2,
+      "store_structured": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 21,
+    "name": "g_Flex_CalculateBounds",
+    "file": "hlsl\\recovered\\021_g_Flex_CalculateBounds.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "fb40526b35cfd2cdbbd9ae583845413f5a6da2527baa3f427875718934b5a650",
+    "compiled_sha256": "9421bc1ebde9fc006833ba6413d9c459e084b78082ab92a63cf1fecdb34739ac",
+    "operations": 49,
+    "opcodes": {
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "movc": 2,
+      "store_structured": 6,
+      "mov": 4,
+      "loop": 2,
+      "uge": 2,
+      "breakc_nz": 2,
+      "sync_g_t": 5,
+      "ult": 2,
+      "if_nz": 2,
+      "ld_structured": 6,
+      "iadd": 2,
+      "min": 1,
+      "endif": 3,
+      "ushr": 2,
+      "endloop": 2,
+      "max": 1,
+      "if_z": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 22,
+    "name": "g_Flex_UpdateVertexNormals",
+    "file": "hlsl\\recovered\\022_g_Flex_UpdateVertexNormals.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "83eb934518e2c275eac06ee5e778c4d827c1ad2e9a2963d296bb0412b47c110b",
+    "compiled_sha256": "909959018c59b5791ca1e0c50d5a2dfef420691108645259b739f10aeb9e8d2f",
+    "operations": 115,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 10,
+      "imul": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "imad": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "ishl": 3,
+      "mov": 27,
+      "loop": 9,
+      "imm_atomic_cmp_exch": 9,
+      "ieq": 9,
+      "break": 9,
+      "endif": 10,
+      "add": 9,
+      "endloop": 9,
+      "bfi": 3,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[27], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[27], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 23,
+    "name": "g_Flex_CreateDiffuseParticles",
+    "file": "hlsl\\recovered\\023_g_Flex_CreateDiffuseParticles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "9776ea7f734558f9bc17d2fd450c58143540c080acad296dbfd8a2bb2d2c2e44",
+    "compiled_sha256": "222002c5a8ac15e3faafbb1be7924e180f99382d5c5d50a89756a3e3d0ccf511",
+    "operations": 30,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 3,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "lt": 1,
+      "imm_atomic_iadd": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "and": 2,
+      "iadd": 1,
+      "div": 1,
+      "mul": 3,
+      "min": 1,
+      "mad": 2,
+      "store_structured": 2,
+      "mov": 1,
+      "endif": 3,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[30], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[30], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 24,
+    "name": "g_Flex_CalculateBoundsFinalizeAMD",
+    "file": "hlsl\\recovered\\024_g_Flex_CalculateBoundsFinalizeAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e3af8dc502c294602b9b9c3f71f2e038b909310fd0ee9275173ae5933b37d82c",
+    "compiled_sha256": "9daa5a1a12b45c7dfa1a022499ea297a7ff4fd97117034f4b19a46dc06b17031",
+    "operations": 91,
+    "opcodes": {
+      "iadd": 2,
+      "ushr": 2,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_cmp_exch": 30,
+      "min": 8,
+      "if_z": 5,
+      "store_structured": 6,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "add": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u2, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u2, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 25,
+    "name": "g_Flex_UpdateTriangles",
+    "file": "hlsl\\recovered\\025_g_Flex_UpdateTriangles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "32dd52388a91be9785dbca122c7641798b2d13bb72d6fb833a303eca26701df2",
+    "compiled_sha256": "6c6c788d0381362c770e59f76a8e9d0321b25b59b9101b21d5dd5220dd612ee1",
+    "operations": 209,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 14,
+      "imul": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 6,
+      "imad": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "add": 7,
+      "mul": 17,
+      "mad": 19,
+      "dp3": 4,
+      "lt": 4,
+      "rsq": 3,
+      "and": 3,
+      "store_structured": 1,
+      "ne": 1,
+      "or": 1,
+      "movc": 1,
+      "sqrt": 2,
+      "max": 2,
+      "min": 1,
+      "ishl": 3,
+      "mov": 33,
+      "loop": 12,
+      "imm_atomic_cmp_exch": 12,
+      "ieq": 12,
+      "break": 12,
+      "endif": 14,
+      "endloop": 12,
+      "bfi": 3,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 26,
+    "name": "g_Flex_SolveContactsAveraged",
+    "file": "hlsl\\recovered\\026_g_Flex_SolveContactsAveraged.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f3a6948a309d0b43bc14a02025df8fba814bcd9f12a8a8b1130de6c461bf89c2",
+    "compiled_sha256": "b6b516d5085fd193abb9c236bacb8d205ad9564bcd65ae22062df00e2aa84266",
+    "operations": 65,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 5,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "eq": 1,
+      "ret": 2,
+      "endif": 5,
+      "iadd": 2,
+      "ne": 1,
+      "lt": 6,
+      "add": 6,
+      "mov": 3,
+      "loop": 1,
+      "breakc_nz": 1,
+      "imad": 1,
+      "dp3": 4,
+      "mul": 5,
+      "mad": 5,
+      "movc": 4,
+      "and": 1,
+      "rsq": 1,
+      "min": 1,
+      "endloop": 1,
+      "div": 1,
+      "store_structured": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 27,
+    "name": "g_Flex_CalculateBoundsGroupNV",
+    "file": "hlsl\\recovered\\027_g_Flex_CalculateBoundsGroupNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "c07ffc09f127578cff28a8a38e5594126d826be3f4b9c216cda5e3153e3fc9d1",
+    "compiled_sha256": "cd4c3016b7b002f7c8eef4f9e5aa8605b2eefce1319e40881c258ab1882b890f",
+    "operations": 239,
+    "opcodes": {
+      "iadd": 1,
+      "ushr": 1,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_alloc": 60,
+      "mov": 62,
+      "store_structured": 66,
+      "min": 8,
+      "if_z": 5,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 28,
+    "name": "g_Flex_SolveShapes128NV",
+    "file": "hlsl\\recovered\\028_g_Flex_SolveShapes128NV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "0ac07ca926053ba0049a6e9084a08a207e6bb1bc63099734e795aa1b1ebe465b",
+    "compiled_sha256": "baf2d85810227240d8a62074956bb97fdf75a2b9c17e9b95179f0d896822a82f",
+    "operations": 748,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 9,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 13,
+      "store_raw": 24,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 20,
+      "mov": 150,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "and": 3,
+      "imm_atomic_alloc": 128,
+      "store_structured": 151,
+      "add": 52,
+      "ishr": 2,
+      "sync_g_t": 14,
+      "ld_structured": 20,
+      "ld_raw": 21,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 5,
+      "if_nz": 7,
+      "mul": 36,
+      "else": 2,
+      "dp2": 2,
+      "mad": 27,
+      "dp3": 7,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 29,
+    "name": "g_Flex_ComputeTriangleBounds",
+    "file": "hlsl\\recovered\\029_g_Flex_ComputeTriangleBounds.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "065d39c2efcb0ef7aa5d952412be486b14815af3f7f27cbe400dcf72e813b222",
+    "compiled_sha256": "58145bafd8a4f4fab7b548a13f59649004769eabc8b16c9f1d2bbb7d2a83d850",
+    "operations": 20,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "imul": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 3,
+      "imad": 1,
+      "min": 2,
+      "max": 2,
+      "mov": 2,
+      "store_structured": 2,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 30,
+    "name": "g_Flex_Finalize",
+    "file": "hlsl\\recovered\\030_g_Flex_Finalize.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "5600b7f7ffe8cc8bc4904e793a5d121f893ddc2fb89d271e730ed577e53c4307",
+    "compiled_sha256": "1ebd115bb12f1130eb718813d6487ebac6713e3557a94ad52c2e00c487fbfa3b",
+    "operations": 30,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "lt": 2,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "store_structured": 3,
+      "ishl": 1,
+      "ld_raw_indexable(raw_buffer)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "max": 1,
+      "div": 1,
+      "add": 3,
+      "dp3": 1,
+      "rsq": 1,
+      "mul": 4,
+      "movc": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "endif": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_raw t3",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_raw t3",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 31,
+    "name": "g_Flex_CalculateInflatableVolumeNV",
+    "file": "hlsl\\recovered\\031_g_Flex_CalculateInflatableVolumeNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "48f1c079e30cdf8da983861c810dec72c13c0f6c67b396bec66ef1e7b1384c3a",
+    "compiled_sha256": "512bf7a3365c7f8cd33566d4d15c1163b16a0615f35134889cdb96ee8bd2f4e5",
+    "operations": 437,
+    "opcodes": {
+      "if_z": 8,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "store_raw": 7,
+      "endif": 10,
+      "sync_g_t": 8,
+      "ld_raw": 13,
+      "iadd": 7,
+      "ushr": 3,
+      "itof": 1,
+      "mul": 9,
+      "div": 2,
+      "and": 27,
+      "ishr": 1,
+      "mov": 62,
+      "loop": 2,
+      "ige": 2,
+      "breakc_nz": 2,
+      "bfi": 2,
+      "ilt": 32,
+      "if_nz": 2,
+      "imul": 2,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 12,
+      "imad": 2,
+      "add": 52,
+      "else": 2,
+      "imm_atomic_alloc": 40,
+      "store_structured": 45,
+      "ishl": 2,
+      "imin": 2,
+      "ld_structured": 34,
+      "movc": 30,
+      "endloop": 2,
+      "mad": 2,
+      "dp3": 1,
+      "max": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 32,
+    "name": "g_Flex_SolveSpringsNV",
+    "file": "hlsl\\recovered\\032_g_Flex_SolveSpringsNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "dfe64e959027a0b0781a844f34d19e721a71a28c7faf8397c9b4a6cf310d6538",
+    "compiled_sha256": "ebfb34e17e5d413b81062c56e6cfdafa6d6544d0668b22ff021463743571f16f",
+    "operations": 79,
+    "opcodes": {
+      "ushr": 1,
+      "and": 4,
+      "uge": 2,
+      "movc": 4,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 7,
+      "iadd": 5,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "lt": 4,
+      "ult": 1,
+      "if_nz": 3,
+      "mov": 4,
+      "loop": 1,
+      "breakc_nz": 1,
+      "add": 11,
+      "dp3": 1,
+      "div": 2,
+      "sqrt": 1,
+      "min": 1,
+      "endif": 3,
+      "mul": 3,
+      "mad": 1,
+      "endloop": 1,
+      "else": 1,
+      "store_structured": 1,
+      "sync_g_t": 1,
+      "ieq": 1,
+      "ld_structured": 7,
+      "ishl": 1,
+      "ld_raw_indexable(raw_buffer)(mixed,mixed,mixed,mixed)": 1,
+      "utof": 1,
+      "store_raw": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 33,
+    "name": "g_Flex_CalculateInflatableVolumeAMD",
+    "file": "hlsl\\recovered\\033_g_Flex_CalculateInflatableVolumeAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "2615209d953905cc1156244ca26a4acd44ec2d3e2d6dbc17a6a86e24081e9689",
+    "compiled_sha256": "48cf4be1307c85b9cdc52cd35a262e810594fa2047c47bcfc14fcaec9a18afdc",
+    "operations": 342,
+    "opcodes": {
+      "if_z": 8,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "store_raw": 7,
+      "endif": 10,
+      "sync_g_t": 8,
+      "ld_raw": 13,
+      "iadd": 7,
+      "ushr": 3,
+      "itof": 1,
+      "mul": 9,
+      "div": 2,
+      "and": 27,
+      "ishr": 1,
+      "mov": 27,
+      "loop": 2,
+      "ige": 2,
+      "breakc_nz": 2,
+      "bfi": 2,
+      "ilt": 32,
+      "if_nz": 2,
+      "imul": 2,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 12,
+      "imad": 2,
+      "add": 52,
+      "else": 2,
+      "imm_atomic_cmp_exch": 20,
+      "store_structured": 5,
+      "ishl": 2,
+      "imin": 2,
+      "ld_structured": 34,
+      "movc": 30,
+      "endloop": 2,
+      "mad": 2,
+      "dp3": 1,
+      "max": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 34,
+    "name": "g_Flex_CalculateDensity",
+    "file": "hlsl\\recovered\\034_g_Flex_CalculateDensity.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "8b570adfac98f8bd90e63fab8352491d8e2dd106d4b68f25d361ac433e2b8d2f",
+    "compiled_sha256": "eba9704522da3c9e53d22fac78e8b27006552627b3f3f136c20adabbea2f19f3",
+    "operations": 34,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "mov": 2,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 2,
+      "add": 2,
+      "dp3": 1,
+      "lt": 2,
+      "and": 2,
+      "sqrt": 1,
+      "movc": 2,
+      "mad": 2,
+      "mul": 3,
+      "endloop": 1,
+      "max": 1,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 35,
+    "name": "g_Flex_CalculateInflatableVolume",
+    "file": "hlsl\\recovered\\035_g_Flex_CalculateInflatableVolume.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "5eef4f1bbfd225ea82d1ad955dcea8816d2ecdc8bba8350efecd86279fd60010",
+    "compiled_sha256": "40f01d0af84c6c04eba60b56a49ac3c9ced5fc8fd8189adc9a89dff4266591ba",
+    "operations": 157,
+    "opcodes": {
+      "if_z": 4,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "store_raw": 7,
+      "endif": 8,
+      "sync_g_t": 8,
+      "ld_raw": 13,
+      "iadd": 9,
+      "ushr": 5,
+      "itof": 1,
+      "mul": 9,
+      "div": 2,
+      "mov": 6,
+      "loop": 4,
+      "ige": 2,
+      "breakc_nz": 4,
+      "bfi": 2,
+      "ishl": 2,
+      "imin": 2,
+      "ilt": 2,
+      "if_nz": 4,
+      "imul": 2,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 12,
+      "imad": 2,
+      "add": 14,
+      "else": 2,
+      "store_structured": 5,
+      "uge": 2,
+      "ult": 2,
+      "ld_structured": 6,
+      "endloop": 4,
+      "mad": 2,
+      "dp3": 1,
+      "max": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 36,
+    "name": "g_Flex_SolveInflatableVolume",
+    "file": "hlsl\\recovered\\036_g_Flex_SolveInflatableVolume.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "646a05207802f7db688c0b3c5f0abf83c77e6a58e395fb749e750076cfe8c5eb",
+    "compiled_sha256": "8a7ae9a6df14995517fd75097e96e4ad96a0d434802b90e86845252e39e1026b",
+    "operations": 146,
+    "opcodes": {
+      "mul": 7,
+      "if_z": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "store_raw": 1,
+      "endif": 10,
+      "sync_g_t": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 7,
+      "ld_raw": 1,
+      "mov": 28,
+      "loop": 10,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 2,
+      "imul": 1,
+      "imad": 1,
+      "add": 11,
+      "mad": 2,
+      "dp3": 1,
+      "rsq": 1,
+      "lt": 1,
+      "movc": 1,
+      "ishl": 3,
+      "imm_atomic_cmp_exch": 9,
+      "ieq": 9,
+      "if_nz": 9,
+      "break": 9,
+      "endloop": 10,
+      "bfi": 3,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 37,
+    "name": "g_Flex_SolveContactsSequential",
+    "file": "hlsl\\recovered\\037_g_Flex_SolveContactsSequential.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "a30aa3587a0ceff397e0b24648d1a96f078e714806c7ec0e308e1293f502125c",
+    "compiled_sha256": "6e6933bd1d13dbad71324c542ab836c7ae4b507a1f956ac1eb3df1783b89e2d4",
+    "operations": 60,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 4,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "eq": 1,
+      "ret": 2,
+      "endif": 4,
+      "iadd": 2,
+      "ne": 1,
+      "lt": 5,
+      "mov": 3,
+      "loop": 1,
+      "breakc_nz": 1,
+      "imad": 1,
+      "dp3": 4,
+      "add": 6,
+      "mul": 6,
+      "and": 2,
+      "mad": 3,
+      "rsq": 1,
+      "min": 1,
+      "movc": 3,
+      "endloop": 1,
+      "store_structured": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 38,
+    "name": "g_Flex_ContinuousShockPropagation",
+    "file": "hlsl\\recovered\\038_g_Flex_ContinuousShockPropagation.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "10fb72b33e7245de30d819072826a4155d69bc7ef055c3042e13b2688f81ed9c",
+    "compiled_sha256": "3069256a7f49e948d8dc450933e5c1e02d4386419dbdd08d331993d1bfe4c231",
+    "operations": 32,
+    "opcodes": {
+      "if_z": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 2,
+      "store_raw": 3,
+      "dp3": 4,
+      "lt": 2,
+      "if_nz": 2,
+      "endif": 3,
+      "rsq": 1,
+      "mul": 4,
+      "and": 1,
+      "sync_g_t": 1,
+      "ilt": 1,
+      "ld_raw": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "add": 1,
+      "exp": 1,
+      "store_structured": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 12",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 12",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 39,
+    "name": "g_Flex_CalculateBoundsFinalize",
+    "file": "hlsl\\recovered\\039_g_Flex_CalculateBoundsFinalize.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "63a0581300a1f79154313b6a3864c0319ce6212842fabb3bac18b671c80de675",
+    "compiled_sha256": "2a9bfef82775a7d16d4aed477dcaf1b47d8e977ca1922ea3f8a63de92fbd48be",
+    "operations": 53,
+    "opcodes": {
+      "iadd": 4,
+      "ushr": 4,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "store_structured": 6,
+      "mov": 2,
+      "loop": 2,
+      "uge": 2,
+      "breakc_nz": 2,
+      "sync_g_t": 5,
+      "ult": 2,
+      "if_nz": 2,
+      "ld_structured": 6,
+      "min": 1,
+      "endif": 3,
+      "endloop": 2,
+      "max": 1,
+      "if_z": 1,
+      "add": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 40,
+    "name": "g_Flex_SpringsParticleRange",
+    "file": "hlsl\\recovered\\040_g_Flex_SpringsParticleRange.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "1520fc5d1e07daae84dc95c885ab5723c0043f24eb2f8a21cbf09daa968b58ea",
+    "compiled_sha256": "54e65134812f458fbc9ca68f05f0e67a1d630b74d937a6d8e685ef0b79b438a9",
+    "operations": 23,
+    "opcodes": {
+      "ishl": 1,
+      "ult": 1,
+      "if_nz": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "if_z": 1,
+      "store_structured": 4,
+      "else": 1,
+      "iadd": 3,
+      "ine": 1,
+      "endif": 4,
+      "ieq": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 41,
+    "name": "g_Flex_UpdateVertexNormalsInit",
+    "file": "hlsl\\recovered\\041_g_Flex_UpdateVertexNormalsInit.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "d90f00c96f6bd9fea362c6e714fb9ddcbfb97eef72b296f809b928288dd181b2",
+    "compiled_sha256": "85ec41f6ed29c51f09c79bb2fb057c463ea4ebbc4b8279fa98b62efbe5fa993b",
+    "operations": 6,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ishl": 1,
+      "store_raw": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 42,
+    "name": "g_Flex_SolveShapesPlasticDeformation",
+    "file": "hlsl\\recovered\\042_g_Flex_SolveShapesPlasticDeformation.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "576533695b63cfdb4323bcddc834875815b956fb184d42967deaed2209a8e017",
+    "compiled_sha256": "2bed1b46767c1ad346404a89aa6812abca68a98111fdf84b9ab3fac5b20ec02d",
+    "operations": 424,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 11,
+      "iadd": 14,
+      "ushr": 5,
+      "if_z": 6,
+      "store_raw": 23,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 24,
+      "mov": 46,
+      "loop": 12,
+      "ige": 4,
+      "breakc_nz": 8,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "and": 1,
+      "store_structured": 12,
+      "uge": 4,
+      "sync_g_t": 14,
+      "ult": 4,
+      "if_nz": 18,
+      "ld_structured": 12,
+      "add": 31,
+      "endloop": 12,
+      "ld_raw": 24,
+      "itof": 1,
+      "div": 4,
+      "lt": 7,
+      "ne": 1,
+      "mul": 41,
+      "dp3": 9,
+      "else": 2,
+      "dp2": 3,
+      "mad": 35,
+      "sqrt": 2,
+      "break": 5,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "imm_atomic_cmp_exch": 4,
+      "ieq": 4,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 43,
+    "name": "g_Flex_CalculateDensitySurfaceTension",
+    "file": "hlsl\\recovered\\043_g_Flex_CalculateDensitySurfaceTension.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e77d5c38bc5975cc99b4547e73aa00fd792d97fe5a0374258b5acf44c67d121e",
+    "compiled_sha256": "145324271fcb76b758dc148afa1856cf1868692d599fe053ac83243fb906126c",
+    "operations": 48,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 4,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 2,
+      "add": 3,
+      "dp3": 1,
+      "lt": 2,
+      "and": 3,
+      "sqrt": 1,
+      "movc": 2,
+      "mad": 2,
+      "mul": 6,
+      "div": 1,
+      "endloop": 1,
+      "max": 1,
+      "store_structured": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "endif": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t4",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 44,
+    "name": "g_Flex_SolveDensitiesNonFluid",
+    "file": "hlsl\\recovered\\044_g_Flex_SolveDensitiesNonFluid.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "67ab01b98fe35ad7018ca4ffa157e0e238561286eec002c98d15c01a558323e8",
+    "compiled_sha256": "9eff696fe87cbae9ef4c7bc410118d70e1eebd5068f20aed93ad4bbb7311d7e4",
+    "operations": 88,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 4,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "eq": 2,
+      "ishl": 2,
+      "store_raw": 2,
+      "ret": 2,
+      "endif": 4,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 2,
+      "mov": 8,
+      "min": 2,
+      "lt": 7,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 3,
+      "add": 7,
+      "dp3": 5,
+      "ge": 2,
+      "and": 2,
+      "sqrt": 1,
+      "continue": 1,
+      "div": 2,
+      "mul": 7,
+      "movc": 6,
+      "mad": 5,
+      "rsq": 1,
+      "endloop": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 45,
+    "name": "g_Flex_SolveShapesPlasticDeformationNV",
+    "file": "hlsl\\recovered\\045_g_Flex_SolveShapesPlasticDeformationNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "ed32947a6b89348b499c7e23071b7a42c2cc9d9aa7f0a690f57cc1baafa469d8",
+    "compiled_sha256": "526cf87910de4aa17616ff06538058d971fe46f3c9bbd8952aa942982d2655e2",
+    "operations": 773,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 11,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 14,
+      "store_raw": 27,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 24,
+      "mov": 151,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "and": 3,
+      "imm_atomic_alloc": 128,
+      "store_structured": 152,
+      "add": 50,
+      "ishr": 2,
+      "sync_g_t": 14,
+      "ld_structured": 12,
+      "ld_raw": 24,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 7,
+      "if_nz": 10,
+      "ne": 1,
+      "mul": 41,
+      "dp3": 9,
+      "else": 2,
+      "dp2": 3,
+      "mad": 32,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 46,
+    "name": "g_Flex_CalculateBoundsFinalizeNV",
+    "file": "hlsl\\recovered\\046_g_Flex_CalculateBoundsFinalizeNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "58a6069af4b1380245385639f2f3648125ba291f1d7b5ab07061717100f98ba4",
+    "compiled_sha256": "14b2c58a0e760e857b7fbcb80bd8ebd8e8a6bae63f2f0ed876f3a24afc25a47f",
+    "operations": 241,
+    "opcodes": {
+      "iadd": 2,
+      "ushr": 2,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_alloc": 60,
+      "mov": 60,
+      "store_structured": 66,
+      "min": 8,
+      "if_z": 5,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "add": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u2, 12",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 47,
+    "name": "g_Flex_TransformShapeBounds",
+    "file": "hlsl\\recovered\\047_g_Flex_TransformShapeBounds.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "ce4f9826a3e0d3daefb80751a745997c1119293fc0349b54982661b4436ece25",
+    "compiled_sha256": "8a8c43edc7cd99e82f57ad0e1a7a27c4193fa6413366b242c9f236dead6d5835",
+    "operations": 135,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "and": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 5,
+      "switch": 1,
+      "case": 6,
+      "mov": 14,
+      "break": 7,
+      "add": 14,
+      "iadd": 2,
+      "ld_structured_indexable(structured_buffer, stride=48)(mixed,mixed,mixed,mixed)": 4,
+      "mul": 42,
+      "default": 1,
+      "endswitch": 1,
+      "dp2": 2,
+      "mad": 24,
+      "dp3": 2,
+      "min": 1,
+      "store_structured": 2,
+      "max": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 48",
+        "dcl_resource_structured t7, 48",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 48",
+        "dcl_resource_structured t7, 48",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 48,
+    "name": "g_Flex_UpdateTrianglesNV",
+    "file": "hlsl\\recovered\\048_g_Flex_UpdateTrianglesNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f29fdf37082ab0e34847af2bb927317849626c849aba6772d0a6e294f12d2de8",
+    "compiled_sha256": "96a14352d0085ee29c4a346c510941e4dce09941f14c6a5a0009947efe328464",
+    "operations": 176,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 2,
+      "imul": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 6,
+      "imad": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "add": 4,
+      "mul": 17,
+      "mad": 10,
+      "dp3": 4,
+      "lt": 4,
+      "rsq": 3,
+      "and": 3,
+      "store_structured": 61,
+      "ne": 1,
+      "or": 1,
+      "movc": 1,
+      "sqrt": 2,
+      "max": 2,
+      "min": 1,
+      "ishl": 3,
+      "imm_atomic_alloc": 24,
+      "store_raw": 12,
+      "bfi": 3,
+      "endif": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 49,
+    "name": "g_Flex_SolveShapes32NV",
+    "file": "hlsl\\recovered\\049_g_Flex_SolveShapes32NV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "b6417ddcd64c802759b2f10ae12cf12e49d95def7abd9afea962301fcbe27941",
+    "compiled_sha256": "040bc33ba411f8de52de5e5a81ae47d3fc2fdeb203d5fe079c541f46a17a4a8a",
+    "operations": 700,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 9,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 9,
+      "store_raw": 24,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 16,
+      "mov": 150,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "and": 1,
+      "imm_atomic_alloc": 128,
+      "store_structured": 147,
+      "add": 40,
+      "sync_g_t": 10,
+      "ld_structured": 4,
+      "ld_raw": 21,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 5,
+      "if_nz": 7,
+      "mul": 36,
+      "else": 2,
+      "dp2": 2,
+      "mad": 27,
+      "dp3": 7,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 32, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 32, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 50,
+    "name": "g_Flex_SolveShapesNV",
+    "file": "hlsl\\recovered\\050_g_Flex_SolveShapesNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "1f6afb4ac9c25509740839777ac844e1f06d918b1abe3e4099772a5dac76cf85",
+    "compiled_sha256": "182b572cfac72af33f0878cd752cca28a93a12f9b3dc5ce32eb3f1bc1d7336da",
+    "operations": 732,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 9,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 13,
+      "store_raw": 24,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 20,
+      "mov": 150,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "and": 3,
+      "imm_atomic_alloc": 128,
+      "store_structured": 151,
+      "add": 44,
+      "ishr": 2,
+      "sync_g_t": 14,
+      "ld_structured": 12,
+      "ld_raw": 21,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 5,
+      "if_nz": 7,
+      "mul": 36,
+      "else": 2,
+      "dp2": 2,
+      "mad": 27,
+      "dp3": 7,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 51,
+    "name": "g_Flex_SolveShapesPlasticDeformation128NV",
+    "file": "hlsl\\recovered\\051_g_Flex_SolveShapesPlasticDeformation128NV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "285dea6cd5be62448d5539a85ed8c7fcee7912de9f18bc92df530a2416070874",
+    "compiled_sha256": "afccc1f585810bc44bd7ab6d40f197e98d480f1bc9b03572160b37374129053a",
+    "operations": 789,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 11,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 14,
+      "store_raw": 27,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 24,
+      "mov": 151,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "and": 3,
+      "imm_atomic_alloc": 128,
+      "store_structured": 152,
+      "add": 58,
+      "ishr": 2,
+      "sync_g_t": 14,
+      "ld_structured": 20,
+      "ld_raw": 24,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 7,
+      "if_nz": 10,
+      "ne": 1,
+      "mul": 41,
+      "dp3": 9,
+      "else": 2,
+      "dp2": 3,
+      "mad": 32,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 52,
+    "name": "g_Flex_SolveShapes",
+    "file": "hlsl\\recovered\\052_g_Flex_SolveShapes.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "67cb7a098e966eabe75fe9d9fe71dba0bb1a5bdb8dbd6fa48161056121aea3d0",
+    "compiled_sha256": "59bc2a029a4368521f638cc234406978ec68f5e7c3e95527de2dcc30c28aac56",
+    "operations": 383,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 9,
+      "iadd": 14,
+      "ushr": 5,
+      "if_z": 5,
+      "store_raw": 20,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 20,
+      "mov": 45,
+      "loop": 12,
+      "ige": 4,
+      "breakc_nz": 8,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "and": 1,
+      "store_structured": 11,
+      "uge": 4,
+      "sync_g_t": 14,
+      "ult": 4,
+      "if_nz": 15,
+      "ld_structured": 12,
+      "add": 25,
+      "endloop": 12,
+      "ld_raw": 21,
+      "itof": 1,
+      "div": 4,
+      "lt": 5,
+      "mul": 36,
+      "else": 2,
+      "dp2": 2,
+      "mad": 30,
+      "dp3": 7,
+      "sqrt": 2,
+      "break": 5,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "imm_atomic_cmp_exch": 4,
+      "ieq": 4,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 64, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 53,
+    "name": "g_Flex_SpringsGenerateIndices",
+    "file": "hlsl\\recovered\\053_g_Flex_SpringsGenerateIndices.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e5438d60cb600aac7946a90d365e272e2bb4e1650fadd622e25e5c1b290c1009",
+    "compiled_sha256": "73605ceebde3dc455fff8c9376b9edc4a01e8a8506229109dd2f4152d1cef694",
+    "operations": 6,
+    "opcodes": {
+      "ishl": 1,
+      "ult": 1,
+      "if_nz": 1,
+      "store_uav_typed": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 54,
+    "name": "g_Flex_SolveInflatableVolumeNV",
+    "file": "hlsl\\recovered\\054_g_Flex_SolveInflatableVolumeNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "18f2343449e4f37c96cd6ffb0cca87e56dca88a06680e1e8b87f8b484442da0b",
+    "compiled_sha256": "322263da1a8ab105230ecfdcb914eb0196cdc563225f379d1297b73348fbc23d",
+    "operations": 119,
+    "opcodes": {
+      "mul": 7,
+      "if_z": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "store_raw": 10,
+      "endif": 1,
+      "sync_g_t": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 7,
+      "ld_raw": 1,
+      "mov": 1,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 2,
+      "imul": 1,
+      "imad": 1,
+      "add": 2,
+      "mad": 2,
+      "dp3": 1,
+      "rsq": 1,
+      "lt": 1,
+      "movc": 1,
+      "ishl": 3,
+      "imm_atomic_alloc": 18,
+      "store_structured": 45,
+      "bfi": 3,
+      "endloop": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 55,
+    "name": "g_Flex_UpdateTrianglesInit",
+    "file": "hlsl\\recovered\\055_g_Flex_UpdateTrianglesInit.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "16527bc73888805e1be7cb5c710c7b17ac32bf866c24b47747a9d98784442467",
+    "compiled_sha256": "7add31d2c3aad533dd790d4a017ee8d83313cef72db8ffc817630f5788f08b8c",
+    "operations": 6,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ishl": 1,
+      "store_raw": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 56,
+    "name": "g_Flex_SolveContactsAccumulate",
+    "file": "hlsl\\recovered\\056_g_Flex_SolveContactsAccumulate.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e061c65d62aa8e2417c6315a703b7a93bc5f8ae1a5b3e3c025a188f30319eefa",
+    "compiled_sha256": "b35783301741bc776ece6806610a2bda9371fccc97d293b775c2855c7a733efd",
+    "operations": 64,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 5,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 5,
+      "eq": 1,
+      "ret": 2,
+      "endif": 5,
+      "iadd": 2,
+      "ne": 1,
+      "lt": 6,
+      "add": 7,
+      "mov": 2,
+      "loop": 1,
+      "breakc_nz": 1,
+      "imad": 1,
+      "dp3": 4,
+      "mul": 5,
+      "mad": 4,
+      "movc": 4,
+      "and": 1,
+      "rsq": 1,
+      "min": 1,
+      "endloop": 1,
+      "store_structured": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 57,
+    "name": "g_Flex_SolveDensities",
+    "file": "hlsl\\recovered\\057_g_Flex_SolveDensities.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "bfea52d4a75715f7ad640e8336d46686553422897d8e2a1e9a2f64399f391958",
+    "compiled_sha256": "622e56af5996364c2389fdcba8b56769b23277f5769c0344727a331db4bf67eb",
+    "operations": 117,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 5,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "eq": 2,
+      "ishl": 2,
+      "store_raw": 2,
+      "ret": 2,
+      "endif": 5,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 6,
+      "and": 5,
+      "ine": 3,
+      "mov": 8,
+      "min": 2,
+      "lt": 7,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 3,
+      "add": 9,
+      "dp3": 5,
+      "ge": 2,
+      "sqrt": 1,
+      "div": 2,
+      "mul": 15,
+      "mad": 10,
+      "movc": 7,
+      "else": 1,
+      "continue": 1,
+      "rsq": 1,
+      "endloop": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 58,
+    "name": "g_Flex_CollideParticles",
+    "file": "hlsl\\recovered\\058_g_Flex_CollideParticles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "2a396c88add75659c1d41baf8f7674dc709b002daeaf8ee2f1cc0fc5d41b66bd",
+    "compiled_sha256": "4a4ed4057d256814279da76548341e9ce6c024db1c30351e2fbe001cbbbaffed",
+    "operations": 97,
+    "opcodes": {
+      "ilt": 5,
+      "if_nz": 8,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "add": 3,
+      "mul": 1,
+      "ftoi": 1,
+      "iadd": 11,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "and": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "endif": 8,
+      "ine": 1,
+      "mov": 16,
+      "loop": 4,
+      "breakc_nz": 4,
+      "bfi": 3,
+      "ige": 1,
+      "ieq": 2,
+      "continue": 2,
+      "not": 1,
+      "or": 1,
+      "dp3": 2,
+      "lt": 2,
+      "store_structured": 2,
+      "endloop": 4,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 12",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[31], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 12",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 59,
+    "name": "g_Flex_ClearInt",
+    "file": "hlsl\\recovered\\059_g_Flex_ClearInt.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "0e7f2eca2f47fc71178bbd3efd49ce17f17210c30ac15d9cbb466e8da908b751",
+    "compiled_sha256": "0dd5e86effe200c27079368f36ff82bb21e8637a856c9fa2a184df1ca497fe5c",
+    "operations": 5,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_uav_structured u0, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 60,
+    "name": "g_Flex_NormalizeVertexNormals",
+    "file": "hlsl\\recovered\\060_g_Flex_NormalizeVertexNormals.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "3a9e8cd7475dfbccfd1ccf5dd819c712e1bc5e1aff11dd454e82b0ac305a0896",
+    "compiled_sha256": "d166234f296503d40d818545ee01edcefe62e62f7b9beedc3526501bbf7f8a53",
+    "operations": 15,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ishl": 1,
+      "ld_raw_indexable(raw_buffer)(mixed,mixed,mixed,mixed)": 1,
+      "dp3": 1,
+      "lt": 1,
+      "rsq": 1,
+      "mul": 1,
+      "and": 1,
+      "mov": 2,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_raw t1",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_raw t1",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 61,
+    "name": "g_Flex_UpdateDiffuseParticles",
+    "file": "hlsl\\recovered\\061_g_Flex_UpdateDiffuseParticles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "904447af58f9f2922fb176ad7fbdf947a6cda294ff61caa3508220f233429736",
+    "compiled_sha256": "e2f912e1bbb068ab0c29fd960b09308264863cdcb89c7e58f97dabb66cc77af2",
+    "operations": 89,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "add": 8,
+      "mul": 9,
+      "ftoi": 1,
+      "bfi": 2,
+      "iadd": 3,
+      "mov": 10,
+      "loop": 2,
+      "ige": 3,
+      "breakc_nz": 2,
+      "dp3": 5,
+      "lt": 4,
+      "mad": 9,
+      "movc": 10,
+      "endloop": 2,
+      "div": 1,
+      "rsq": 2,
+      "ge": 1,
+      "store_structured": 2,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], dynamicIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t7, 12",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], dynamicIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t7, 12",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 62,
+    "name": "g_Flex_SolveDensitiesSurfaceTension",
+    "file": "hlsl\\recovered\\062_g_Flex_SolveDensitiesSurfaceTension.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "8258bd709512e7e290fe41009d465981fa9cd1a918fd1808ab27ee5c5695b872",
+    "compiled_sha256": "7f449f6cf2b2e6f76ce02021933fb46be5555bda7d18649205f7f9f24c9bdb28",
+    "operations": 119,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 5,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 6,
+      "eq": 2,
+      "ishl": 2,
+      "store_raw": 2,
+      "ret": 2,
+      "endif": 5,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 6,
+      "and": 5,
+      "ine": 3,
+      "mov": 8,
+      "min": 2,
+      "lt": 7,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 3,
+      "add": 11,
+      "dp3": 5,
+      "ge": 2,
+      "sqrt": 1,
+      "div": 2,
+      "mul": 15,
+      "mad": 10,
+      "movc": 7,
+      "else": 1,
+      "continue": 1,
+      "rsq": 1,
+      "endloop": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 63,
+    "name": "g_Flex_CreateGrid",
+    "file": "hlsl\\recovered\\063_g_Flex_CreateGrid.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "4472225784e6a26683ba701b6e650e379c7404cb8e06eeada6bf6b0f222ced3c",
+    "compiled_sha256": "0263f6e60d028baa3f8a43e1acf990cff10b1354e37e399da61052fabcf854f6",
+    "operations": 22,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "if_z": 1,
+      "store_structured": 4,
+      "else": 1,
+      "iadd": 3,
+      "ine": 1,
+      "endif": 4,
+      "ieq": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 64,
+    "name": "g_Flex_CalculateParticleHash",
+    "file": "hlsl\\recovered\\064_g_Flex_CalculateParticleHash.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "3d0538e4b279811596e86251059a08437734badbdcc623c30796b3fc752f1e13",
+    "compiled_sha256": "a2e4d11a5cbd8b2a3d57f864b57147e26de8e41bd141f19caff578a34e8484d6",
+    "operations": 17,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "add": 1,
+      "mul": 1,
+      "ftoi": 1,
+      "bfi": 2,
+      "iadd": 1,
+      "else": 1,
+      "mov": 1,
+      "endif": 1,
+      "store_uav_typed": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 65,
+    "name": "g_Flex_CalculateBoundsGroupAMD",
+    "file": "hlsl\\recovered\\065_g_Flex_CalculateBoundsGroupAMD.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "fee6d9f887a764fa06e3eaeb8e84afde8c6be1eb27840eac39f14e6ad44104bf",
+    "compiled_sha256": "f0f55fd6eaeb76db34b8d0edf5f5db4c071dd0b3f94652983bd37d20d8b1c259",
+    "operations": 89,
+    "opcodes": {
+      "iadd": 1,
+      "ushr": 1,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "and": 1,
+      "ishr": 1,
+      "imm_atomic_cmp_exch": 30,
+      "min": 8,
+      "if_z": 5,
+      "store_structured": 6,
+      "endif": 5,
+      "sync_g_t": 5,
+      "ld_structured": 10,
+      "max": 8,
+      "mov": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_raw u7",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": true
+  },
+  {
+    "index": 66,
+    "name": "g_Flex_ApplyDeltas",
+    "file": "hlsl\\recovered\\066_g_Flex_ApplyDeltas.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "19ffee385a9e00951ced937ad6e9a9ef44f48a0a368cf09f5196b9c4e1f006a4",
+    "compiled_sha256": "52b7d007bd31704c3625fe4843891479798143794d5aaf404311cce484931cbf",
+    "operations": 16,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 2,
+      "ishl": 1,
+      "ld_raw_indexable(raw_buffer)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "mul": 1,
+      "max": 1,
+      "div": 1,
+      "mad": 2,
+      "else": 1,
+      "endif": 2,
+      "store_structured": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[29], immediateIndexed",
+        "dcl_resource_raw t0",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[29], immediateIndexed",
+        "dcl_resource_raw t0",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 67,
+    "name": "g_Flex_CalculateAnisotropy",
+    "file": "hlsl\\recovered\\067_g_Flex_CalculateAnisotropy.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "33469a2b69bdf22524116e41bf0cf5d3cb5b7e9e4b8e1faee2d630e3e997abf0",
+    "compiled_sha256": "e1fc0d3c1028d5fb20c37e3c0f60f10a783b398ac21a2589b41fc6c3d34634ab",
+    "operations": 241,
+    "opcodes": {
+      "ilt": 2,
+      "if_nz": 6,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 3,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 5,
+      "mov": 45,
+      "loop": 3,
+      "ige": 3,
+      "breakc_nz": 3,
+      "iadd": 8,
+      "and": 4,
+      "add": 12,
+      "dp3": 2,
+      "lt": 13,
+      "rsq": 4,
+      "mul": 32,
+      "mad": 31,
+      "movc": 18,
+      "endloop": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "eq": 1,
+      "or": 1,
+      "store_structured": 6,
+      "ret": 2,
+      "endif": 7,
+      "div": 1,
+      "sqrt": 6,
+      "break": 1,
+      "if_z": 1,
+      "ne": 3,
+      "rcp": 6,
+      "itof": 3,
+      "else": 2,
+      "ieq": 1,
+      "max": 1,
+      "min": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 68,
+    "name": "g_Flex_UpdateVertexNormalsNV",
+    "file": "hlsl\\recovered\\068_g_Flex_UpdateVertexNormalsNV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "2820c21afd19c6189037672aed5d75da0e2c1c3ed28604af01f996212f71d40e",
+    "compiled_sha256": "d82d75620872b14f20a4051474553547b04ffd3c91044cb9c31bbad585d6e4bc",
+    "operations": 88,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "imul": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "imad": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "ishl": 3,
+      "imm_atomic_alloc": 18,
+      "store_structured": 45,
+      "store_raw": 9,
+      "bfi": 3,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[27], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[27], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 12",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 69,
+    "name": "g_Flex_CalculateVorticity",
+    "file": "hlsl\\recovered\\069_g_Flex_CalculateVorticity.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "3d61407e87fc295c907ce0dae22f3dc9cdb2f0ed4885a996ce5f3d89db73fdf2",
+    "compiled_sha256": "870dd6d08121d3ecfabd8e73c84a155b3e773aa4d57a662bc3bce824d91ca3f9",
+    "operations": 56,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "and": 3,
+      "ine": 2,
+      "if_z": 2,
+      "store_structured": 2,
+      "ret": 2,
+      "endif": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 6,
+      "loop": 1,
+      "ige": 1,
+      "breakc_nz": 1,
+      "iadd": 3,
+      "continue": 1,
+      "add": 3,
+      "dp3": 2,
+      "ge": 1,
+      "lt": 1,
+      "sqrt": 2,
+      "mad": 3,
+      "mul": 4,
+      "div": 1,
+      "movc": 1,
+      "endloop": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 70,
+    "name": "g_Flex_CollideShapes",
+    "file": "hlsl\\recovered\\070_g_Flex_CollideShapes.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "66c4a6d82a6e514021f1eac54ca51fc65d77edba6a0214957d88585034a9ce48",
+    "compiled_sha256": "0ae7d8628a92231ab79b5a8be6c6709c30e6f50ea24bb3afa1cefb50d26cad41",
+    "operations": 1044,
+    "opcodes": {
+      "ilt": 7,
+      "if_nz": 24,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 10,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 4,
+      "mov": 209,
+      "loop": 3,
+      "ige": 2,
+      "breakc_nz": 2,
+      "dp3": 28,
+      "add": 63,
+      "ge": 3,
+      "and": 19,
+      "imad": 6,
+      "store_structured": 13,
+      "iadd": 13,
+      "endif": 26,
+      "endloop": 3,
+      "min": 10,
+      "max": 5,
+      "breakc_z": 1,
+      "lt": 26,
+      "or": 6,
+      "if_z": 2,
+      "mad": 63,
+      "dp4": 3,
+      "rsq": 5,
+      "mul": 66,
+      "dp2": 2,
+      "ieq": 4,
+      "div": 7,
+      "movc": 19,
+      "itof": 6,
+      "else": 7,
+      "ld_structured_indexable(structured_buffer, stride=48)(mixed,mixed,mixed,mixed)": 1,
+      "sqrt": 3,
+      "ne": 2,
+      "break": 121,
+      "div_sat": 3,
+      "switch": 7,
+      "case": 112,
+      "sample_l_indexable(texture3d)(float,float,float,float)": 112,
+      "default": 7,
+      "endswitch": 7,
+      "ld_structured_indexable(structured_buffer, stride=32)(mixed,mixed,mixed,mixed)": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], dynamicIndexed",
+        "dcl_constantbuffer CB1[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t10, 16",
+        "dcl_resource_structured t11, 16",
+        "dcl_resource_structured t12, 48",
+        "dcl_resource_structured t13, 16",
+        "dcl_resource_structured t14, 32",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_resource_structured t8, 4",
+        "dcl_resource_structured t9, 4",
+        "dcl_resource_texture3d (float,float,float,float) t15",
+        "dcl_resource_texture3d (float,float,float,float) t16",
+        "dcl_resource_texture3d (float,float,float,float) t17",
+        "dcl_resource_texture3d (float,float,float,float) t18",
+        "dcl_resource_texture3d (float,float,float,float) t19",
+        "dcl_resource_texture3d (float,float,float,float) t20",
+        "dcl_resource_texture3d (float,float,float,float) t21",
+        "dcl_resource_texture3d (float,float,float,float) t22",
+        "dcl_resource_texture3d (float,float,float,float) t23",
+        "dcl_resource_texture3d (float,float,float,float) t24",
+        "dcl_resource_texture3d (float,float,float,float) t25",
+        "dcl_resource_texture3d (float,float,float,float) t26",
+        "dcl_resource_texture3d (float,float,float,float) t27",
+        "dcl_resource_texture3d (float,float,float,float) t28",
+        "dcl_resource_texture3d (float,float,float,float) t29",
+        "dcl_resource_texture3d (float,float,float,float) t30",
+        "dcl_sampler s0, mode_default",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], dynamicIndexed",
+        "dcl_constantbuffer CB1[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t10, 16",
+        "dcl_resource_structured t11, 16",
+        "dcl_resource_structured t12, 48",
+        "dcl_resource_structured t13, 16",
+        "dcl_resource_structured t14, 32",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_resource_structured t8, 4",
+        "dcl_resource_structured t9, 4",
+        "dcl_resource_texture3d (float,float,float,float) t15",
+        "dcl_resource_texture3d (float,float,float,float) t16",
+        "dcl_resource_texture3d (float,float,float,float) t17",
+        "dcl_resource_texture3d (float,float,float,float) t18",
+        "dcl_resource_texture3d (float,float,float,float) t19",
+        "dcl_resource_texture3d (float,float,float,float) t20",
+        "dcl_resource_texture3d (float,float,float,float) t21",
+        "dcl_resource_texture3d (float,float,float,float) t22",
+        "dcl_resource_texture3d (float,float,float,float) t23",
+        "dcl_resource_texture3d (float,float,float,float) t24",
+        "dcl_resource_texture3d (float,float,float,float) t25",
+        "dcl_resource_texture3d (float,float,float,float) t26",
+        "dcl_resource_texture3d (float,float,float,float) t27",
+        "dcl_resource_texture3d (float,float,float,float) t28",
+        "dcl_resource_texture3d (float,float,float,float) t29",
+        "dcl_resource_texture3d (float,float,float,float) t30",
+        "dcl_sampler s0, mode_default",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 71,
+    "name": "g_Flex_SpringsReorder",
+    "file": "hlsl\\recovered\\071_g_Flex_SpringsReorder.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f2b1b430a837711c4dcf8c19b810db55d7eb0269b76db32d64f5d029f2ef1e6a",
+    "compiled_sha256": "e103690523f1ea0e44b059f94bef3e027c642b4ac723cc4869f3a158f06eeed7",
+    "operations": 16,
+    "opcodes": {
+      "ishl": 1,
+      "ult": 1,
+      "if_nz": 1,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ushr": 1,
+      "and": 1,
+      "iadd": 1,
+      "movc": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 3,
+      "store_structured": 3,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4",
+        "dcl_uav_structured u2, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[1], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 4",
+        "dcl_uav_structured u2, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 72,
+    "name": "g_Flex_ClearFloat4",
+    "file": "hlsl\\recovered\\072_g_Flex_ClearFloat4.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "62c549699b44ee94fcaa2ad6513ec8c9cdcab8e19d1f063bc1fe0dd64b2d0b8f",
+    "compiled_sha256": "7f5f97516e72cd6bdae047dcc7a698ae0f106931a0c3d96f86c14b7308e23c26",
+    "operations": 5,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 73,
+    "name": "g_Flex_Predict",
+    "file": "hlsl\\recovered\\073_g_Flex_Predict.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "6ca41be91bbfeb2108cfd76e1893b84519b397ca78066c07150aa0e8af8a22d9",
+    "compiled_sha256": "9b789eff32dc610c0d6fcd0bc0819bf3ae09ac969dc603d8fa25d1c3f066d3ac",
+    "operations": 27,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 2,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 1,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 1,
+      "lt": 2,
+      "and": 1,
+      "mul": 5,
+      "mad": 2,
+      "movc": 3,
+      "dp3": 1,
+      "rsq": 1,
+      "store_structured": 2,
+      "mov": 1,
+      "add": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 12"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[25], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 16",
+        "dcl_resource_structured t2, 4",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 12"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 74,
+    "name": "g_Flex_UpdateVelocities",
+    "file": "hlsl\\recovered\\074_g_Flex_UpdateVelocities.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e0712bb35cede590401d69bfcc8df3b855489757d4abfe0466f8ccd18c1e5abe",
+    "compiled_sha256": "247db523d0a4748fa7a3db0d3b246af7af2e333ce87f6d6a350752ea5b150b44",
+    "operations": 9,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "add": 1,
+      "mul": 1,
+      "store_structured": 1,
+      "endif": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 16",
+        "dcl_uav_structured u0, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 75,
+    "name": "g_Flex_SolveSprings",
+    "file": "hlsl\\recovered\\075_g_Flex_SolveSprings.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "dfe64e959027a0b0781a844f34d19e721a71a28c7faf8397c9b4a6cf310d6538",
+    "compiled_sha256": "ebfb34e17e5d413b81062c56e6cfdafa6d6544d0668b22ff021463743571f16f",
+    "operations": 79,
+    "opcodes": {
+      "ushr": 1,
+      "and": 4,
+      "uge": 2,
+      "movc": 4,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 7,
+      "iadd": 5,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "lt": 4,
+      "ult": 1,
+      "if_nz": 3,
+      "mov": 4,
+      "loop": 1,
+      "breakc_nz": 1,
+      "add": 11,
+      "dp3": 1,
+      "div": 2,
+      "sqrt": 1,
+      "min": 1,
+      "endif": 3,
+      "mul": 3,
+      "mad": 1,
+      "endloop": 1,
+      "else": 1,
+      "store_structured": 1,
+      "sync_g_t": 1,
+      "ieq": 1,
+      "ld_structured": 7,
+      "ishl": 1,
+      "ld_raw_indexable(raw_buffer)(mixed,mixed,mixed,mixed)": 1,
+      "utof": 1,
+      "store_raw": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 512, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[26], immediateIndexed",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 4",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 76,
+    "name": "g_Flex_CollideTriangles",
+    "file": "hlsl\\recovered\\076_g_Flex_CollideTriangles.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "e76fdc35f64925c67f6801103e4634989b3012b9412b62d0a9dd26806e1749d2",
+    "compiled_sha256": "7de7ecf7d2ba372fb04069602403922640be5fc1e9094b829e5b585a6f0528fc",
+    "operations": 626,
+    "opcodes": {
+      "ilt": 5,
+      "if_nz": 17,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 14,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 7,
+      "and": 21,
+      "min": 2,
+      "max": 2,
+      "add": 28,
+      "mov": 254,
+      "ishl": 8,
+      "loop": 3,
+      "breakc_z": 2,
+      "iadd": 28,
+      "ld_structured": 3,
+      "else": 12,
+      "endif": 22,
+      "lt": 8,
+      "or": 10,
+      "if_z": 5,
+      "ieq": 1,
+      "store_structured": 8,
+      "ige": 5,
+      "endloop": 3,
+      "breakc_nz": 1,
+      "mad": 49,
+      "dp4": 2,
+      "rsq": 4,
+      "mul": 40,
+      "dp2": 2,
+      "dp3": 22,
+      "div": 5,
+      "ld_structured_indexable(structured_buffer, stride=48)(mixed,mixed,mixed,mixed)": 1,
+      "itof": 1,
+      "imad": 2,
+      "ge": 20,
+      "movc": 7,
+      "not": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_constantbuffer CB1[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t10, 4",
+        "dcl_resource_structured t11, 16",
+        "dcl_resource_structured t12, 16",
+        "dcl_resource_structured t13, 16",
+        "dcl_resource_structured t14, 4",
+        "dcl_resource_structured t15, 16",
+        "dcl_resource_structured t16, 16",
+        "dcl_resource_structured t17, 48",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 4",
+        "dcl_resource_structured t8, 16",
+        "dcl_resource_structured t9, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_constantbuffer CB1[1], immediateIndexed",
+        "dcl_resource_structured t0, 16",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t10, 4",
+        "dcl_resource_structured t11, 16",
+        "dcl_resource_structured t12, 16",
+        "dcl_resource_structured t13, 16",
+        "dcl_resource_structured t14, 4",
+        "dcl_resource_structured t15, 16",
+        "dcl_resource_structured t16, 16",
+        "dcl_resource_structured t17, 48",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 4",
+        "dcl_resource_structured t8, 16",
+        "dcl_resource_structured t9, 16",
+        "dcl_uav_structured u0, 4",
+        "dcl_uav_structured u1, 16",
+        "dcl_uav_structured u2, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 77,
+    "name": "g_Flex_SolveVelocities",
+    "file": "hlsl\\recovered\\077_g_Flex_SolveVelocities.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "71464302f515bac96c6e490daa0b8d7a00f2504a8f78605d9ba72baaed20e32f",
+    "compiled_sha256": "2d904cc1500586a37ede20260e4d21b79185ffada130c4933eecf8cf59d8ad22",
+    "operations": 141,
+    "opcodes": {
+      "ilt": 1,
+      "if_nz": 6,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 9,
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 5,
+      "and": 7,
+      "ine": 2,
+      "lt": 10,
+      "mov": 9,
+      "loop": 2,
+      "ige": 2,
+      "breakc_nz": 2,
+      "iadd": 3,
+      "add": 9,
+      "dp3": 9,
+      "ge": 2,
+      "sqrt": 2,
+      "div": 2,
+      "mad": 13,
+      "mul": 17,
+      "movc": 10,
+      "endif": 6,
+      "endloop": 2,
+      "rsq": 1,
+      "imad": 1,
+      "max": 2,
+      "dp2": 1,
+      "store_structured": 3,
+      "ishl": 1,
+      "store_raw": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 4",
+        "dcl_resource_structured t8, 16",
+        "dcl_uav_raw u1",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u2, 4",
+        "dcl_uav_structured u3, 4"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[32], immediateIndexed",
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 16",
+        "dcl_resource_structured t5, 16",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 4",
+        "dcl_resource_structured t8, 16",
+        "dcl_uav_raw u1",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u2, 4",
+        "dcl_uav_structured u3, 4"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 78,
+    "name": "g_Flex_SolveShapesPlasticDeformation32NV",
+    "file": "hlsl\\recovered\\078_g_Flex_SolveShapesPlasticDeformation32NV.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "982d856b12958af29315d36e80ef0b8d5da2489dbbfef97fbb634d2319ccbab2",
+    "compiled_sha256": "e383a763770a4427cca4c9eb33e60e71baf48549e02cb6b624df8bfdc3fa57e9",
+    "operations": 741,
+    "opcodes": {
+      "ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed)": 11,
+      "iadd": 10,
+      "ushr": 1,
+      "if_z": 10,
+      "store_raw": 27,
+      "ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed)": 3,
+      "endif": 20,
+      "mov": 151,
+      "loop": 4,
+      "ige": 4,
+      "breakc_nz": 4,
+      "bfi": 4,
+      "ilt": 3,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 7,
+      "and": 1,
+      "imm_atomic_alloc": 128,
+      "store_structured": 148,
+      "add": 46,
+      "sync_g_t": 10,
+      "ld_structured": 4,
+      "ld_raw": 24,
+      "endloop": 4,
+      "itof": 1,
+      "div": 4,
+      "lt": 7,
+      "if_nz": 10,
+      "ne": 1,
+      "mul": 41,
+      "dp3": 9,
+      "else": 2,
+      "dp2": 3,
+      "mad": 32,
+      "sqrt": 2,
+      "break": 1,
+      "rsq": 1,
+      "sincos": 1,
+      "ishl": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 32, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 32, 1, 1",
+      "resources": [
+        "dcl_resource_structured t0, 4",
+        "dcl_resource_structured t1, 4",
+        "dcl_resource_structured t2, 4",
+        "dcl_resource_structured t3, 4",
+        "dcl_resource_structured t4, 4",
+        "dcl_resource_structured t5, 4",
+        "dcl_resource_structured t6, 16",
+        "dcl_resource_structured t7, 16",
+        "dcl_uav_raw u0",
+        "dcl_uav_structured u1, 12",
+        "dcl_uav_structured u2, 16",
+        "dcl_uav_structured u3, 16",
+        "dcl_uav_structured u4, 12",
+        "dcl_uav_structured u5, 16",
+        "dcl_uav_structured_opc u7, 256"
+      ]
+    },
+    "vendor_counter_encoding": true,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 79,
+    "name": "g_Flex_CalculateBoundsGroup",
+    "file": "hlsl\\recovered\\079_g_Flex_CalculateBoundsGroup.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "ac6dd85a761ce2684698be166dd94d445234fd6ecdf3c0ae18f1091e02eeb559",
+    "compiled_sha256": "dedb47f48ff802743f07b02e6377aeba60917a223ae2a63b159dff8b12ae2929",
+    "operations": 51,
+    "opcodes": {
+      "iadd": 3,
+      "ushr": 3,
+      "ilt": 1,
+      "ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed)": 2,
+      "movc": 2,
+      "store_structured": 6,
+      "mov": 4,
+      "loop": 2,
+      "uge": 2,
+      "breakc_nz": 2,
+      "sync_g_t": 5,
+      "ult": 2,
+      "if_nz": 2,
+      "ld_structured": 6,
+      "min": 1,
+      "endif": 3,
+      "endloop": 2,
+      "max": 1,
+      "if_z": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 128, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[24], immediateIndexed",
+        "dcl_resource_structured t2, 16",
+        "dcl_resource_structured t3, 16",
+        "dcl_uav_structured u0, 16",
+        "dcl_uav_structured u1, 16"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 80,
+    "name": "g_RadixSort1CS",
+    "file": "hlsl\\recovered\\080_g_RadixSort1CS.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "4162fbdc45fcf90e3d473468e2eb317c12a28d78cc70c0e6681bf0c51b4ab278",
+    "compiled_sha256": "7aa30ead87fe15df9d633d4d72ca1be2dc2a9517f4bd90fb00675782e696279d",
+    "operations": 238,
+    "opcodes": {
+      "imad": 7,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 1,
+      "ishl": 3,
+      "uge": 2,
+      "movc": 56,
+      "iadd": 77,
+      "ushr": 9,
+      "and": 13,
+      "ieq": 16,
+      "store_structured": 5,
+      "sync_g_t": 4,
+      "ult": 2,
+      "if_nz": 3,
+      "ld_structured": 15,
+      "endif": 4,
+      "if_z": 1,
+      "store_uav_typed": 16,
+      "bfi": 3,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 81,
+    "name": "g_RadixSort2CS",
+    "file": "hlsl\\recovered\\081_g_RadixSort2CS.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "cd15117dd21e2d15ac81e1c2e7a1e984d7214f517fbdc412fbc2929856451b5e",
+    "compiled_sha256": "9bbfc923d8118ea867571cc2a198ae10868a4b682e799fd35bdfcc2c6266512e",
+    "operations": 154,
+    "opcodes": {
+      "if_z": 1,
+      "ushr": 4,
+      "iadd": 53,
+      "mov": 7,
+      "loop": 2,
+      "uge": 6,
+      "breakc_nz": 2,
+      "ult": 2,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "and": 3,
+      "store_structured": 5,
+      "sync_g_t": 5,
+      "if_nz": 17,
+      "ld_structured": 19,
+      "endif": 18,
+      "store_uav_typed": 2,
+      "endloop": 2,
+      "else": 2,
+      "bfi": 1,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 82,
+    "name": "g_RadixSortBlockCS",
+    "file": "hlsl\\recovered\\082_g_RadixSortBlockCS.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "4d70c52f91c42b2deeb894add583919e144bf35ce1634945226eeac09d0bb922",
+    "compiled_sha256": "2e6011384d5d7b69b140d79706ce1d6a177b1ce383e7a7072f2c2ba883dcff50",
+    "operations": 132,
+    "opcodes": {
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 2,
+      "ishl": 2,
+      "uge": 6,
+      "movc": 6,
+      "imad": 2,
+      "iadd": 37,
+      "mov": 3,
+      "loop": 1,
+      "breakc_nz": 1,
+      "ushr": 1,
+      "and": 1,
+      "xor": 1,
+      "store_structured": 12,
+      "sync_g_t": 5,
+      "if_nz": 12,
+      "ld_structured": 24,
+      "endif": 12,
+      "endloop": 1,
+      "store_uav_typed": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_buffer (uint,uint,uint,uint) t1",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_buffer (uint,uint,uint,uint) t1",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  },
+  {
+    "index": 83,
+    "name": "g_RadixSort3CS",
+    "file": "hlsl\\recovered\\083_g_RadixSort3CS.hlsl",
+    "compile_hresult": 0,
+    "source_sha256": "f1246422905721a0a428d54ccb5db1e17e413631b1abe539f18efad825bb642d",
+    "compiled_sha256": "5acdd264bf78ecaf47749ba2acd53f073afd754270503f89d7d7514dc7e5b5c5",
+    "operations": 169,
+    "opcodes": {
+      "ult": 1,
+      "if_nz": 13,
+      "imad": 3,
+      "ld_indexable(buffer)(uint,uint,uint,uint)": 4,
+      "store_structured": 14,
+      "iadd": 52,
+      "ishl": 3,
+      "endif": 13,
+      "uge": 7,
+      "movc": 6,
+      "mov": 5,
+      "loop": 2,
+      "breakc_nz": 2,
+      "ushr": 2,
+      "and": 2,
+      "xor": 1,
+      "sync_g_t": 6,
+      "ld_structured": 28,
+      "endloop": 2,
+      "store_uav_typed": 2,
+      "ret": 1
+    },
+    "interface_exact": true,
+    "original_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_buffer (uint,uint,uint,uint) t1",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "recompiled_interface": {
+      "thread_group": "dcl_thread_group 256, 1, 1",
+      "resources": [
+        "dcl_constantbuffer CB0[2], immediateIndexed",
+        "dcl_resource_buffer (uint,uint,uint,uint) t0",
+        "dcl_resource_buffer (uint,uint,uint,uint) t1",
+        "dcl_resource_buffer (uint,uint,uint,uint) t2",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u0",
+        "dcl_uav_typed_buffer (uint,uint,uint,uint) u1"
+      ]
+    },
+    "vendor_counter_encoding": false,
+    "vendor_cmpxchg_encoding": false
+  }
+]

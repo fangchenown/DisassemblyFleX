@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "task": "DisassemblyFleX",
+  "status": "ARCHIVED",
+  "phase": "COMPLETE",
+  "created": "2026-10-09T22:48:32+08:00",
+  "updated": "2026-10-10T04:33:31+08:00",
+  "source_root": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX",
+  "output_root": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-20261009",
+  "goal_status": "complete",
+  "hard_target": "独立源码构建并与原 NvFlexReleaseD3D_x64.dll 行为一致；FlexDemo全功能验证；锁屏兼容；完成后中文报告和账本归档",
+  "active_jobs": [],
+  "acceptance_complete": true,
+  "archive_allowed": true,
+  "summary": "源码工程、最终洁净构建final-v1、13项综合回归、两后端67场景30/120帧矩阵、84指令流精确重编码与中文报告已交付。最终DLL8e4a8f1bb479f129147855b9656caa0379ccc2a9c91838604d3cae63a1191090。按报告明确的有效API/硬件/float32数值精度范围验收；D3D11 30帧41/67、D3D12 46/67全字节同，其余原版非确定性数据保留，D3D12两处独立量化审计不冒充bit相等。最终所有13门禁和3场景120帧复核PASS；主要矩阵536运行40200帧无运行失败、零顶层窗口、资产未改。详细REPORT_CN.txt、MANIFEST.json、FINAL_VALIDATION.json在Build/DisassemblyFleX-20261009/delivery。现在归档完整账本，保留入口和后续构建日志存根。",
+  "next": [],
+  "archive_path": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\OpenFlexExecutionLedgerArchive\\20261010-complete",
+  "completed": "2026-10-10T04:33:31+08:00",
+  "validation_scope": "Valid API and tested Windows/NVIDIA domain; numerical/structural compatibility, not a guarantee of universal byte identity. See REPORT_CN.txt.",
+  "precision_exceptions": [
+    3,
+    27
+  ]
+}

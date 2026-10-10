@@ -1,0 +1,1504 @@
+[
+  {
+    "category": "api",
+    "va": "0x180042200",
+    "export_or_pdb_name": "?NvFlexGetMaxDiffuseParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetMaxDiffuseParticles.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042210",
+    "export_or_pdb_name": "?NvFlexGetMaxNeighborsPerParticle@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetMaxNeighborsPerParticle.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800421f0",
+    "export_or_pdb_name": "?NvFlexGetMaxNumParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetMaxNumParticles.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042240",
+    "export_or_pdb_name": "?NvFlexGetNumDynamicTriangles@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetNumDynamicTriangles.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042220",
+    "export_or_pdb_name": "?NvFlexGetNumParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetNumParticles.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042250",
+    "export_or_pdb_name": "?NvFlexGetNumRigids@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetNumRigids.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042260",
+    "export_or_pdb_name": "?NvFlexGetNumShapes@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetNumShapes.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042230",
+    "export_or_pdb_name": "?NvFlexGetNumSprings@@YAHPEBUNvFlexSolver@@@Z",
+    "file": "cpp/api/NvFlexGetNumSprings.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800421b0",
+    "export_or_pdb_name": "?NvFlexGetTriangleMeshNumTriangles@@YAHPEAUNvFlexLibrary@@I@Z",
+    "file": "cpp/api/NvFlexGetTriangleMeshNumTriangles.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshIndex"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800421d0",
+    "export_or_pdb_name": "?NvFlexGetTriangleMeshNumVertices@@YAHPEAUNvFlexLibrary@@I@Z",
+    "file": "cpp/api/NvFlexGetTriangleMeshNumVertices.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshIndex"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041290",
+    "export_or_pdb_name": "NvFlexAcquireContext",
+    "file": "cpp/api/NvFlexAcquireContext.cpp",
+    "pdb_parameters": [
+      "__formal"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040070",
+    "export_or_pdb_name": "NvFlexAllocBuffer",
+    "file": "cpp/api/NvFlexAllocBuffer.cpp",
+    "pdb_parameters": [
+      "lib",
+      "elementCount",
+      "elementByteStride",
+      "type"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180043c20",
+    "export_or_pdb_name": "NvFlexComputeWaitForGraphics",
+    "file": "cpp/api/NvFlexComputeWaitForGraphics.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180043ae0",
+    "export_or_pdb_name": "NvFlexCopyDeviceToHost",
+    "file": "cpp/api/NvFlexCopyDeviceToHost.cpp",
+    "pdb_parameters": [
+      "solver",
+      "pDevice",
+      "pHost",
+      "size",
+      "stride"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042310",
+    "export_or_pdb_name": "NvFlexCopySolver",
+    "file": "cpp/api/NvFlexCopySolver.cpp",
+    "pdb_parameters": [
+      "dst",
+      "src"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800412b0",
+    "export_or_pdb_name": "NvFlexCreateConvexMesh",
+    "file": "cpp/api/NvFlexCreateConvexMesh.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003fb60",
+    "export_or_pdb_name": "NvFlexCreateDistanceField",
+    "file": "cpp/api/NvFlexCreateDistanceField.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180037f80",
+    "export_or_pdb_name": "NvFlexCreateSolver",
+    "file": "cpp/api/NvFlexCreateSolver.cpp",
+    "pdb_parameters": [
+      "lib",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800417a0",
+    "export_or_pdb_name": "NvFlexCreateTriangleMesh",
+    "file": "cpp/api/NvFlexCreateTriangleMesh.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041380",
+    "export_or_pdb_name": "NvFlexDestroyConvexMesh",
+    "file": "cpp/api/NvFlexDestroyConvexMesh.cpp",
+    "pdb_parameters": [
+      "lib",
+      "convexIndex"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003fc40",
+    "export_or_pdb_name": "NvFlexDestroyDistanceField",
+    "file": "cpp/api/NvFlexDestroyDistanceField.cpp",
+    "pdb_parameters": [
+      "lib",
+      "SDFIndex"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ab30",
+    "export_or_pdb_name": "NvFlexDestroySolver",
+    "file": "cpp/api/NvFlexDestroySolver.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041860",
+    "export_or_pdb_name": "NvFlexDestroyTriangleMesh",
+    "file": "cpp/api/NvFlexDestroyTriangleMesh.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshIndex"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800422c0",
+    "export_or_pdb_name": "NvFlexFlush",
+    "file": "cpp/api/NvFlexFlush.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800400e0",
+    "export_or_pdb_name": "NvFlexFreeBuffer",
+    "file": "cpp/api/NvFlexFreeBuffer.cpp",
+    "pdb_parameters": [
+      "buf"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003edd0",
+    "export_or_pdb_name": "NvFlexGetActive",
+    "file": "cpp/api/NvFlexGetActive.cpp",
+    "pdb_parameters": [
+      "s",
+      "indices",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ee40",
+    "export_or_pdb_name": "NvFlexGetActiveCount",
+    "file": "cpp/api/NvFlexGetActiveCount.cpp",
+    "pdb_parameters": [
+      "s"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f0b0",
+    "export_or_pdb_name": "NvFlexGetAnisotropy",
+    "file": "cpp/api/NvFlexGetAnisotropy.cpp",
+    "pdb_parameters": [
+      "s",
+      "q1",
+      "q2",
+      "q3",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ff00",
+    "export_or_pdb_name": "NvFlexGetBounds",
+    "file": "cpp/api/NvFlexGetBounds.cpp",
+    "pdb_parameters": [
+      "s",
+      "lower",
+      "upper"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040cd0",
+    "export_or_pdb_name": "NvFlexGetContacts",
+    "file": "cpp/api/NvFlexGetContacts.cpp",
+    "pdb_parameters": [
+      "s",
+      "planes",
+      "velocities",
+      "indices",
+      "counts"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041660",
+    "export_or_pdb_name": "NvFlexGetConvexMeshBounds",
+    "file": "cpp/api/NvFlexGetConvexMeshBounds.cpp",
+    "pdb_parameters": [
+      "lib",
+      "convexIndex",
+      "lower",
+      "upper"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800414c0",
+    "export_or_pdb_name": "NvFlexGetConvexMeshes",
+    "file": "cpp/api/NvFlexGetConvexMeshes.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshes",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180043c30",
+    "export_or_pdb_name": "NvFlexGetDataAftermath",
+    "file": "cpp/api/NvFlexGetDataAftermath.cpp",
+    "pdb_parameters": [
+      "lib",
+      "pDataOut",
+      "pStatusOut"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ee80",
+    "export_or_pdb_name": "NvFlexGetDensities",
+    "file": "cpp/api/NvFlexGetDensities.cpp",
+    "pdb_parameters": [
+      "s",
+      "d",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800431a0",
+    "export_or_pdb_name": "NvFlexGetDetailTimers",
+    "file": "cpp/api/NvFlexGetDetailTimers.cpp",
+    "pdb_parameters": [
+      "solver",
+      "timers"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800422a0",
+    "export_or_pdb_name": "NvFlexGetDeviceAndContext",
+    "file": "cpp/api/NvFlexGetDeviceAndContext.cpp",
+    "pdb_parameters": [
+      "lib",
+      "device",
+      "context"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042960",
+    "export_or_pdb_name": "NvFlexGetDeviceLatency",
+    "file": "cpp/api/NvFlexGetDeviceLatency.cpp",
+    "pdb_parameters": [
+      "solver",
+      "begin",
+      "end",
+      "frequency"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800422b0",
+    "export_or_pdb_name": "NvFlexGetDeviceName",
+    "file": "cpp/api/NvFlexGetDeviceName.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f150",
+    "export_or_pdb_name": "NvFlexGetDiffuseParticles",
+    "file": "cpp/api/NvFlexGetDiffuseParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "v",
+      "count"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003fde0",
+    "export_or_pdb_name": "NvFlexGetDistanceFields",
+    "file": "cpp/api/NvFlexGetDistanceFields.cpp",
+    "pdb_parameters": [
+      "lib",
+      "sdfs",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f800",
+    "export_or_pdb_name": "NvFlexGetDynamicTriangles",
+    "file": "cpp/api/NvFlexGetDynamicTriangles.cpp",
+    "pdb_parameters": [
+      "s",
+      "triangles",
+      "normals",
+      "numTris"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040fa0",
+    "export_or_pdb_name": "NvFlexGetNeighbors",
+    "file": "cpp/api/NvFlexGetNeighbors.cpp",
+    "pdb_parameters": [
+      "s",
+      "neighbors",
+      "counts",
+      "apiToInternal",
+      "internalToApi"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ef60",
+    "export_or_pdb_name": "NvFlexGetNormals",
+    "file": "cpp/api/NvFlexGetNormals.cpp",
+    "pdb_parameters": [
+      "s",
+      "normals",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003fa80",
+    "export_or_pdb_name": "NvFlexGetParams",
+    "file": "cpp/api/NvFlexGetParams.cpp",
+    "pdb_parameters": [
+      "s",
+      "params"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003eb90",
+    "export_or_pdb_name": "NvFlexGetParticles",
+    "file": "cpp/api/NvFlexGetParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ecf0",
+    "export_or_pdb_name": "NvFlexGetPhases",
+    "file": "cpp/api/NvFlexGetPhases.cpp",
+    "pdb_parameters": [
+      "s",
+      "phases",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003eb20",
+    "export_or_pdb_name": "NvFlexGetRestParticles",
+    "file": "cpp/api/NvFlexGetRestParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003dfc0",
+    "export_or_pdb_name": "NvFlexGetRigids",
+    "file": "cpp/api/NvFlexGetRigids.cpp",
+    "pdb_parameters": [
+      "s",
+      "offsets",
+      "indices",
+      "rest",
+      "normals",
+      "stiffness",
+      "thresholds",
+      "creeps",
+      "rotations",
+      "translations"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042290",
+    "export_or_pdb_name": "NvFlexGetShapeBVH",
+    "file": "cpp/api/NvFlexGetShapeBVH.cpp",
+    "pdb_parameters": [
+      "s",
+      "bvh"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ec00",
+    "export_or_pdb_name": "NvFlexGetSmoothParticles",
+    "file": "cpp/api/NvFlexGetSmoothParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003c2a0",
+    "export_or_pdb_name": "NvFlexGetSolverDesc",
+    "file": "cpp/api/NvFlexGetSolverDesc.cpp",
+    "pdb_parameters": [
+      "solver",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003c2c0",
+    "export_or_pdb_name": "NvFlexGetSolverLibrary",
+    "file": "cpp/api/NvFlexGetSolverLibrary.cpp",
+    "pdb_parameters": [
+      "solver"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003c230",
+    "export_or_pdb_name": "NvFlexGetSolvers",
+    "file": "cpp/api/NvFlexGetSolvers.cpp",
+    "pdb_parameters": [
+      "lib",
+      "solvers",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003d330",
+    "export_or_pdb_name": "NvFlexGetSprings",
+    "file": "cpp/api/NvFlexGetSprings.cpp",
+    "pdb_parameters": [
+      "s",
+      "indices",
+      "restLengths",
+      "springStiffness",
+      "numSprings"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180042bb0",
+    "export_or_pdb_name": "NvFlexGetTimers",
+    "file": "cpp/api/NvFlexGetTimers.cpp",
+    "pdb_parameters": [
+      "solver",
+      "timers"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800420b0",
+    "export_or_pdb_name": "NvFlexGetTriangleMeshBounds",
+    "file": "cpp/api/NvFlexGetTriangleMeshBounds.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshIndex",
+      "lower",
+      "upper"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041920",
+    "export_or_pdb_name": "NvFlexGetTriangleMeshes",
+    "file": "cpp/api/NvFlexGetTriangleMeshes.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshes",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f040",
+    "export_or_pdb_name": "NvFlexGetVelocities",
+    "file": "cpp/api/NvFlexGetVelocities.cpp",
+    "pdb_parameters": [
+      "s",
+      "v",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180037c30",
+    "export_or_pdb_name": "NvFlexGetVersion",
+    "file": "cpp/api/NvFlexGetVersion.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "api",
+    "va": "0x180035ba0",
+    "export_or_pdb_name": "NvFlexInit",
+    "file": "cpp/api/NvFlexInit.cpp",
+    "pdb_parameters": [
+      "version",
+      "errorFunc",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180029e30",
+    "export_or_pdb_name": "NvFlexMakePhase",
+    "file": "cpp/api/NvFlexMakePhase.cpp",
+    "pdb_parameters": [
+      "group",
+      "particleFlags"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180029e10",
+    "export_or_pdb_name": "NvFlexMakePhaseWithChannels",
+    "file": "cpp/api/NvFlexMakePhaseWithChannels.cpp",
+    "pdb_parameters": [
+      "group",
+      "particleFlags",
+      "shapeChannels"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180029e60",
+    "export_or_pdb_name": "NvFlexMakeShapeFlags",
+    "file": "cpp/api/NvFlexMakeShapeFlags.cpp",
+    "pdb_parameters": [
+      "type",
+      "dynamic"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180029e50",
+    "export_or_pdb_name": "NvFlexMakeShapeFlagsWithChannels",
+    "file": "cpp/api/NvFlexMakeShapeFlagsWithChannels.cpp",
+    "pdb_parameters": [
+      "type",
+      "dynamic",
+      "shapeChannels"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040160",
+    "export_or_pdb_name": "NvFlexMap",
+    "file": "cpp/api/NvFlexMap.cpp",
+    "pdb_parameters": [
+      "buffer",
+      "flags"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040230",
+    "export_or_pdb_name": "NvFlexRegisterD3DBuffer",
+    "file": "cpp/api/NvFlexRegisterD3DBuffer.cpp",
+    "pdb_parameters": [
+      "lib",
+      "bufferD3D",
+      "elementCount",
+      "elementByteStride"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800402e0",
+    "export_or_pdb_name": "NvFlexRegisterSolverCallback",
+    "file": "cpp/api/NvFlexRegisterSolverCallback.cpp",
+    "pdb_parameters": [
+      "s",
+      "callback",
+      "stage"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800412a0",
+    "export_or_pdb_name": "NvFlexRestoreContext",
+    "file": "cpp/api/NvFlexRestoreContext.cpp",
+    "pdb_parameters": [
+      "__formal"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ed60",
+    "export_or_pdb_name": "NvFlexSetActive",
+    "file": "cpp/api/NvFlexSetActive.cpp",
+    "pdb_parameters": [
+      "s",
+      "indices",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ee70",
+    "export_or_pdb_name": "NvFlexSetActiveCount",
+    "file": "cpp/api/NvFlexSetActiveCount.cpp",
+    "pdb_parameters": [
+      "s",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040350",
+    "export_or_pdb_name": "NvFlexSetDebug",
+    "file": "cpp/api/NvFlexSetDebug.cpp",
+    "pdb_parameters": [
+      "s",
+      "enable"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f370",
+    "export_or_pdb_name": "NvFlexSetDiffuseParticles",
+    "file": "cpp/api/NvFlexSetDiffuseParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "v",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f4f0",
+    "export_or_pdb_name": "NvFlexSetDynamicTriangles",
+    "file": "cpp/api/NvFlexSetDynamicTriangles.cpp",
+    "pdb_parameters": [
+      "s",
+      "triangles",
+      "normals",
+      "numTris"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003e4c0",
+    "export_or_pdb_name": "NvFlexSetInflatables",
+    "file": "cpp/api/NvFlexSetInflatables.cpp",
+    "pdb_parameters": [
+      "s",
+      "startTris",
+      "numTris",
+      "restVolumes",
+      "overPressures",
+      "constraintScales",
+      "n"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003eef0",
+    "export_or_pdb_name": "NvFlexSetNormals",
+    "file": "cpp/api/NvFlexSetNormals.cpp",
+    "pdb_parameters": [
+      "s",
+      "normals",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003f980",
+    "export_or_pdb_name": "NvFlexSetParams",
+    "file": "cpp/api/NvFlexSetParams.cpp",
+    "pdb_parameters": [
+      "s",
+      "params"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ea40",
+    "export_or_pdb_name": "NvFlexSetParticles",
+    "file": "cpp/api/NvFlexSetParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003ec80",
+    "export_or_pdb_name": "NvFlexSetPhases",
+    "file": "cpp/api/NvFlexSetPhases.cpp",
+    "pdb_parameters": [
+      "s",
+      "phases",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003eab0",
+    "export_or_pdb_name": "NvFlexSetRestParticles",
+    "file": "cpp/api/NvFlexSetRestParticles.cpp",
+    "pdb_parameters": [
+      "s",
+      "p",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003d350",
+    "export_or_pdb_name": "NvFlexSetRigids",
+    "file": "cpp/api/NvFlexSetRigids.cpp",
+    "pdb_parameters": [
+      "s",
+      "offsets",
+      "indices",
+      "rest",
+      "normals",
+      "stiffness",
+      "thresholds",
+      "creeps",
+      "rotations",
+      "translations",
+      "numRigids",
+      "numIndices"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180040360",
+    "export_or_pdb_name": "NvFlexSetShapes",
+    "file": "cpp/api/NvFlexSetShapes.cpp",
+    "pdb_parameters": [
+      "s",
+      "geometry",
+      "shapePositions",
+      "shapeRotations",
+      "prevShapePositions",
+      "prevShapeRotations",
+      "shapeFlags",
+      "numShapes"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180037f60",
+    "export_or_pdb_name": "NvFlexSetSolverDescDefaults",
+    "file": "cpp/api/NvFlexSetSolverDescDefaults.cpp",
+    "pdb_parameters": [
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003c760",
+    "export_or_pdb_name": "NvFlexSetSprings",
+    "file": "cpp/api/NvFlexSetSprings.cpp",
+    "pdb_parameters": [
+      "s",
+      "springIndices",
+      "springLengths",
+      "springStiffness",
+      "numSprings"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003efd0",
+    "export_or_pdb_name": "NvFlexSetVelocities",
+    "file": "cpp/api/NvFlexSetVelocities.cpp",
+    "pdb_parameters": [
+      "s",
+      "v",
+      "desc"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800372a0",
+    "export_or_pdb_name": "NvFlexShutdown",
+    "file": "cpp/api/NvFlexShutdown.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800401b0",
+    "export_or_pdb_name": "NvFlexUnmap",
+    "file": "cpp/api/NvFlexUnmap.cpp",
+    "pdb_parameters": [
+      "buffer"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800402a0",
+    "export_or_pdb_name": "NvFlexUnregisterD3DBuffer",
+    "file": "cpp/api/NvFlexUnregisterD3DBuffer.cpp",
+    "pdb_parameters": [
+      "buf"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800401f0",
+    "export_or_pdb_name": "NvFlexUnregisterOGLBuffer",
+    "file": "cpp/api/NvFlexUnregisterOGLBuffer.cpp",
+    "pdb_parameters": [
+      "buf"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041530",
+    "export_or_pdb_name": "NvFlexUpdateConvexMesh",
+    "file": "cpp/api/NvFlexUpdateConvexMesh.cpp",
+    "pdb_parameters": [
+      "lib",
+      "convexIndex",
+      "planes",
+      "numPlanes",
+      "lower",
+      "upper"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003fe50",
+    "export_or_pdb_name": "NvFlexUpdateDistanceField",
+    "file": "cpp/api/NvFlexUpdateDistanceField.cpp",
+    "pdb_parameters": [
+      "lib",
+      "SDFIndex",
+      "dimx",
+      "dimy",
+      "dimz",
+      "field"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x18003c2d0",
+    "export_or_pdb_name": "NvFlexUpdateSolver",
+    "file": "cpp/api/NvFlexUpdateSolver.cpp",
+    "pdb_parameters": [
+      "s",
+      "dt",
+      "substeps",
+      "enableTimers"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x180041990",
+    "export_or_pdb_name": "NvFlexUpdateTriangleMesh",
+    "file": "cpp/api/NvFlexUpdateTriangleMesh.cpp",
+    "pdb_parameters": [
+      "lib",
+      "meshIndex",
+      "vertices",
+      "indices",
+      "numVertices",
+      "numTris",
+      "lower",
+      "upper"
+    ]
+  },
+  {
+    "category": "api",
+    "va": "0x1800422d0",
+    "export_or_pdb_name": "NvFlexWait",
+    "file": "cpp/api/NvFlexWait.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x18002e420",
+    "export_or_pdb_name": "Sqrt",
+    "file": "cpp/solver/Sqrt.cpp",
+    "pdb_parameters": [
+      "x"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x18002e430",
+    "export_or_pdb_name": "Rand",
+    "file": "cpp/solver/Rand.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x18002e470",
+    "export_or_pdb_name": "Randf",
+    "file": "cpp/solver/Randf.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x18002e4c0",
+    "export_or_pdb_name": "Randf",
+    "file": "cpp/solver/18002e4c0_Randf.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x18002e520",
+    "export_or_pdb_name": "TightPack3D",
+    "file": "cpp/solver/TightPack3D.cpp",
+    "pdb_parameters": [
+      "radius",
+      "separation",
+      "points",
+      "maxPoints"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d40",
+    "export_or_pdb_name": "PrintPredictInput",
+    "file": "cpp/solver/PrintPredictInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d50",
+    "export_or_pdb_name": "PrintCollideParticlesInput",
+    "file": "cpp/solver/PrintCollideParticlesInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d60",
+    "export_or_pdb_name": "PrintCollideParticlesOutput",
+    "file": "cpp/solver/PrintCollideParticlesOutput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d70",
+    "export_or_pdb_name": "PrintCalculateDensityInput",
+    "file": "cpp/solver/PrintCalculateDensityInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d80",
+    "export_or_pdb_name": "PrintSolveDensityInput",
+    "file": "cpp/solver/PrintSolveDensityInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030d90",
+    "export_or_pdb_name": "PrintSolveDensityOutput",
+    "file": "cpp/solver/PrintSolveDensityOutput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030da0",
+    "export_or_pdb_name": "PrintSolveContactsInput",
+    "file": "cpp/solver/PrintSolveContactsInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030db0",
+    "export_or_pdb_name": "PrintCollideShapesInput",
+    "file": "cpp/solver/PrintCollideShapesInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030dc0",
+    "export_or_pdb_name": "PrintCollideTrianglesInput",
+    "file": "cpp/solver/PrintCollideTrianglesInput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030dd0",
+    "export_or_pdb_name": "PrintCollideTrianglesOutput",
+    "file": "cpp/solver/PrintCollideTrianglesOutput.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030de0",
+    "export_or_pdb_name": "Synchronize",
+    "file": "cpp/solver/Synchronize.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180030e50",
+    "export_or_pdb_name": "Predict",
+    "file": "cpp/solver/Predict.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180030fb0",
+    "export_or_pdb_name": "ComputeBounds",
+    "file": "cpp/solver/ComputeBounds.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800312a0",
+    "export_or_pdb_name": "CalculateParticleHash",
+    "file": "cpp/solver/CalculateParticleHash.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180031420",
+    "export_or_pdb_name": "SortParticleHash",
+    "file": "cpp/solver/SortParticleHash.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180031570",
+    "export_or_pdb_name": "CreateGrid",
+    "file": "cpp/solver/CreateGrid.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800316a0",
+    "export_or_pdb_name": "ReorderParticles",
+    "file": "cpp/solver/ReorderParticles.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180031890",
+    "export_or_pdb_name": "CollideParticles",
+    "file": "cpp/solver/CollideParticles.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180031a50",
+    "export_or_pdb_name": "CollideShapes",
+    "file": "cpp/solver/CollideShapes.cpp",
+    "pdb_parameters": [
+      "s",
+      "substep",
+      "numSubsteps",
+      "kNumBlocks"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180031da0",
+    "export_or_pdb_name": "CollideTriangles",
+    "file": "cpp/solver/CollideTriangles.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800320e0",
+    "export_or_pdb_name": "ContinuousShockPropagation",
+    "file": "cpp/solver/ContinuousShockPropagation.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800321c0",
+    "export_or_pdb_name": "CalculateDensity",
+    "file": "cpp/solver/CalculateDensity.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800323a0",
+    "export_or_pdb_name": "SolveDensity",
+    "file": "cpp/solver/SolveDensity.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800325b0",
+    "export_or_pdb_name": "SpringsGenerateIndices",
+    "file": "cpp/solver/SpringsGenerateIndices.cpp",
+    "pdb_parameters": [
+      "lib",
+      "indices",
+      "constants",
+      "numSprings"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180032670",
+    "export_or_pdb_name": "SpringsFindParticleRange",
+    "file": "cpp/solver/SpringsFindParticleRange.cpp",
+    "pdb_parameters": [
+      "lib",
+      "sortedIndices",
+      "particleHalfSpringStarts",
+      "particleHalfSpringEnds",
+      "constants",
+      "numSprings"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180032770",
+    "export_or_pdb_name": "SpringsReorderData",
+    "file": "cpp/solver/SpringsReorderData.cpp",
+    "pdb_parameters": [
+      "lib",
+      "sortedIndices",
+      "springIndices",
+      "springLengths",
+      "springStiffness",
+      "halfSpringOpposites",
+      "halfSpringLengths",
+      "halfSpringStiffness",
+      "constants",
+      "numSprings"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x1800328c0",
+    "export_or_pdb_name": "SolveSprings",
+    "file": "cpp/solver/SolveSprings.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180032a90",
+    "export_or_pdb_name": "CalculateAndSolveInflatables",
+    "file": "cpp/solver/CalculateAndSolveInflatables.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180032d10",
+    "export_or_pdb_name": "ApplyDeltas",
+    "file": "cpp/solver/ApplyDeltas.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180032e10",
+    "export_or_pdb_name": "SolveShapes",
+    "file": "cpp/solver/SolveShapes.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800330d0",
+    "export_or_pdb_name": "SolveContacts",
+    "file": "cpp/solver/SolveContacts.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033220",
+    "export_or_pdb_name": "UpdateVelocities",
+    "file": "cpp/solver/UpdateVelocities.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033340",
+    "export_or_pdb_name": "CalculateVorticity",
+    "file": "cpp/solver/CalculateVorticity.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800334e0",
+    "export_or_pdb_name": "SolveVelocities",
+    "file": "cpp/solver/SolveVelocities.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800336e0",
+    "export_or_pdb_name": "UpdateTriangles",
+    "file": "cpp/solver/UpdateTriangles.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033850",
+    "export_or_pdb_name": "UpdateNormals",
+    "file": "cpp/solver/UpdateNormals.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033a20",
+    "export_or_pdb_name": "NormalizeNormals",
+    "file": "cpp/solver/NormalizeNormals.cpp",
+    "pdb_parameters": [
+      "s",
+      "substep",
+      "numSubsteps",
+      "kNumBlocks"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180033b60",
+    "export_or_pdb_name": "Finalize",
+    "file": "cpp/solver/Finalize.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033d00",
+    "export_or_pdb_name": "CreateDiffuse",
+    "file": "cpp/solver/CreateDiffuse.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180033ea0",
+    "export_or_pdb_name": "UpdateDiffuse",
+    "file": "cpp/solver/UpdateDiffuse.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180034070",
+    "export_or_pdb_name": "ClampDiffuse",
+    "file": "cpp/solver/ClampDiffuse.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180034170",
+    "export_or_pdb_name": "CompactDiffuse",
+    "file": "cpp/solver/CompactDiffuse.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x1800342e0",
+    "export_or_pdb_name": "SmoothPositions",
+    "file": "cpp/solver/SmoothPositions.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180034480",
+    "export_or_pdb_name": "CalculateAnisotropy",
+    "file": "cpp/solver/CalculateAnisotropy.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180034630",
+    "export_or_pdb_name": "LazyClearGrid",
+    "file": "cpp/solver/LazyClearGrid.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180034780",
+    "export_or_pdb_name": "FlexLogFunc",
+    "file": "cpp/solver/FlexLogFunc.cpp",
+    "pdb_parameters": [
+      "func",
+      "type",
+      "msg",
+      "file",
+      "line"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180034ba0",
+    "export_or_pdb_name": "CalculateRestDensity",
+    "file": "cpp/solver/CalculateRestDensity.cpp",
+    "pdb_parameters": [
+      "restDistance",
+      "h",
+      "rho",
+      "rhoDeriv",
+      "surfaceDeriv"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180034f40",
+    "export_or_pdb_name": "InitParams",
+    "file": "cpp/solver/InitParams.cpp",
+    "pdb_parameters": [
+      "s",
+      "dt",
+      "numSubsteps"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180035590",
+    "export_or_pdb_name": "Update",
+    "file": "cpp/solver/Update.cpp",
+    "pdb_parameters": [
+      "s",
+      "dt",
+      "substep",
+      "numSubsteps"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x1800359f0",
+    "export_or_pdb_name": "DeviceSelect",
+    "file": "cpp/solver/DeviceSelect.cpp",
+    "pdb_parameters": [
+      "lib",
+      "initDesc"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x180037c40",
+    "export_or_pdb_name": "FlattenTriangleMeshes",
+    "file": "cpp/solver/FlattenTriangleMeshes.cpp",
+    "pdb_parameters": [
+      "lib"
+    ]
+  },
+  {
+    "category": "solver",
+    "va": "0x18003a7e0",
+    "export_or_pdb_name": "NvFlexSolver::NvFlexSolver",
+    "file": "cpp/solver/NvFlexSolver__NvFlexSolver.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x18003fb00",
+    "export_or_pdb_name": "FlexAlloc",
+    "file": "cpp/solver/FlexAlloc.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x18003fb30",
+    "export_or_pdb_name": "FlexFree",
+    "file": "cpp/solver/FlexFree.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180055a30",
+    "export_or_pdb_name": "UpdateSubresources",
+    "file": "cpp/solver/UpdateSubresources.cpp",
+    "pdb_parameters": []
+  },
+  {
+    "category": "solver",
+    "va": "0x180055c50",
+    "export_or_pdb_name": "UpdateSubresources",
+    "file": "cpp/solver/180055c50_UpdateSubresources.cpp",
+    "pdb_parameters": []
+  }
+]

@@ -1,0 +1,834 @@
+{
+  "records": [
+    {
+      "file": "headless.cpp",
+      "input": "I:\\CodeX Project\\KG3D_Cloth\\Build\\OpenFlexAlpha82c-20260928\\bin\\headless.cpp",
+      "input_sha256": "3e4a2f83c6f8a318fdf13cd8b397a36254cb34060f10c2ca1186ce58a39633a4",
+      "output_sha256": "a4bd12e5e20b75796780373c748e04f017c3d1006ea37d7d60a3a9231c68be4e"
+    },
+    {
+      "file": "render_stubs.cpp",
+      "input": "I:\\CodeX Project\\KG3D_Cloth\\Build\\OpenFlexAlpha82c-20260928\\bin\\render_stubs.cpp",
+      "input_sha256": "7c08d631a92545d8c22017467591de31331bca440ea2e06600b52d42c996768e",
+      "output_sha256": "25f7ab00e2dd18e767c2f28be584c96b5c2b0e1e085ac9fd194c721d9332ffe7"
+    },
+    {
+      "file": "api_shim.cpp",
+      "input": "I:\\CodeX Project\\KG3D_Cloth\\Build\\OpenFlexAlpha82c-20260928\\bin\\api_shim.cpp",
+      "input_sha256": "c20e4c7743ace9107b2039248f159ac078cd2d0f82d0337de8929934c16eb982",
+      "output_sha256": "5d92f817f52cddf188febcbfea7172944ad5c42e625407a4c110d02316f950c8"
+    },
+    {
+      "file": "DiagnosticProbe.h",
+      "input": "I:\\CodeX Project\\KG3D_Cloth\\Build\\OpenFlexAlpha82c-20260928\\bin\\DiagnosticProbe.h",
+      "input_sha256": "10c5962bcdcf43f8fd593c2b0054a4f43fd21c62f27478f516b90f026ec46f9d",
+      "output_sha256": "8393b839116e83f98ca4487e18d38237f2f36cf137b2c5bec39c9b06ff884235"
+    },
+    {
+      "file": "locksafe_power.py",
+      "input": "I:\\CodeX Project\\KG3D_Cloth\\Build\\OpenFlexAlpha82c-20260928\\tools\\benchmark_power.py",
+      "input_sha256": "4b9c0523320cdd3dd2f73c561f69620e380926a84c5dfdaaaeb330d5509806ee"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\benchmark.h",
+      "sha256": "7cef928e73d4cca5129bde2b43c717b66c664a4cf0159db98e420a8f2fce16fc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\appGraphCtx.h",
+      "sha256": "bcf1c2b2aa5524aad8026ba418c59977f9627079339fbb066a6d264d8d014107"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\appGraphCtxLoader.cpp",
+      "sha256": "2c0054b5e06e6dd1564293797b8c55db676683799f9a17d1c36409ce1697bb84"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\imguiGraph.cpp",
+      "sha256": "f4e526e5a2a39d43754dc1b12c66514eec7d063407e2948a8b2157cd6931f89b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\imguiGraph.h",
+      "sha256": "49b96ff739c3634f2b86ae86fe579bbc838ff6204177f0b9dcd3b6ab785d9ba2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\imguiGraphLoader.cpp",
+      "sha256": "9db59d9f66e0ffcf4b34aeaed98e4ff304c3d46c594787f8e687d96087514abb"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\loader.cpp",
+      "sha256": "207278944e85814211edde18e398ce6cb49764fef0b54f63bc3836bf9e366da9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\loader.h",
+      "sha256": "d486ef6b0ff7f95a6577cbd41d393364ddd963cc5d74a4b9785985af662a4235"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\loaderMacros.h",
+      "sha256": "4b73fe3d0bcf77e22b799e22bca2006495e7d96acb96f60a1082e8972c975796"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\renderParamsD3D.cpp",
+      "sha256": "96c373ca29b29eaa9a27cb5ccb691eb01fd5e21e32c35aa7001c5572e8b13b5f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\renderParamsD3D.h",
+      "sha256": "a3d5399c11b6d73ffd67a76893aa5a4f7b6355a5b581b6ab35540a3e31998628"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\shaderCommonD3D.h",
+      "sha256": "007c02da2f00d00d107afa956b51ba192e1a4bf76cb6720effb14cbe42754733"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d\\shaders\\shaderCommon.h",
+      "sha256": "faf5faa8697a4fda1582c7fd1be392da53d7de6bac649cecca7ccb0658eeba27"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\appD3D11Ctx.cpp",
+      "sha256": "4f7f0946e80dc51ebd4ceebe4ec3ac136aa51549cc8e9b084dccbe7da3b88b94"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\appD3D11Ctx.h",
+      "sha256": "9d07a9e3ea5554756975fa18e2b1a07b6768f21ba0ec1fde46fcf40ea30c2c72"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\debugLineRenderD3D11.cpp",
+      "sha256": "c0e5afa8332e66cfd66a0e5d986f59870f9862cfe6b20e8be6d8394a60327151"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\debugLineRenderD3D11.h",
+      "sha256": "3f6965e5c3f589e14af44f4ac7515ea08ee2afc09983627fcfc2e42f9a3950e8"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\demoContextD3D11.cpp",
+      "sha256": "1241af03c5cee16f63ef51afe92ef6a7b9e3c1824d25536ebbfae44cd22f761f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\demoContextD3D11.h",
+      "sha256": "1c94fd258690537e27a9e38d0c98aaa208aa71adedd1e73df3e9d7edda46832f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\diffuseRenderD3D11.cpp",
+      "sha256": "fe8a6a8ef59374cbe12ad092486503a7e5be8c323dbb568c4138301a71746adc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\diffuseRenderD3D11.h",
+      "sha256": "efa84ceba882a44d937d27ac6be5c8310788a8f8e42032b4412b24631201293d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\fluidRenderD3D11.cpp",
+      "sha256": "caffae721754834c26f7e2f020f1ba00c9c7f45671bcac868733a2c5973730d0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\fluidRenderD3D11.h",
+      "sha256": "85e9719f82dbe14673884b779067e974bd274e51daf0cc887af14cafdb5b774e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\imguiGraphD3D11.cpp",
+      "sha256": "26d3e07d393864b65d989c932b2e30fc690c1b4248e062a1130475c267c62f6b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\imguiGraphD3D11.h",
+      "sha256": "30f18000001a62c0954dd86afc466230613b187a9e3ff7fbba5c7eeb2f407fa9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\imguiInteropD3D11.cpp",
+      "sha256": "e8c6705a94ca15feaf8270d56845a12cb84a1cc81b0e41a789bfc3395055daea"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\meshRenderD3D11.cpp",
+      "sha256": "06a49d59390367a137583877a8b2e42c5f8bf23e9277922c3f964aca207232df"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\meshRenderD3D11.h",
+      "sha256": "f56e84ce7c291146dac76cacc61dadd2706f85276c322a975e25864499e7aef5"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\pointRenderD3D11.cpp",
+      "sha256": "38c9d2d32afaab6f8713358dbcb1f79e4c3d51f69a3578797665b1194e427cc3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\pointRenderD3D11.h",
+      "sha256": "4b73496812a67895b543fb3138434d2d2c5b958770215b1f5d76eabceb509c02"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\renderTargetD3D11.cpp",
+      "sha256": "91bcf761c9276b32eddde9511f8253c241ff5b27b6ad4fef9978eeee197881b0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\renderTargetD3D11.h",
+      "sha256": "c2b0c746a107fa6fc0181781b7e4a031e8fc4b1edb95a8ac5623861d7b885219"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\shadowMapD3D11.cpp",
+      "sha256": "078b3fa2d578283bce0a39bf62eff22fdb95c35ef8830e25d41c2b29c8113384"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d11\\shadowMapD3D11.h",
+      "sha256": "bbeb8caf53ed83c705f83487023ef55bbbe5a6dba6ad765ac60f23e307af44c6"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\appD3D12Ctx.cpp",
+      "sha256": "0ceca6673faaa7871dea54121e2e20b1ccfc7a03d91bc3f6a3232159d26d3750"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\appD3D12Ctx.h",
+      "sha256": "bceb2e6fdcd3816faca10ba7530ee33635477223653649793120da71bf517828"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\bufferD3D12.cpp",
+      "sha256": "6011fb50559c241ad9afda6d122398f355f391e91c7398acd627ca0e1fcc889d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\bufferD3D12.h",
+      "sha256": "bc2c15179038e19135f5727839b179e1222779be9ad22a50a48ccdf222f39fe8"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\demoContextD3D12.cpp",
+      "sha256": "fbf72096c69643812a678d72fcf29a5c952e271b15058767da5f14232ef5d7fd"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\demoContextD3D12.h",
+      "sha256": "2547adc9899269acf600685efee848500605d7c71b7f421b7abca9a4d8e8bea9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\diffusePointRenderPipelineD3D12.cpp",
+      "sha256": "e5d02683f05cb4911e6562944fa191642eb9b9fd4e2ab377ed9436bfed40277c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\diffusePointRenderPipelineD3D12.h",
+      "sha256": "485c2efb2b04090d0fcaa28ad9b1b97665f682db2b16a857290e6e3fc6f7842c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidCompositeRenderPipelineD3D12.cpp",
+      "sha256": "5167547624aaf1ef5cb8d07a153398d77f906cb614068b3b24662459318c0ef9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidCompositeRenderPipelineD3D12.h",
+      "sha256": "93337733d15c2595bad20f389e1c888c36ec84bb8713f730f06322739ae1e20e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidEllipsoidRenderPipelineD3D12.cpp",
+      "sha256": "4cdf806e99b112f6f459e3344940429d96eb51db16edccb4e91d8d2d652d3d3a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidEllipsoidRenderPipelineD3D12.h",
+      "sha256": "c6fa9cae7e4bde1f6b7023d787af8e3935588b7841bb7a898212071157128562"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidSmoothRenderPipelineD3D12.cpp",
+      "sha256": "afa6670cc0e7c94ccebdce560b47f95e7c12c04a60291778596b6edba7e29960"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidSmoothRenderPipelineD3D12.h",
+      "sha256": "b26de86bbd8ea456ea944f7175563f07b4442b997c01fccad8eb7d2a4d031582"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidThicknessRenderPipelineD3D12.cpp",
+      "sha256": "7b90bdb4410625e4f09732ea8ac2b3877d7da8463d1f1167b3b07ed4e6744132"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\fluidThicknessRenderPipelineD3D12.h",
+      "sha256": "aeba3eee6ae46ec8c72bcc7e203990c448abeb1514fdf3ca5b9f9194434fc810"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\imguiGraphD3D12.cpp",
+      "sha256": "fe6e4a28368b3b77a1867d01d8fe772ad4d240cbfaeb85d1740dd7d28e143769"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\imguiGraphD3D12.h",
+      "sha256": "10193c6efa2a7f4f5c181a7eed65fc1f29f355588f2f5fb6a84527d8044bbd69"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\imguiInteropD3D12.cpp",
+      "sha256": "846585ec46eca6dd9fa66e224f7401d8dd279efe65090fbc8644b061007af44f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\lineRenderPipelineD3D12.cpp",
+      "sha256": "ea76ba48d788b3a6d6999d3e586a2aab93c4ef3e6ba0884bd3964c9182ee3bb4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\lineRenderPipelineD3D12.h",
+      "sha256": "e0035ffe033db45408360c8c431d225a222c330fc31f9745379a00cfc1d44879"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRenderer.cpp",
+      "sha256": "c8428472a56999e23e748b53ddca4b2492f6a9546977fb83ff944170592add2c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRenderer.h",
+      "sha256": "e80e32b3248e7e7a5adacce0092339b7e0db4ccd0edea0b186f4af3e97660abd"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRendererD3D12.cpp",
+      "sha256": "2a2afa11615a8a9a972ba61c6f6708f6e25bb4c230178bf007c67625d27585db"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRendererD3D12.h",
+      "sha256": "1c8608ba4a116dcb646a6770611f307c9396b84cb8410829a39eed06c9af6c40"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRenderPipelineD3D12.cpp",
+      "sha256": "b817c4dc4c98199820d1d4df32f4c549f9459b54a3c64497d76e87659b14ba86"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshRenderPipelineD3D12.h",
+      "sha256": "420fc7b65cc8acefe46040d6f731d7779e7ec335704b128da8c2f5c5b6f01cf6"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshUtil.cpp",
+      "sha256": "5f218a5d45a14e75dcc7df6116cbc935befa520d0b9e945c5aa70e8b760b4bb2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\meshUtil.h",
+      "sha256": "0586310e92485fa81c3253b5132ed30c8ed6924c49a2355c5a933cf792316b5d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12CircularResourceHeap.cpp",
+      "sha256": "51a68a2c053858fd61be19ea59c947b7094dc261f5186ea6db969572e5769314"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12CircularResourceHeap.h",
+      "sha256": "8072e8559fd49140d9ed5db24907ab3029fc049599ca6d391a9abb9b6454095a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12CounterFence.cpp",
+      "sha256": "a6c6c053cb5c376c598aa04e18bb853931ec02d75a3446614f6caafeace7350f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12CounterFence.h",
+      "sha256": "3cab84aaef1ea5ed955245573df48e8a121885a3a1b5e461efcbe2d569a80404"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12DescriptorHeap.cpp",
+      "sha256": "9a820b01ecc4bb0ea6469b467edd3236b36307359f55bb20c97acb84503bd173"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12DescriptorHeap.h",
+      "sha256": "7316eb4d3b410338b8c71410134e54bdb1bd23de3775ca2f1e626cf25367dcc2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12Handle.h",
+      "sha256": "fcb300873679a94143c5ebcf616c656896fe530181044646b920df72f17f820e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12HelperUtil.cpp",
+      "sha256": "5f8a876c0c2bd5e6052e7786f819ba5c1951ad6dcdaebaa484818048efe99c6d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12HelperUtil.h",
+      "sha256": "617113e0ba656bd4c7eb4bf3e2022d3741b48743b848fca0c061ff28b687554f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12RenderTarget.cpp",
+      "sha256": "d4c53e213d9517a676aa009fd5469b0f7d8f6a047a3fcbf5b797c22b86455bef"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12RenderTarget.h",
+      "sha256": "17159752ed2a4bca847208a758cbd548ccad69764810385444f6bcb7570a3381"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12Resource.cpp",
+      "sha256": "d5ffe598769109fdad87f25165df4ea22a11f4338574a36fc2654de5c4cb8512"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12Resource.h",
+      "sha256": "baced0de4edd625b8cabfa5dca21b77a4565d9a23b28034efbef46999b60d0c0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12ResourceScopeManager.cpp",
+      "sha256": "430085f413ccf13dd2a0202d4389289eb57e4efec8f30df9fefa7eaf8d1d3b32"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDx12ResourceScopeManager.h",
+      "sha256": "41fa2159b7c691e701ab284add632e9854b8a833d96ab5eade3389c0bdf0eaa3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDxDebugUtil.cpp",
+      "sha256": "b1d8d8c34fe8b81372d1f240e34b67fc6f877dbd41acbfad69eef508de9858a1"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDxDebugUtil.h",
+      "sha256": "88e51c7e2f20c1502a1da84d58f6e67fe8f2a008d0f5a64bf73bbf4e2deb2580"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDxFormatUtil.cpp",
+      "sha256": "779a9738e377f063875b82818d7879e6d6d8f05ab2632a6fcd077be24ae9c921"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoDxFormatUtil.h",
+      "sha256": "d81989781666d1b6f3601e5c438074b153e7a032da0635fd02f12ab078000a87"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoFreeList.cpp",
+      "sha256": "b2b68cf30081704a7664dbb3e67c9bc786437c17102634641f089463b108fd1b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvCoFreeList.h",
+      "sha256": "51b332515f649220891e2706a2feef15e6191c999d9e2ed8154b413be9a2dc15"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\NvResult.h",
+      "sha256": "635faa789e9acd7a0928e61c68969c22e40e2d3a8f423a109b4dbb3f1fad466c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\pipelineUtilD3D12.cpp",
+      "sha256": "ce7d86ca45796c587bc4ad8b2861060044816891900f72cbf878d7e7f4ae0139"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\pipelineUtilD3D12.h",
+      "sha256": "5d1c7bf331759b4e75e58bd0516d915a47809a2a304cfe44b34ccba5db842ce3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\pointRenderPipelineD3D12.cpp",
+      "sha256": "1d48a2543415e3ab0a8495645b263ae37522e10e97d9fc2a935e67fd6c3ccac9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\pointRenderPipelineD3D12.h",
+      "sha256": "6d03396fcb3e481da30123f783f7f41509c1c718684ab8bc697b827632643dac"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\renderStateD3D12.cpp",
+      "sha256": "96ba5e89e2aa67addedbf2ed8c1d3b4ab96155d1aaeea77d6b84d8280dc5b65a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\d3d12\\renderStateD3D12.h",
+      "sha256": "8c19ad5f8a5638ef5921cc74ef6fee344fd21f9baf41366e3b7775673d3d2939"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\demoContext.h",
+      "sha256": "60e104a791517162ebf55ca339e9ab04deff047f651ada6733129e1f7d192103"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\helpers.h",
+      "sha256": "60598bee899e19d4032667adeaeb99fb6e36dbf554346201db0bf05700f214cb"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\imgui.cpp",
+      "sha256": "153dea933c68674a49d348d1152afc9b87521cae0bc2f9e653d6431d0ceb5cde"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\imgui.h",
+      "sha256": "7b334ff08dc40c5d6908bbd3fae650fdeafb257e8a83fb0e54dd1edb3473cc08"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\main.cpp",
+      "sha256": "4f68782b4ac60056f2b349a1a27c6abe836cefa25edf8935d33c7dcb41f2e798"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\demoContextOGL.h",
+      "sha256": "fb128ad0e43dc4c9fce968e54b9f6e620e11a8d242a07286fa2864fefa52750b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\imguiRenderGL.cpp",
+      "sha256": "7703e13cc06c301bd93d77b647acaed2c758eed84054a23d00f6a5679981511d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\imguiRenderGL.h",
+      "sha256": "6589a0baf12f104dfd497e73b2b9bcdaf71adc310fbf382a4bebc2e6947ee635"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\shader.cpp",
+      "sha256": "627fdf2827633979f3cecdf850ec422c5e4b9161f33c19fd640dfb3d76352df4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\shader.h",
+      "sha256": "60eb65876c436e2260d2dd50a2377716e709dd98b005619b7e3faecc58bed03b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\shadersGL.cpp",
+      "sha256": "ada561c8a1207f5992f67dddce9b37f02646a9c417b5850fab0c89acbf7b0ada"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\opengl\\utilsGL.h",
+      "sha256": "27c6cfd80a3c9a940ac4e9f372b34270dfc7c22b447fd0bcc91b1470591dc615"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\adhesion.h",
+      "sha256": "fa0c0cb0d520102acf57a39921e902cab9fb0b0207c1bc9ae0a276f66082d796"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\armadilloshower.h",
+      "sha256": "635a9e200ddd35ca18f69c6e28d1aef842f82d1c68609e6611c4e381142b12c0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\bananas.h",
+      "sha256": "e531f5f5a3fa1f84b3b33742d4a41d68a8038555f7ad9e68ccf8a8e3994ca54b"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\bouyancy.h",
+      "sha256": "aa27833ecadfb3114f7d6aad1fdc7cd74e3db0f1e11f1cf52b21c7b0d3645662"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\bunnybath.h",
+      "sha256": "3b67f1797d6cd955bb5387efe7492f55f9d6ccf68d993c296b52e78dbeb7b2e8"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\ccdfluid.h",
+      "sha256": "4093845445530119a59ea8a7fb7e00bcac8b9c1b4d1bd09a49ea0e20efc41a7e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\clothlayers.h",
+      "sha256": "d3395d82431f2d7293c55fe9bbab7f6549fa7533a4f61bc75f3cc13bd35e88e7"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\dambreak.h",
+      "sha256": "25ebf0a9e44f5ba938d86263cb99cefbd9f7edbdd80312458c8925783504217c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\darts.h",
+      "sha256": "c5a8c1c08e33be3b105024f56ab71069ab7a1455dd5b7becb43e0672f1e87102"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\debris.h",
+      "sha256": "265dd2ea3ca42fc696dcade33defde42be4a5924e2923a178ee2e56e17f18327"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\deformables.h",
+      "sha256": "ded71ceea7f7fcfeb4a3e86292d318bd21df05e47c198e532b9a8f38144e18ab"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\envcloth.h",
+      "sha256": "a22a38bfc732633126b9c7d29278f176d7945f7ac4bb4b43bfa73ac7866f9747"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\flag.h",
+      "sha256": "245853e6590eb2046ceec655d017ed1a6571b72088d5c8ad25b6b950c9caac67"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\fluidblock.h",
+      "sha256": "34c4b913c4ef164231b9e26ea427064197b9b9d664a993585647023b24a5797e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\fluidclothcoupling.h",
+      "sha256": "b93d6e3bb4936581d5fe6819dd89e7d4fd642c41b1a977d43de69686dd234a94"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\forcefield.h",
+      "sha256": "75a309aed503aec0af4e834d48d5e521e126188a73c663181b5bae3ac0ec07f2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\frictionmoving.h",
+      "sha256": "71de7c6239872c456af1fa026da6c041090f3913853b8c4e042f6831a8b47c74"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\frictionramp.h",
+      "sha256": "ed2102765b8c208fc779693264491479eca2bf1abe189507ce11676246d35d02"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\gamemesh.h",
+      "sha256": "ac57122b4a8c0c1198248888ff92b371dd51941fec5a6174ecfa9084017bf872"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\googun.h",
+      "sha256": "ad12b64031bc3da35a68ddf33c380dd011c743a889f18659aced41217f486f07"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\granularpile.h",
+      "sha256": "4ee465ad9c2e1f28d2d04e17ab71b237b249b37ccb510a69358d8c665e22502f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\granularshape.h",
+      "sha256": "c9a1c88e22823c808855d2fc600a1a726860069284afdc533990f8e87c82a5ec"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\inflatable.h",
+      "sha256": "c09aa0e7aa216e367b4781808c4f0a78a9024c58c576f61173f0b0f30a21c49c"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\initialoverlap.h",
+      "sha256": "84889cce87618fbcf702e5af8b00004a474ee1612362d7d59e8a47f6302cca99"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\lighthouse.h",
+      "sha256": "3c9b70cb5a4cc3eb264dfa1d043242464cfe7d705aaf5032be68f91a384ae1ef"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\localspacecloth.h",
+      "sha256": "fe0e61eea6ac34cfa446f1fb6b44b479f6346f53eb46e82db124ce2fe0212ad2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\localspacefluid.h",
+      "sha256": "71d7f996d1bc625d933a8dee69bbb7c93fbd63af952e36a42296bd3c0825f8ee"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\lowdimensionalshapes.h",
+      "sha256": "f051056ad34a8f16a45b615772a81b45da3a9147017673418b8e969332eafe31"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\melting.h",
+      "sha256": "9564039ab99129c4adaaa74b4099b7e60ea72ad1ffc3e1ae72975fa1e44bd129"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\mixedpile.h",
+      "sha256": "4f6757a4f785708420ac9c85d0fe9c78f6aa73e6484692e7b4ad85542c3aef23"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\nonconvex.h",
+      "sha256": "502374f5ce4552a43f56182782d0a224751a1323a6f4b0616e30dbe189f830c6"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\parachutingbunnies.h",
+      "sha256": "9cb5680df0eb86d5a6715eed60e1bba22511a3c1b5c07db27dc7a78ae316c2c0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\pasta.h",
+      "sha256": "58420e8a3af9e3898ec41b524c968b4d76ac2ed9104dd1d40b66b466b548acbc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\player.h",
+      "sha256": "f223983c67c08d0f6e71c616d54b12e04910b5e256890c5fd67f5708783be332"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\potpourri.h",
+      "sha256": "985aa0984fb42f6330c162c001eef6165729363576c61dc9c7b3bd97c6b26138"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\rayleightaylor.h",
+      "sha256": "e47419d9e27892ff7055f1a2189d749a8a71a0a87d9f1c669187a5a1e4b58148"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\restitution.h",
+      "sha256": "94ff2fb41e6e5f15e03e0c5ca2fa2c057a5ff9e5d1f4de7e97693ed8967d44df"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\rigidfluidcoupling.h",
+      "sha256": "0bb8ad600f87ca67756cfdc1071da28d27f46f1ea3cae263c53495a79754e3a1"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\rigidpile.h",
+      "sha256": "503603380ce8030f7a632c3d30839f66251b2d755e3e55cc9877bde40aced400"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\rigidrotation.h",
+      "sha256": "79d3cc94bcfb321a5a1fdb0607e7133eb8a21d15e02143e76ed5ab1809b7d139"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\rockpool.h",
+      "sha256": "7f5880641e11d3d133f9c327c1d05ee0420d02a09b898975a95347dfeea973d5"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\sdfcollision.h",
+      "sha256": "85866ba593474d286b45340b43b65b4f3b6c6e056d2e5be1cdb5cf5ae32daf65"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\shapechannels.h",
+      "sha256": "0759bbd901eb5566f94db3cfccc4716f4413fa6edc315a5275ffad2b4e46992d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\shapecollision.h",
+      "sha256": "9e44f94caf7bb8bf838799b85734c371140b5c9a25348347ef81e42ae85ed109"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\softbody.h",
+      "sha256": "98e5936811e0a7d1553035fc7845c0e61b18d49db27f0107a00efe57bd0105a3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\spherecloth.h",
+      "sha256": "06cdf331496b9316ff40fac9b6e0d4e6e129ac02a793bdda36fd8d401fb970f2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\surfacetension.h",
+      "sha256": "48259d31dc1bf1389697119b08092b93f131a15e8e0dd9acec65831429a22ca2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\tearing.h",
+      "sha256": "12eac6e1d579e8defcd3b4edfdcd1acbdcf6aebf6938bc5f360ba48c04bb7ef9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\thinbox.h",
+      "sha256": "2c43991343fe6eb0ef91bd224e230831bd34fb374a43a49bda0abe33e184193a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\trianglecollision.h",
+      "sha256": "0ee09fa900263aede3dbd9e469200ebba4f722d272aefe929c9b3b24e014dee4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\triggervolume.h",
+      "sha256": "8c08f2140b788163d45e3f0e52c2da11a613a5321cc3a47a260417526cc9d64f"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\viscosity.h",
+      "sha256": "c1261de6541932db1f5685ae0426b7e5eede76cd031d786d1c1b97b3d62c1f05"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes\\waterballoon.h",
+      "sha256": "d283e9ae5bbf16bd26c71e9de0e0277d8dd74b1b839b22a05ae14cdca0a4c882"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\scenes.h",
+      "sha256": "b40af076a057c64d6a1c4570f8fc3bd026aaa62833bbf1893d6e6d0e0f7da0cc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\shaders.h",
+      "sha256": "1a810b60cd6dc714e47d61125a1760f8c925b5211e7b581b1c96830d8566748d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\shadersDemoContext.cpp",
+      "sha256": "16b0b39358d48f4e2ade68df2102600d2f71672568d0cab126572e082f03ccd4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\shadersDemoContext.h",
+      "sha256": "7c5d4dc7615aa52a0c54ab3d0943f0e9fa2ce6f57210716af0d6a9cdbae54a15"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\demo\\stb_truetype.h",
+      "sha256": "96f76c0760465c75d59184980357fff5349fbfa75a0c2663c927481f11b4a007"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\aabbtree.cpp",
+      "sha256": "4b41bb5dd439bd7efd0ae9a9c526cf4edd4db801f8c23999b80a73fd9d5358c0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\aabbtree.h",
+      "sha256": "5eb2bfd3baa6ae2683c9b0925c8525ee1b6e3dd88ebcf5dc57e0f187669120fc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\cloth.h",
+      "sha256": "096691dee42b329edabc49847415ad2b779424ff3cf46cb725ec05456728e9d6"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\convex.h",
+      "sha256": "6f22adf7d8dc185df2e671cda26ac83bfc8937826e6e47cee6a83e2cafcd1351"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\core.cpp",
+      "sha256": "dcd7d07764b8a4444ba2604144ed839fb26bcef9eb9701bd2c6600d8ff7cde6d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\core.h",
+      "sha256": "756eccfe126020a9e6d52881f2e982ead12531340140704d4bc638c0f5aa8f24"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\extrude.cpp",
+      "sha256": "6121f3ff27d1d9b7c49cc73a6e31f71146c2019b9ef936fc799dc4d9ee9c1d1a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\extrude.h",
+      "sha256": "f8bb456c552c812493276538dd55e56f355e1922eb7b8bc06bb5e271fb7486b3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\mat22.h",
+      "sha256": "c96042f09bac835326fc37e5c115a159b7490ae73985aa5a4d29909315cdb1b2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\mat33.h",
+      "sha256": "6571c6f128be582b27e86d1ba2d4f573f464a2012c31b51367423180378542f0"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\mat44.h",
+      "sha256": "b90efa8a48c771d8d5350b9f881775d26ed3811608f4a52067ba41a24abbfafe"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\maths.cpp",
+      "sha256": "53afaa6c422feaf3134bc7b5a5c25f09a0bed1d24b863f5dbee8fa6a63f9de90"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\maths.h",
+      "sha256": "438bf7333f6f6fd6022b9f212436c16c7cd53e86ba0a833dd3162baadedcb74e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\matnn.h",
+      "sha256": "25673280a6f32471b8541169838ea689ed45c9b5de2047ea9298c48bc0a803d4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\mesh.cpp",
+      "sha256": "07576c8b4710267dcf06b4a209191783b3488a9b07b418c3dfd3a577dfb9881d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\mesh.h",
+      "sha256": "754be1b387f8b82ced72a2e634d5153aef88d6dbcb003ac49c61778241b082bd"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\perlin.cpp",
+      "sha256": "1cab3699918cd87e9fbb91f69e9a99fd3a2074d4f6ee58b9617f767e5bb9d6f3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\perlin.h",
+      "sha256": "ec562d5518361036dff85f0bd1ea49e2f74c968e87d07992c7639687f0c1d6a8"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\pfm.cpp",
+      "sha256": "da68515e60216a1cc45408927e6db4d5f8b5017745148c5c532205399cf7b65d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\pfm.h",
+      "sha256": "465a2231990d6e6c14498ef53220bbf90deca412a72c9b0ee32dd35e384ec3b9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\platform.cpp",
+      "sha256": "044df4edef0a2f5ff93d8a630fe9c6183019bba3188ed5528dec54b8d8365ee9"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\platform.h",
+      "sha256": "47c70068af3fb7a52c66d17e3b102dee47a55f81c8e0f3eb46831ae1677cf132"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\png.cpp",
+      "sha256": "a0558ae5c56fc3ca6503c20898a173610c5b56d656df9b24663c1893bc1a9cb8"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\png.h",
+      "sha256": "02baba2d1895f013edf06b75cc9b9349868e67f858f2dfde49c432bfed806ccc"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\point3.h",
+      "sha256": "b3881da9c5049a9db15445c0fbda6bd78ced6be872ee3e954c94acaf0a41172e"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\quat.h",
+      "sha256": "94b28bb887b6cb074954dec2a9bac5ca40dd9927a52efb363a81c0fe2e3689d2"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\sdf.cpp",
+      "sha256": "8faecccb75e6a73dc977265e1637427ee5b7e2bbcd57933478ccaf3bb12785ed"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\sdf.h",
+      "sha256": "ca13838dc0833d6a59ac68e987738fe39d891a0a31e73a7a4762f6d2d2944edb"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\tga.cpp",
+      "sha256": "a6f6b281a3adf686cbc937bdd95740a54a5802b2952d00b9625d5cf7583f8e29"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\tga.h",
+      "sha256": "c038e43ee3e248b23b335b5e470cf1d3fbeb2cd305ef36671a31e01259c69d88"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\types.h",
+      "sha256": "b5dc8cae163026305cdb4761f761636f3b64b05a75363a93ee5a61c9afbbe04d"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\vec2.h",
+      "sha256": "4fd730805dbe10a7d0206ef0e8043cb74dcdf738f619dae62e1ea6a1c042d46a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\vec3.h",
+      "sha256": "bc9cd434faf190e042eebd971f56192c3007e640f87b920e3e4bed44f12930a6"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\vec4.h",
+      "sha256": "eaf1eec4fdf98f98bb5a38ce9c9fb123003b6526568d97d816627c516703a490"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\voxelize.cpp",
+      "sha256": "0a143cef1acd0f7c29a56b0926e17facac20adbc418435819f1289bdd5cb54d4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\core\\voxelize.h",
+      "sha256": "ced5bb0481aed9662e26ad36b5d36324535d7011b0c06cd3c6e20edf34df27a3"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlex.h",
+      "sha256": "5a2d938c1e435761393293a71318d89ca526a46f5200430cc63089040c3e113a"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlexDevice.h",
+      "sha256": "44693426a887d33dae4879ea25460dd2e3b71040b7802a21e3305ff977cf01f4"
+    },
+    {
+      "official_input": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlexExt.h",
+      "sha256": "6dc1f8046512aedbd6cee756862ef84fc8d9de35c77fc1706c76bc79c789acd2"
+    }
+  ],
+  "scope": "Official scene registry/Init/Update code with renderer stubs and full-frequency headless entry; diagnostic parameter and upload-skip controls disabled."
+}

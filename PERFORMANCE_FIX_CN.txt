@@ -1,0 +1,31 @@
+DisassemblyFleX D3D12 正式性能修复
+
+恢复入口：OPENFLEX_EXECUTION_LEDGER.md
+本任务账本：PerformanceFixExecutionLedger/00_CURRENT.md
+输出目录：../Build/DisassemblyFleXPerformanceFix-20261010/
+
+正式源码修改
+  src/runtime/D3D12Resources.hpp / .cpp
+    保持映射的常量缓冲区版本池；记录实际 fence 及最后使用值。
+    Map、bind、copy 都更新使用记录；只复用所有相关提交均完成的版本。
+    排除当前 front，以维持既有 root CBV 缓存与 ClearState 行为。
+  src/runtime/D3D12Context.cpp
+    shader-visible 描述符堆按完成状态循环使用。
+    外部 Context 切换时保留旧提交的 native 资源，按旧 fence 回收。
+    同一次池扫描只查询一次当前 fence；其他 fence 仍独立检查。
+
+构建（从 KG3D_Cloth 工作区根目录运行，名称必须唯一）
+  python -B DisassemblyFleX/tools/fix_task.py python -B DisassemblyFleX/tools/build.py --name rebuilt-v1
+
+build.py 支持 DISASSEMBLYFLEX_OUTPUT 与 DISASSEMBLYFLEX_LEDGER 指定独立任务目录；fix_task.py 设置本修复任务目录并为编译获取共享 GPU 锁，避免污染测试。
+
+测试
+  tests/d3d12_pool_oracle.cpp 验证在途数据、跨提交绑定、固定资源池高水位、释放时机、多个 fence 与 Direct/Compute 队列；另比较三个 solver 交错更新/重建的输出。
+  fix_regression.py 复用既有13项公开 API/Context 回归。
+  fix_benchmark.py 使用固定官方 FlexDemo 无窗口 harness 比较原版、旧重建版和正式修复版；D3D11比较原/新版。
+  fix_analyze.py / fix_quality.py / fix_audit.py 分别统计、保守处理质量异常、执行最终验收。
+  fix_profile.py 用相同 Context 代理确认原有分配热点消失。
+
+运行不需要交互桌面、窗口焦点或键鼠，CREATE_NO_WINDOW 加 SystemRequired 可在锁屏期间执行；共享 alpha8.2c 的 gpu.lock，不改显示器或电源计划。
+
+原版 DLL 和此前两次交付保持不变。新 DLL 的精确路径、哈希、性能及兼容性范围以本任务最终中文报告与 FINAL_VALIDATION.json 为准。

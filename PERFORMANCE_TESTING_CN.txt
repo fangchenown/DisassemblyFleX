@@ -1,0 +1,37 @@
+性能对比任务入口
+
+当前工作与恢复：OPENFLEX_EXECUTION_LEDGER.md
+独立任务账本：PerformanceExecutionLedger/00_CURRENT.md
+结果目录：../Build/DisassemblyFleXPerformance-20261010/
+
+正式比较输入
+  FleX/bin/win64/NvFlexReleaseD3D_x64.dll（原版）
+  Build/DisassemblyFleX-20261009/delivery/NvFlexReleaseD3D_x64.dll（最终源码重建）
+  两版使用相同的官方 FlexDemo 无窗口适配 EXE、原版 Ext 与资产。
+
+运行（从工作区 KG3D_Cloth 根目录；suite 名须唯一）
+  python -B DisassemblyFleX/tools/performance_benchmark.py --suite repeat-main-v2 --frames 300 --warmup 60 --repeats 4
+  python -B DisassemblyFleX/tools/performance_analyze.py --suite repeat-main-v2
+
+所有新结果默认写入 Build/DisassemblyFleXPerformance-20261010。
+runner 会验证两个 DLL 的固定 SHA256，无法用修改后的 DLL 假装本轮同一候选。
+已成功的运行可恢复复用；发现未完成/失败 receipt 会保留证据并停止，需要先确认其进程是否仍在运行。
+同一任务的旧正式结果与源码恢复归档不会被重写。
+
+执行条件
+  Windows x64、D3D11/D3D12 驱动、现有 FleX SDK、Python 3。
+  隐藏 CLI，不创建 Demo 顶层窗口，不调用桌面输入或截图。
+  ES_SYSTEM_REQUIRED 防止空闲睡眠，不请求显示器保持点亮，锁屏可执行。
+  与独立 alpha8.2c 任务共用 Build/OpenFlexAlpha82c-20260928/gpu.lock。
+
+诊断工具
+  performance_diagnostic_build.py：生成相同的 Context 调用计数/计时代理 EXE。
+  performance_diagnostics.py：CPU Context / API / GPU timer 诊断。
+  performance_ablation_build.py：创建独立常量缓冲区/描述符堆复用的实验 DLL。
+  performance_ablation.py：实验 DLL 与原候选的配对测试。
+  performance_emit.py：相同官方发射切换下的 Adhesion/Goo Gun 补测。
+  performance_shader_audit.py：从两个实际 DLL 扫描并比较 84 份可执行 shader 程序。
+  performance_audit.py：窗口、输入、睡眠、帧数、输出与完成状态审计。
+  performance_report.py：从完整数据生成中文报告及标准 PNG 图表。
+
+诊断 DLL 不是本次正式替换 DLL；它们只完成选定场景的性能消融，未经全 API 与外部 Context 生命周期回归验收。必须根据最终报告的范围解释结果。

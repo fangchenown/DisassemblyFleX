@@ -1,0 +1,37 @@
+[
+  {
+    "file": "Context.h",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\src\\dx\\context\\Context.h",
+    "source_sha256": "d7c2c681fad093ab6548e15aa6c9a938a913f94bb1310b5e6159002cf6f284fe",
+    "adaptation": true,
+    "adapted_sha256": "04223b554a2fde34fbe81cf19667d34f9b379552668f969189edd2d4dd662914"
+  },
+  {
+    "file": "Device.h",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\src\\dx\\context\\Device.h",
+    "source_sha256": "19e5c06613d17f6cb7c7c2601e28dc2958412511fca88be65da06268b64f3557",
+    "adaptation": true,
+    "adapted_sha256": "0019c30a2e5c670acb0202cd3bf0d1979df22634694451a18baa8722d4cefe0f"
+  },
+  {
+    "file": "Format.h",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\src\\dx\\context\\Format.h",
+    "source_sha256": "7234e8f8de6cda7d9798def855b1511a7f48520facb08f66e8017eadcb79471e",
+    "adaptation": false,
+    "adapted_sha256": "54e9e9590496b24e5631471169015eac5ee5754f0ff81f3e3377f7f50c1bb9f1"
+  },
+  {
+    "file": "NvFlexTypes.h",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\src\\dx\\context\\NvFlexTypes.h",
+    "source_sha256": "e30f63b374cfbb024d27eaf4292df0e8b3f4e24088b321aad0e17162e0ef53d3",
+    "adaptation": false,
+    "adapted_sha256": "68a48246fab55626a612ec3a121f742304884911db4b8f6c309b1bcd831952ac"
+  },
+  {
+    "file": "Vector.h",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\src\\dx\\context\\Vector.h",
+    "source_sha256": "ebe076e79429f1881cd2b42b790db12e2f1ee63dff185bb4914ce1174fbe761b",
+    "adaptation": false,
+    "adapted_sha256": "a920516f14efeab29f1345fdd0234bbf77e7a159772da49d5ed4ec290aecb793"
+  }
+]

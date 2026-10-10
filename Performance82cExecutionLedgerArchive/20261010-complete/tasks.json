@@ -1,0 +1,32 @@
+[
+  {
+    "id": "P1",
+    "task": "冻结版本/环境/FlexDemo及测试协议与试跑",
+    "status": "complete"
+  },
+  {
+    "id": "P2",
+    "task": "建立API/CPU方法/GPU逐shader观测与开销/覆盖验证",
+    "status": "complete"
+  },
+  {
+    "id": "P3",
+    "task": "正式无剖析交错全场景性能及独立质量矩阵",
+    "status": "complete"
+  },
+  {
+    "id": "P4",
+    "task": "逐入口/方法/shader剖析与默认/可选/平台覆盖",
+    "status": "complete"
+  },
+  {
+    "id": "P5",
+    "task": "依据测量评估组合并在隔离候选中验证",
+    "status": "complete"
+  },
+  {
+    "id": "P6",
+    "task": "统计/中文逐项报告/可复现证据/归档",
+    "status": "complete"
+  }
+]

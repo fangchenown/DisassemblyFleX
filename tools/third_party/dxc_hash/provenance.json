@@ -1,0 +1,16 @@
+{
+  "repository": "microsoft/DirectXShaderCompiler",
+  "commit": "84f68ed1a40db3f3444a306162cab6ac0adfe842",
+  "files": [
+    {
+      "file": "DxilHash.cpp",
+      "url": "https://raw.githubusercontent.com/microsoft/DirectXShaderCompiler/84f68ed1a40db3f3444a306162cab6ac0adfe842/lib/DxilHash/DxilHash.cpp",
+      "sha256": "d66b631ea28d4c90a8217fac004f9290eaac07f79115451e0c4e954c0b0c94af"
+    },
+    {
+      "file": "LICENSE.TXT",
+      "url": "https://raw.githubusercontent.com/microsoft/DirectXShaderCompiler/84f68ed1a40db3f3444a306162cab6ac0adfe842/LICENSE.TXT",
+      "sha256": "27a49e35d1da96eba18fba54bc882667ff0ff8c0254f16f2b6e165d605ba7df8"
+    }
+  ]
+}

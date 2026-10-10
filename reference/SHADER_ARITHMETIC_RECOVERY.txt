@@ -1,0 +1,37 @@
+Shader arithmetic recovery — 2026-10-10
+
+Observed evidence:
+- Default recompilation passed separated particles, solid contacts, plane contacts
+  and a 1025-particle multi-block case, but fluid64 differed by small FP amounts.
+- Original fluid64 repeated twice was byte-identical.
+- Matching the original compiler DLL version (6.3.9600.16384) did not remove the difference.
+- Making every recovered register precise changed the answer but did not match.
+- Precise frontend lowering followed by restoring the original driver refactoring
+  policy matched fluid64 positions/velocities/density/normals/smoothing/anisotropy
+  at frames 1 and 10 exactly (particle-frontend-v2-oracle).
+
+Build policy:
+1. Compile the recovered instruction-level HLSL with precise temporary registers.
+2. Remove only the precise component mask from compiler-produced instruction
+   tokens. Leave opcodes, operands, constants, resource declarations, control flow
+   and the global REFACTORING_ALLOWED flag unchanged.
+3. Recompute the generated DXBC container hash using Microsoft's published hash
+   implementation. Validate it against the untouched compiler blob first.
+4. Keep both the exact compiler input and the resulting bytecode/hash manifest.
+
+No original shader instruction payload is inserted by this process. The generated
+bytecode remains the output of compiling the delivered HLSL; the postprocessor
+restores the original arithmetic policy at the driver boundary.
+
+Primary references:
+https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/precise
+https://github.com/microsoft/DirectX-Headers/blob/main/include/directx/D3D12TokenizedProgramFormat.hpp
+https://github.com/microsoft/DirectXShaderCompiler/tree/84f68ed1a40db3f3444a306162cab6ac0adfe842/lib/DxilHash
+
+Microsoft documents that precise can prevent mad splitting and mul/add fusion.
+The token mask is D3D11_SB_INSTRUCTION_PRECISE_VALUES_MASK = 0x00780000.
+Hash source/license/provenance are vendored under tools/third_party/dxc_hash.
+The modifier-count audit rejects any token edit not accounted for by the
+disassembler's precise annotations.
+
+This evidence covers the tested cases, not yet the complete DLL or all Demo scenes.

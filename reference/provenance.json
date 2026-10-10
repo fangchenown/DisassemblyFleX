@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "origin": {
+    "shaders/recovered/000_g_bvh_BuildLeaves.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\000_g_bvh_BuildLeaves.hlsl",
+      "sha256": "8fdde1d60275c6162f0c16c2e5119f2f6feb825f575f8f7a0e0337d816b43e90"
+    },
+    "shaders/recovered/001_g_bvh_ComputeTotalBoundsGroupNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\001_g_bvh_ComputeTotalBoundsGroupNV.hlsl",
+      "sha256": "c86ab3d1a82eef3146cf8fffae95250b7ac1842312b3952a43308606907497ea"
+    },
+    "shaders/recovered/002_g_bvh_CalculateMortonCodes.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\002_g_bvh_CalculateMortonCodes.hlsl",
+      "sha256": "567aae2b7cbb1db68ae5b4284246559d59e1e5409391d2c30cf3215b78356478"
+    },
+    "shaders/recovered/003_g_bvh_ComputeTotalBoundsGroup.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\003_g_bvh_ComputeTotalBoundsGroup.hlsl",
+      "sha256": "a3d5260d4d539fd1a85861c1d1727255c89b01b9a22904b9ea7d68697a2121f9"
+    },
+    "shaders/recovered/004_g_bvh_ComputeTotalBounds.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\004_g_bvh_ComputeTotalBounds.hlsl",
+      "sha256": "bc1247049fcb190c061960cb17cb865c2b033c44e6814618136eccb85c45cc66"
+    },
+    "shaders/recovered/005_g_bvh_BuildHierarchy.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\005_g_bvh_BuildHierarchy.hlsl",
+      "sha256": "08ae21d7deb964c9963558bef8fbd9eb03186ca9e20df03ca0cca3ef14285f2a"
+    },
+    "shaders/recovered/006_g_bvh_ComputeTotalBoundsAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\006_g_bvh_ComputeTotalBoundsAMD.hlsl",
+      "sha256": "6f9f94695bdea8b45b0ae3d53db83297247417d1b663488135b17b15f4501bbb"
+    },
+    "shaders/recovered/007_g_bvh_ComputeTotalBoundsFinalize.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\007_g_bvh_ComputeTotalBoundsFinalize.hlsl",
+      "sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c"
+    },
+    "shaders/recovered/008_g_bvh_ComputeTotalBoundsGroupAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\008_g_bvh_ComputeTotalBoundsGroupAMD.hlsl",
+      "sha256": "651b9ef187aafc42c930556c26a287fef40d5ba1a64c92019d5f5d2a1bb0abf7"
+    },
+    "shaders/recovered/009_g_bvh_ComputeTotalBoundsNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\009_g_bvh_ComputeTotalBoundsNV.hlsl",
+      "sha256": "6ef2baa5fbf354df93c3f39210c85c3bbd807326094c31117774ec16dc40d1b9"
+    },
+    "shaders/recovered/010_g_bvh_ComputeTotalBoundsFinalizeNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\010_g_bvh_ComputeTotalBoundsFinalizeNV.hlsl",
+      "sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c"
+    },
+    "shaders/recovered/011_g_bvh_ComputeTotalBoundsFinalizeAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\011_g_bvh_ComputeTotalBoundsFinalizeAMD.hlsl",
+      "sha256": "f17cbf7065f74fc306040e263a07fb257a0a055b0f78954276f6cdf20d30576c"
+    },
+    "shaders/recovered/012_g_bvh_ComputeTotalInvEdges.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\012_g_bvh_ComputeTotalInvEdges.hlsl",
+      "sha256": "c92f6e2c0127a84535ee8e896f841058493405db77b2267cadec8b7c7cf012ad"
+    },
+    "shaders/recovered/013_g_bvh_CalculateKeyDeltas.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\013_g_bvh_CalculateKeyDeltas.hlsl",
+      "sha256": "96c7d503369d9e1f32e668c55edfc70e9befb65f162c27f9a9ff58e7878527c9"
+    },
+    "shaders/recovered/014_g_Flex_ReorderParticles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\014_g_Flex_ReorderParticles.hlsl",
+      "sha256": "aa5bcb0065814a2bc01ab5292b987c763f5f61e9a3cb0629901a6b97aac0a0bd"
+    },
+    "shaders/recovered/015_g_Flex_CompactDiffuseParticles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\015_g_Flex_CompactDiffuseParticles.hlsl",
+      "sha256": "1a2b289b056c640dade0daf4c151106b94728ce93670ac704be39121a816dffd"
+    },
+    "shaders/recovered/016_g_Flex_CalculateBoundsNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\016_g_Flex_CalculateBoundsNV.hlsl",
+      "sha256": "a75ffdf7dae998180773f8b098731f2bf6bde467bda99821e5ba0416f9611542"
+    },
+    "shaders/recovered/017_g_Flex_ClampDiffuseParticleCount.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\017_g_Flex_ClampDiffuseParticleCount.hlsl",
+      "sha256": "559783f1d06e9fe4e366f4018c394d96dc50a2fc7507ebb7202f7eeafd80893b"
+    },
+    "shaders/recovered/018_g_Flex_CalculateBoundsAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\018_g_Flex_CalculateBoundsAMD.hlsl",
+      "sha256": "d8272d24dbbc50988d1513a1a836ea7e9a7818248e748b97c8b66e2ac1c1149d"
+    },
+    "shaders/recovered/019_g_Flex_ClearCellBuckets.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\019_g_Flex_ClearCellBuckets.hlsl",
+      "sha256": "807463e8ca1ff81336f8596b356f017d7bd913981639e57692fe59c949a6de94"
+    },
+    "shaders/recovered/020_g_Flex_SmoothPositions.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\020_g_Flex_SmoothPositions.hlsl",
+      "sha256": "bdeb1d3edea5619866d17edbc9358e0d04dbee56d031019d51dd514a9fb7ebcc"
+    },
+    "shaders/recovered/021_g_Flex_CalculateBounds.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\021_g_Flex_CalculateBounds.hlsl",
+      "sha256": "fb40526b35cfd2cdbbd9ae583845413f5a6da2527baa3f427875718934b5a650"
+    },
+    "shaders/recovered/022_g_Flex_UpdateVertexNormals.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\022_g_Flex_UpdateVertexNormals.hlsl",
+      "sha256": "83eb934518e2c275eac06ee5e778c4d827c1ad2e9a2963d296bb0412b47c110b"
+    },
+    "shaders/recovered/023_g_Flex_CreateDiffuseParticles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\023_g_Flex_CreateDiffuseParticles.hlsl",
+      "sha256": "9776ea7f734558f9bc17d2fd450c58143540c080acad296dbfd8a2bb2d2c2e44"
+    },
+    "shaders/recovered/024_g_Flex_CalculateBoundsFinalizeAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\024_g_Flex_CalculateBoundsFinalizeAMD.hlsl",
+      "sha256": "e3af8dc502c294602b9b9c3f71f2e038b909310fd0ee9275173ae5933b37d82c"
+    },
+    "shaders/recovered/025_g_Flex_UpdateTriangles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\025_g_Flex_UpdateTriangles.hlsl",
+      "sha256": "32dd52388a91be9785dbca122c7641798b2d13bb72d6fb833a303eca26701df2"
+    },
+    "shaders/recovered/026_g_Flex_SolveContactsAveraged.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\026_g_Flex_SolveContactsAveraged.hlsl",
+      "sha256": "f3a6948a309d0b43bc14a02025df8fba814bcd9f12a8a8b1130de6c461bf89c2"
+    },
+    "shaders/recovered/027_g_Flex_CalculateBoundsGroupNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\027_g_Flex_CalculateBoundsGroupNV.hlsl",
+      "sha256": "c07ffc09f127578cff28a8a38e5594126d826be3f4b9c216cda5e3153e3fc9d1"
+    },
+    "shaders/recovered/028_g_Flex_SolveShapes128NV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\028_g_Flex_SolveShapes128NV.hlsl",
+      "sha256": "0ac07ca926053ba0049a6e9084a08a207e6bb1bc63099734e795aa1b1ebe465b"
+    },
+    "shaders/recovered/029_g_Flex_ComputeTriangleBounds.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\029_g_Flex_ComputeTriangleBounds.hlsl",
+      "sha256": "065d39c2efcb0ef7aa5d952412be486b14815af3f7f27cbe400dcf72e813b222"
+    },
+    "shaders/recovered/030_g_Flex_Finalize.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\030_g_Flex_Finalize.hlsl",
+      "sha256": "5600b7f7ffe8cc8bc4904e793a5d121f893ddc2fb89d271e730ed577e53c4307"
+    },
+    "shaders/recovered/031_g_Flex_CalculateInflatableVolumeNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\031_g_Flex_CalculateInflatableVolumeNV.hlsl",
+      "sha256": "48f1c079e30cdf8da983861c810dec72c13c0f6c67b396bec66ef1e7b1384c3a"
+    },
+    "shaders/recovered/032_g_Flex_SolveSpringsNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\032_g_Flex_SolveSpringsNV.hlsl",
+      "sha256": "dfe64e959027a0b0781a844f34d19e721a71a28c7faf8397c9b4a6cf310d6538"
+    },
+    "shaders/recovered/033_g_Flex_CalculateInflatableVolumeAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\033_g_Flex_CalculateInflatableVolumeAMD.hlsl",
+      "sha256": "2615209d953905cc1156244ca26a4acd44ec2d3e2d6dbc17a6a86e24081e9689"
+    },
+    "shaders/recovered/034_g_Flex_CalculateDensity.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\034_g_Flex_CalculateDensity.hlsl",
+      "sha256": "8b570adfac98f8bd90e63fab8352491d8e2dd106d4b68f25d361ac433e2b8d2f"
+    },
+    "shaders/recovered/035_g_Flex_CalculateInflatableVolume.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\035_g_Flex_CalculateInflatableVolume.hlsl",
+      "sha256": "5eef4f1bbfd225ea82d1ad955dcea8816d2ecdc8bba8350efecd86279fd60010"
+    },
+    "shaders/recovered/036_g_Flex_SolveInflatableVolume.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\036_g_Flex_SolveInflatableVolume.hlsl",
+      "sha256": "646a05207802f7db688c0b3c5f0abf83c77e6a58e395fb749e750076cfe8c5eb"
+    },
+    "shaders/recovered/037_g_Flex_SolveContactsSequential.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\037_g_Flex_SolveContactsSequential.hlsl",
+      "sha256": "a30aa3587a0ceff397e0b24648d1a96f078e714806c7ec0e308e1293f502125c"
+    },
+    "shaders/recovered/038_g_Flex_ContinuousShockPropagation.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\038_g_Flex_ContinuousShockPropagation.hlsl",
+      "sha256": "10fb72b33e7245de30d819072826a4155d69bc7ef055c3042e13b2688f81ed9c"
+    },
+    "shaders/recovered/039_g_Flex_CalculateBoundsFinalize.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\039_g_Flex_CalculateBoundsFinalize.hlsl",
+      "sha256": "63a0581300a1f79154313b6a3864c0319ce6212842fabb3bac18b671c80de675"
+    },
+    "shaders/recovered/040_g_Flex_SpringsParticleRange.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\040_g_Flex_SpringsParticleRange.hlsl",
+      "sha256": "1520fc5d1e07daae84dc95c885ab5723c0043f24eb2f8a21cbf09daa968b58ea"
+    },
+    "shaders/recovered/041_g_Flex_UpdateVertexNormalsInit.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\041_g_Flex_UpdateVertexNormalsInit.hlsl",
+      "sha256": "d90f00c96f6bd9fea362c6e714fb9ddcbfb97eef72b296f809b928288dd181b2"
+    },
+    "shaders/recovered/042_g_Flex_SolveShapesPlasticDeformation.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\042_g_Flex_SolveShapesPlasticDeformation.hlsl",
+      "sha256": "576533695b63cfdb4323bcddc834875815b956fb184d42967deaed2209a8e017"
+    },
+    "shaders/recovered/043_g_Flex_CalculateDensitySurfaceTension.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\043_g_Flex_CalculateDensitySurfaceTension.hlsl",
+      "sha256": "e77d5c38bc5975cc99b4547e73aa00fd792d97fe5a0374258b5acf44c67d121e"
+    },
+    "shaders/recovered/044_g_Flex_SolveDensitiesNonFluid.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\044_g_Flex_SolveDensitiesNonFluid.hlsl",
+      "sha256": "67ab01b98fe35ad7018ca4ffa157e0e238561286eec002c98d15c01a558323e8"
+    },
+    "shaders/recovered/045_g_Flex_SolveShapesPlasticDeformationNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\045_g_Flex_SolveShapesPlasticDeformationNV.hlsl",
+      "sha256": "ed32947a6b89348b499c7e23071b7a42c2cc9d9aa7f0a690f57cc1baafa469d8"
+    },
+    "shaders/recovered/046_g_Flex_CalculateBoundsFinalizeNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\046_g_Flex_CalculateBoundsFinalizeNV.hlsl",
+      "sha256": "58a6069af4b1380245385639f2f3648125ba291f1d7b5ab07061717100f98ba4"
+    },
+    "shaders/recovered/047_g_Flex_TransformShapeBounds.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\047_g_Flex_TransformShapeBounds.hlsl",
+      "sha256": "ce4f9826a3e0d3daefb80751a745997c1119293fc0349b54982661b4436ece25"
+    },
+    "shaders/recovered/048_g_Flex_UpdateTrianglesNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\048_g_Flex_UpdateTrianglesNV.hlsl",
+      "sha256": "f29fdf37082ab0e34847af2bb927317849626c849aba6772d0a6e294f12d2de8"
+    },
+    "shaders/recovered/049_g_Flex_SolveShapes32NV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\049_g_Flex_SolveShapes32NV.hlsl",
+      "sha256": "b6417ddcd64c802759b2f10ae12cf12e49d95def7abd9afea962301fcbe27941"
+    },
+    "shaders/recovered/050_g_Flex_SolveShapesNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\050_g_Flex_SolveShapesNV.hlsl",
+      "sha256": "1f6afb4ac9c25509740839777ac844e1f06d918b1abe3e4099772a5dac76cf85"
+    },
+    "shaders/recovered/051_g_Flex_SolveShapesPlasticDeformation128NV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\051_g_Flex_SolveShapesPlasticDeformation128NV.hlsl",
+      "sha256": "285dea6cd5be62448d5539a85ed8c7fcee7912de9f18bc92df530a2416070874"
+    },
+    "shaders/recovered/052_g_Flex_SolveShapes.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\052_g_Flex_SolveShapes.hlsl",
+      "sha256": "67cb7a098e966eabe75fe9d9fe71dba0bb1a5bdb8dbd6fa48161056121aea3d0"
+    },
+    "shaders/recovered/053_g_Flex_SpringsGenerateIndices.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\053_g_Flex_SpringsGenerateIndices.hlsl",
+      "sha256": "e5438d60cb600aac7946a90d365e272e2bb4e1650fadd622e25e5c1b290c1009"
+    },
+    "shaders/recovered/054_g_Flex_SolveInflatableVolumeNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\054_g_Flex_SolveInflatableVolumeNV.hlsl",
+      "sha256": "18f2343449e4f37c96cd6ffb0cca87e56dca88a06680e1e8b87f8b484442da0b"
+    },
+    "shaders/recovered/055_g_Flex_UpdateTrianglesInit.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\055_g_Flex_UpdateTrianglesInit.hlsl",
+      "sha256": "16527bc73888805e1be7cb5c710c7b17ac32bf866c24b47747a9d98784442467"
+    },
+    "shaders/recovered/056_g_Flex_SolveContactsAccumulate.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\056_g_Flex_SolveContactsAccumulate.hlsl",
+      "sha256": "e061c65d62aa8e2417c6315a703b7a93bc5f8ae1a5b3e3c025a188f30319eefa"
+    },
+    "shaders/recovered/057_g_Flex_SolveDensities.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\057_g_Flex_SolveDensities.hlsl",
+      "sha256": "bfea52d4a75715f7ad640e8336d46686553422897d8e2a1e9a2f64399f391958"
+    },
+    "shaders/recovered/058_g_Flex_CollideParticles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\058_g_Flex_CollideParticles.hlsl",
+      "sha256": "2a396c88add75659c1d41baf8f7674dc709b002daeaf8ee2f1cc0fc5d41b66bd"
+    },
+    "shaders/recovered/059_g_Flex_ClearInt.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\059_g_Flex_ClearInt.hlsl",
+      "sha256": "0e7f2eca2f47fc71178bbd3efd49ce17f17210c30ac15d9cbb466e8da908b751"
+    },
+    "shaders/recovered/060_g_Flex_NormalizeVertexNormals.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\060_g_Flex_NormalizeVertexNormals.hlsl",
+      "sha256": "3a9e8cd7475dfbccfd1ccf5dd819c712e1bc5e1aff11dd454e82b0ac305a0896"
+    },
+    "shaders/recovered/061_g_Flex_UpdateDiffuseParticles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\061_g_Flex_UpdateDiffuseParticles.hlsl",
+      "sha256": "904447af58f9f2922fb176ad7fbdf947a6cda294ff61caa3508220f233429736"
+    },
+    "shaders/recovered/062_g_Flex_SolveDensitiesSurfaceTension.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\062_g_Flex_SolveDensitiesSurfaceTension.hlsl",
+      "sha256": "8258bd709512e7e290fe41009d465981fa9cd1a918fd1808ab27ee5c5695b872"
+    },
+    "shaders/recovered/063_g_Flex_CreateGrid.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\063_g_Flex_CreateGrid.hlsl",
+      "sha256": "4472225784e6a26683ba701b6e650e379c7404cb8e06eeada6bf6b0f222ced3c"
+    },
+    "shaders/recovered/064_g_Flex_CalculateParticleHash.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\064_g_Flex_CalculateParticleHash.hlsl",
+      "sha256": "3d0538e4b279811596e86251059a08437734badbdcc623c30796b3fc752f1e13"
+    },
+    "shaders/recovered/065_g_Flex_CalculateBoundsGroupAMD.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\065_g_Flex_CalculateBoundsGroupAMD.hlsl",
+      "sha256": "fee6d9f887a764fa06e3eaeb8e84afde8c6be1eb27840eac39f14e6ad44104bf"
+    },
+    "shaders/recovered/066_g_Flex_ApplyDeltas.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\066_g_Flex_ApplyDeltas.hlsl",
+      "sha256": "19ffee385a9e00951ced937ad6e9a9ef44f48a0a368cf09f5196b9c4e1f006a4"
+    },
+    "shaders/recovered/067_g_Flex_CalculateAnisotropy.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\067_g_Flex_CalculateAnisotropy.hlsl",
+      "sha256": "33469a2b69bdf22524116e41bf0cf5d3cb5b7e9e4b8e1faee2d630e3e997abf0"
+    },
+    "shaders/recovered/068_g_Flex_UpdateVertexNormalsNV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\068_g_Flex_UpdateVertexNormalsNV.hlsl",
+      "sha256": "2820c21afd19c6189037672aed5d75da0e2c1c3ed28604af01f996212f71d40e"
+    },
+    "shaders/recovered/069_g_Flex_CalculateVorticity.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\069_g_Flex_CalculateVorticity.hlsl",
+      "sha256": "3d61407e87fc295c907ce0dae22f3dc9cdb2f0ed4885a996ce5f3d89db73fdf2"
+    },
+    "shaders/recovered/070_g_Flex_CollideShapes.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\070_g_Flex_CollideShapes.hlsl",
+      "sha256": "66c4a6d82a6e514021f1eac54ca51fc65d77edba6a0214957d88585034a9ce48"
+    },
+    "shaders/recovered/071_g_Flex_SpringsReorder.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\071_g_Flex_SpringsReorder.hlsl",
+      "sha256": "f2b1b430a837711c4dcf8c19b810db55d7eb0269b76db32d64f5d029f2ef1e6a"
+    },
+    "shaders/recovered/072_g_Flex_ClearFloat4.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\072_g_Flex_ClearFloat4.hlsl",
+      "sha256": "62c549699b44ee94fcaa2ad6513ec8c9cdcab8e19d1f063bc1fe0dd64b2d0b8f"
+    },
+    "shaders/recovered/073_g_Flex_Predict.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\073_g_Flex_Predict.hlsl",
+      "sha256": "6ca41be91bbfeb2108cfd76e1893b84519b397ca78066c07150aa0e8af8a22d9"
+    },
+    "shaders/recovered/074_g_Flex_UpdateVelocities.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\074_g_Flex_UpdateVelocities.hlsl",
+      "sha256": "e0712bb35cede590401d69bfcc8df3b855489757d4abfe0466f8ccd18c1e5abe"
+    },
+    "shaders/recovered/075_g_Flex_SolveSprings.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\075_g_Flex_SolveSprings.hlsl",
+      "sha256": "dfe64e959027a0b0781a844f34d19e721a71a28c7faf8397c9b4a6cf310d6538"
+    },
+    "shaders/recovered/076_g_Flex_CollideTriangles.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\076_g_Flex_CollideTriangles.hlsl",
+      "sha256": "e76fdc35f64925c67f6801103e4634989b3012b9412b62d0a9dd26806e1749d2"
+    },
+    "shaders/recovered/077_g_Flex_SolveVelocities.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\077_g_Flex_SolveVelocities.hlsl",
+      "sha256": "71464302f515bac96c6e490daa0b8d7a00f2504a8f78605d9ba72baaed20e32f"
+    },
+    "shaders/recovered/078_g_Flex_SolveShapesPlasticDeformation32NV.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\078_g_Flex_SolveShapesPlasticDeformation32NV.hlsl",
+      "sha256": "982d856b12958af29315d36e80ef0b8d5da2489dbbfef97fbb634d2319ccbab2"
+    },
+    "shaders/recovered/079_g_Flex_CalculateBoundsGroup.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\079_g_Flex_CalculateBoundsGroup.hlsl",
+      "sha256": "ac6dd85a761ce2684698be166dd94d445234fd6ecdf3c0ae18f1091e02eeb559"
+    },
+    "shaders/recovered/080_g_RadixSort1CS.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\080_g_RadixSort1CS.hlsl",
+      "sha256": "4162fbdc45fcf90e3d473468e2eb317c12a28d78cc70c0e6681bf0c51b4ab278"
+    },
+    "shaders/recovered/081_g_RadixSort2CS.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\081_g_RadixSort2CS.hlsl",
+      "sha256": "cd15117dd21e2d15ac81e1c2e7a1e984d7214f517fbdc412fbc2929856451b5e"
+    },
+    "shaders/recovered/082_g_RadixSortBlockCS.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\082_g_RadixSortBlockCS.hlsl",
+      "sha256": "4d70c52f91c42b2deeb894add583919e144bf35ce1634945226eeac09d0bb922"
+    },
+    "shaders/recovered/083_g_RadixSort3CS.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovered\\083_g_RadixSort3CS.hlsl",
+      "sha256": "f1246422905721a0a428d54ccb5db1e17e413631b1abe539f18efad825bb642d"
+    },
+    "shaders/readable/004_g_bvh_ComputeTotalBounds.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\readable\\004_g_bvh_ComputeTotalBounds.hlsl",
+      "sha256": "e692bdab1953ee759bc98b2665cdc334cf7a4a597d398fa29093871dad25219d"
+    },
+    "shaders/readable/066_g_Flex_ApplyDeltas.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\readable\\066_g_Flex_ApplyDeltas.hlsl",
+      "sha256": "96d8adebbb0a0b6fe619d91b81c639d77890bc1d3cd39571b3326068ce0978b3"
+    },
+    "shaders/readable/075_g_Flex_SolveSprings.hlsl": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\readable\\075_g_Flex_SolveSprings.hlsl",
+      "sha256": "9e3fc9114f236bb4c21c05daced26e677f103ca1f0f6db506d86ebd9130e1e0d"
+    },
+    "shaders/readable/KernelParams.hlsli": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\readable\\KernelParams.hlsli",
+      "sha256": "c3f44f0076b4be2849fcd2b6c5c040cee8b14c687b46f9c7a5cf4612d7121751"
+    },
+    "include/recovered/FlexLayouts.hpp": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\cpp\\recovered\\FlexLayouts.hpp",
+      "sha256": "cf44fba7c7d142578da9abeb11925915f3c52c93f2ee58c20f10ff272a07105e"
+    },
+    "include/recovered/FlexCore.hpp": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\cpp\\recovered\\FlexCore.hpp",
+      "sha256": "e94b5525673f358110b9a83fb9f1cffd08d73dbfb7aea33bb26da05985cee8bd"
+    },
+    "include/NvFlex.h": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlex.h",
+      "sha256": "5a2d938c1e435761393293a71318d89ca526a46f5200430cc63089040c3e113a",
+      "adaptation": "Export attributes removed; module definition preserves exact names/ordinals.",
+      "adapted_sha256": "2742925ba6eef9e7480a0078135e9d2dc8371de8ec58cf25a2c27b013309008d"
+    },
+    "include/NvFlexExt.h": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlexExt.h",
+      "sha256": "6dc1f8046512aedbd6cee756862ef84fc8d9de35c77fc1706c76bc79c789acd2"
+    },
+    "include/NvFlexDevice.h": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\include\\NvFlexDevice.h",
+      "sha256": "44693426a887d33dae4879ea25460dd2e3b71040b7802a21e3305ff977cf01f4"
+    },
+    "reference/exports.csv": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexDisassembly-20261009\\exports.csv",
+      "sha256": "c9f9ed00f605c00069a6434a65ff988209e39cfc15b36b9de1f1162824af3cbd"
+    },
+    "reference/input_metadata.json": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexDisassembly-20261009\\metadata.json",
+      "sha256": "234b4a3d6b8525f9489e0624da36a7b0ff88e3cba52fd9c9a66b995e7e170726"
+    },
+    "reference/recovered_source_index.json": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\cpp\\source_index.json",
+      "sha256": "e6a00a4e3065966d5ff54f4984ef397baaadf7a789243f6e2a5c6cb2b511a769"
+    },
+    "reference/prior_verification.json": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\verification.json",
+      "sha256": "4c34d4b2c8ade6bf78c5a4046f879548963bb43b47e88eabebf43eecfb394292"
+    },
+    "reference/prior_shader_validation.json": {
+      "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009\\hlsl\\recovery_results.json",
+      "sha256": "77f7246c7047723e64fb8c0d1866a805d066937e41693df3019f11b15c048bc6"
+    }
+  },
+  "disassembly_root": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexDisassembly-20261009",
+  "decompilation_root": "I:\\CodeX Project\\KG3D_Cloth\\Build\\NvFlexSourceRecovery-20261009",
+  "scope": "Public SDK declarations + source HLSL + verified small C++ functions. No original DLL/PE instruction payload in candidate sources."
+}

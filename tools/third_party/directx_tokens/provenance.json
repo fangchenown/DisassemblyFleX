@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/microsoft/DirectX-Headers",
+  "commit": "adbd6f3ba40795c46a8d0f33af00bcb57ff0f0a4",
+  "files": {
+    "D3D12TokenizedProgramFormat.hpp": {
+      "url": "https://raw.githubusercontent.com/microsoft/DirectX-Headers/adbd6f3ba40795c46a8d0f33af00bcb57ff0f0a4/include/directx/D3D12TokenizedProgramFormat.hpp",
+      "sha256": "5862ef7c8b819f0d02ba73563a9df4dc0e89f11fe59d8f598def39122273c626"
+    },
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/microsoft/DirectX-Headers/adbd6f3ba40795c46a8d0f33af00bcb57ff0f0a4/LICENSE",
+      "sha256": "903df5512f7d02609fed0c780a9b704f5a3eeb6e4d84ebe42a29845c81899a3c"
+    }
+  }
+}

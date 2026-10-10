@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "phase": "COMPLETE",
+  "active_jobs": [],
+  "output_root": "I:/CodeX Project/KG3D_Cloth/Build/DisassemblyFleXPerformance-20261010",
+  "goal": "原版与重建 DLL 官方 FlexDemo 性能差异测量及归因",
+  "archive_only_after_acceptance": true,
+  "updated": "2026-10-10T01:17:34.122664+00:00",
+  "finished": "2026-10-10T01:17:34.122157+00:00",
+  "run_count": 1402,
+  "main_effective_runs": 1072,
+  "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformance-20261010\\delivery\\REPORT_CN.txt",
+  "audit": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformance-20261010\\evidence\\FINAL_AUDIT.json"
+}

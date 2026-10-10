@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "phase": "COMPLETE",
+  "active_jobs": [],
+  "output_root": "I:/CodeX Project/KG3D_Cloth/Build/DisassemblyFleXPerformanceFix-20261010",
+  "next": "None; task complete",
+  "updated": "2026-10-10T02:26:26.281000+00:00",
+  "finished": "2026-10-10T02:32:41.441127+00:00",
+  "candidate_sha256": "0407fe58026c9d8dc93c36d5adf42d554bb3e660fe1f79eafd666d9a3e81e357",
+  "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\delivery\\REPORT_CN.txt",
+  "effective_flexdemo_runs": 1533
+}

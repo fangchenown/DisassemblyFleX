@@ -1,0 +1,84 @@
+{
+  "input_dll": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\bin\\win64\\NvFlexReleaseD3D_x64.dll",
+  "size": 1393520,
+  "sha256": "b79e4680dc16b3e5aa47bd653e23c9383380722d35a97af0bdb49623be53118d",
+  "input_pdb": "I:\\CodeX Project\\KG3D_Cloth\\FleX\\bin\\win64\\NvFlexReleaseD3D_x64.dll.pdb",
+  "pdb_sha256": "18708d3b82ba556d78807bbac2751488d8224d2c3a52efc32031817511414560",
+  "machine": "0x8664",
+  "image_base": "0x180000000",
+  "entrypoint_rva": "0x5f4d0",
+  "pe_timestamp_utc": "2018-07-25T21:02:40+00:00",
+  "dll_codeview_age": 1,
+  "pdb_matching": "Microsoft symchk: PDB Matched TRUE; private symbols, line numbers, type info available.",
+  "age_note": "LLVM dump summary reports PDB info-stream Age 2; Microsoft DIA/symchk report Age 1. See original logs.",
+  "exports": 93,
+  "exports_pdb_public_exact_match": 93,
+  "exports_pdb_function_exact_match": 83,
+  "exports_complete_instruction_bytes": 93,
+  "function_records": 3288,
+  "unique_function_addresses": 3288,
+  "public_symbol_records": 5987,
+  "data_symbol_records": 224,
+  "pdata_records": 4065,
+  "unique_pdb_function_starts_in_pdata": 1538,
+  "cpu_instruction_count": 164534,
+  "cpu_disassembled_bytes": 550607,
+  "cpu_unknown_instructions": 0,
+  "cpu_instruction_byte_check": "Every displayed instruction byte matches DLL bytes.",
+  "focused_internal_functions": 61,
+  "dxbc_containers": 84,
+  "unique_shader_hashes": 81,
+  "shaders_named_from_pdb": 84,
+  "shaders_disassembled_ok": 84,
+  "noncontainer_dxbc_magic_hits": [],
+  "sections": [
+    {
+      "name": ".text",
+      "rva": "0x1000",
+      "virtual_size": 550607,
+      "file_offset": "0x400",
+      "raw_size": 550912,
+      "characteristics": "0x60000020"
+    },
+    {
+      "name": ".rdata",
+      "rva": "0x88000",
+      "virtual_size": 771224,
+      "file_offset": "0x86c00",
+      "raw_size": 771584,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".data",
+      "rva": "0x145000",
+      "virtual_size": 25576,
+      "file_offset": "0x143200",
+      "raw_size": 10240,
+      "characteristics": "0xc0000040"
+    },
+    {
+      "name": ".pdata",
+      "rva": "0x14c000",
+      "virtual_size": 48780,
+      "file_offset": "0x145a00",
+      "raw_size": 49152,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".rsrc",
+      "rva": "0x158000",
+      "virtual_size": 480,
+      "file_offset": "0x151a00",
+      "raw_size": 512,
+      "characteristics": "0x40000040"
+    },
+    {
+      "name": ".reloc",
+      "rva": "0x159000",
+      "virtual_size": 3496,
+      "file_offset": "0x151c00",
+      "raw_size": 3584,
+      "characteristics": "0x42000040"
+    }
+  ]
+}

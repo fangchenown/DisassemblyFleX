@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "phases": [
+    {
+      "id": "P00",
+      "title": "固定输入、工程和账本",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/P00_inputs.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P01",
+      "title": "独立构建、93项ABI及基础API",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/api-baseline-v4-build.json",
+        "Build/DisassemblyFleX-20261009/evidence/api-baseline-v4-oracle.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "全部HLSL及D3D资源/设备路径",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/d3d11-context-v3-library-buffer-positive.json",
+        "Build/DisassemblyFleX-20261009/evidence/context-v5-oracle.json",
+        "Build/DisassemblyFleX-20261009/evidence/d3d12-v4-context.json",
+        "Build/DisassemblyFleX-20261009/evidence/d3d11-async-v9-interop.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "求解器CPU调度与粒子/弹簧基础",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/params-v1-oracle.json",
+        "Build/DisassemblyFleX-20261009/evidence/solver-lifecycle-v1-oracle.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "完整几何/碰撞/刚体/充气体/流体/散粒",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/springs-v1-oracle/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/triangles-inflatables-v1-oracle/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/demo-scene47-30-v1-comparison.json",
+        "Build/DisassemblyFleX-20261009/evidence/rigids-v1-oracle/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/geometry-mesh-v1-nonvacuous/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/geometry-api-v2.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "完整公开API与边界、回调、互操作、D3D模式",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/diagnostic-api-v2.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "FlexDemo全场景行为对照与锁屏运行",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/evidence/demo-geometry-first-v1/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/demo-original-repeat-v1/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/demo-all67-first-v1/results.json",
+        "Build/DisassemblyFleX-20261009/evidence/demo-d3d12-all67-v1/results.json",
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "最终洁净构建、中文报告、交付、归档",
+      "status": "complete",
+      "evidence": [
+        "Build/DisassemblyFleX-20261009/delivery/FINAL_VALIDATION.json"
+      ]
+    }
+  ]
+}

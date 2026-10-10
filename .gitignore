@@ -1,0 +1,27 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local IDE state
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Generated build directories and compiler intermediates
+/build/
+/Build/
+/out/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+
+# Local temporary files
+*.tmp
+*.bak

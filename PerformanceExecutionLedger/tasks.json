@@ -1,0 +1,27 @@
+[
+  {
+    "id": "P1",
+    "task": "输入冻结、计时审计、pilot",
+    "status": "complete"
+  },
+  {
+    "id": "P2",
+    "task": "67场景×2后端×4配对主测试及质量配对复测",
+    "status": "complete"
+  },
+  {
+    "id": "P3",
+    "task": "统计、工作量核对及3个发射场景补测",
+    "status": "complete"
+  },
+  {
+    "id": "P4",
+    "task": "CPU/GPU热点诊断和资源复用因果消融",
+    "status": "complete"
+  },
+  {
+    "id": "P5",
+    "task": "中文详细报告、最终审计、图表检查与归档",
+    "status": "complete"
+  }
+]

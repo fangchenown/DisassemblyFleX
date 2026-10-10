@@ -1,0 +1,746 @@
+[
+  {
+    "export": "?NvFlexGetMaxDiffuseParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 1,
+    "implementation": "DF_NvFlexGetMaxDiffuseParticles",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42200"
+  },
+  {
+    "export": "?NvFlexGetMaxNeighborsPerParticle@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 2,
+    "implementation": "DF_NvFlexGetMaxNeighborsPerParticle",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42210"
+  },
+  {
+    "export": "?NvFlexGetMaxNumParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 3,
+    "implementation": "DF_NvFlexGetMaxNumParticles",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x421f0"
+  },
+  {
+    "export": "?NvFlexGetNumDynamicTriangles@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 4,
+    "implementation": "DF_NvFlexGetNumDynamicTriangles",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42240"
+  },
+  {
+    "export": "?NvFlexGetNumParticles@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 5,
+    "implementation": "DF_NvFlexGetNumParticles",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42220"
+  },
+  {
+    "export": "?NvFlexGetNumRigids@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 6,
+    "implementation": "DF_NvFlexGetNumRigids",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42250"
+  },
+  {
+    "export": "?NvFlexGetNumShapes@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 7,
+    "implementation": "DF_NvFlexGetNumShapes",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42260"
+  },
+  {
+    "export": "?NvFlexGetNumSprings@@YAHPEBUNvFlexSolver@@@Z",
+    "ordinal": 8,
+    "implementation": "DF_NvFlexGetNumSprings",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x42230"
+  },
+  {
+    "export": "?NvFlexGetTriangleMeshNumTriangles@@YAHPEAUNvFlexLibrary@@I@Z",
+    "ordinal": 9,
+    "implementation": "DF_NvFlexGetTriangleMeshNumTriangles",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x421b0"
+  },
+  {
+    "export": "?NvFlexGetTriangleMeshNumVertices@@YAHPEAUNvFlexLibrary@@I@Z",
+    "ordinal": 10,
+    "implementation": "DF_NvFlexGetTriangleMeshNumVertices",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x421d0"
+  },
+  {
+    "export": "NvFlexAcquireContext",
+    "ordinal": 11,
+    "implementation": "NvFlexAcquireContext",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x41290"
+  },
+  {
+    "export": "NvFlexAllocBuffer",
+    "ordinal": 12,
+    "implementation": "NvFlexAllocBuffer",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x40070"
+  },
+  {
+    "export": "NvFlexComputeWaitForGraphics",
+    "ordinal": 13,
+    "implementation": "NvFlexComputeWaitForGraphics",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x43c20"
+  },
+  {
+    "export": "NvFlexCopyDeviceToHost",
+    "ordinal": 14,
+    "implementation": "NvFlexCopyDeviceToHost",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x43ae0"
+  },
+  {
+    "export": "NvFlexCopySolver",
+    "ordinal": 15,
+    "implementation": "NvFlexCopySolver",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x42310"
+  },
+  {
+    "export": "NvFlexCreateConvexMesh",
+    "ordinal": 16,
+    "implementation": "NvFlexCreateConvexMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x412b0"
+  },
+  {
+    "export": "NvFlexCreateDistanceField",
+    "ordinal": 17,
+    "implementation": "NvFlexCreateDistanceField",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3fb60"
+  },
+  {
+    "export": "NvFlexCreateSolver",
+    "ordinal": 18,
+    "implementation": "NvFlexCreateSolver",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x37f80"
+  },
+  {
+    "export": "NvFlexCreateTriangleMesh",
+    "ordinal": 19,
+    "implementation": "NvFlexCreateTriangleMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x417a0"
+  },
+  {
+    "export": "NvFlexDestroyConvexMesh",
+    "ordinal": 20,
+    "implementation": "NvFlexDestroyConvexMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41380"
+  },
+  {
+    "export": "NvFlexDestroyDistanceField",
+    "ordinal": 21,
+    "implementation": "NvFlexDestroyDistanceField",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3fc40"
+  },
+  {
+    "export": "NvFlexDestroySolver",
+    "ordinal": 22,
+    "implementation": "NvFlexDestroySolver",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ab30"
+  },
+  {
+    "export": "NvFlexDestroyTriangleMesh",
+    "ordinal": 23,
+    "implementation": "NvFlexDestroyTriangleMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41860"
+  },
+  {
+    "export": "NvFlexFlush",
+    "ordinal": 24,
+    "implementation": "NvFlexFlush",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x422c0"
+  },
+  {
+    "export": "NvFlexFreeBuffer",
+    "ordinal": 25,
+    "implementation": "NvFlexFreeBuffer",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x400e0"
+  },
+  {
+    "export": "NvFlexGetActive",
+    "ordinal": 26,
+    "implementation": "NvFlexGetActive",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3edd0"
+  },
+  {
+    "export": "NvFlexGetActiveCount",
+    "ordinal": 27,
+    "implementation": "NvFlexGetActiveCount",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x3ee40"
+  },
+  {
+    "export": "NvFlexGetAnisotropy",
+    "ordinal": 28,
+    "implementation": "NvFlexGetAnisotropy",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3f0b0"
+  },
+  {
+    "export": "NvFlexGetBounds",
+    "ordinal": 29,
+    "implementation": "NvFlexGetBounds",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3ff00"
+  },
+  {
+    "export": "NvFlexGetContacts",
+    "ordinal": 30,
+    "implementation": "NvFlexGetContacts",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x40cd0"
+  },
+  {
+    "export": "NvFlexGetConvexMeshBounds",
+    "ordinal": 31,
+    "implementation": "NvFlexGetConvexMeshBounds",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41660"
+  },
+  {
+    "export": "NvFlexGetConvexMeshes",
+    "ordinal": 32,
+    "implementation": "NvFlexGetConvexMeshes",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x414c0"
+  },
+  {
+    "export": "NvFlexGetDataAftermath",
+    "ordinal": 33,
+    "implementation": "NvFlexGetDataAftermath",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x43c30"
+  },
+  {
+    "export": "NvFlexGetDensities",
+    "ordinal": 34,
+    "implementation": "NvFlexGetDensities",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ee80"
+  },
+  {
+    "export": "NvFlexGetDetailTimers",
+    "ordinal": 35,
+    "implementation": "NvFlexGetDetailTimers",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x431a0"
+  },
+  {
+    "export": "NvFlexGetDeviceAndContext",
+    "ordinal": 36,
+    "implementation": "NvFlexGetDeviceAndContext",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x422a0"
+  },
+  {
+    "export": "NvFlexGetDeviceLatency",
+    "ordinal": 37,
+    "implementation": "NvFlexGetDeviceLatency",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x42960"
+  },
+  {
+    "export": "NvFlexGetDeviceName",
+    "ordinal": 38,
+    "implementation": "NvFlexGetDeviceName",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x422b0"
+  },
+  {
+    "export": "NvFlexGetDiffuseParticles",
+    "ordinal": 39,
+    "implementation": "NvFlexGetDiffuseParticles",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3f150"
+  },
+  {
+    "export": "NvFlexGetDistanceFields",
+    "ordinal": 40,
+    "implementation": "NvFlexGetDistanceFields",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3fde0"
+  },
+  {
+    "export": "NvFlexGetDynamicTriangles",
+    "ordinal": 41,
+    "implementation": "NvFlexGetDynamicTriangles",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3f800"
+  },
+  {
+    "export": "NvFlexGetNeighbors",
+    "ordinal": 42,
+    "implementation": "NvFlexGetNeighbors",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x40fa0"
+  },
+  {
+    "export": "NvFlexGetNormals",
+    "ordinal": 43,
+    "implementation": "NvFlexGetNormals",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ef60"
+  },
+  {
+    "export": "NvFlexGetParams",
+    "ordinal": 44,
+    "implementation": "NvFlexGetParams",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x3fa80"
+  },
+  {
+    "export": "NvFlexGetParticles",
+    "ordinal": 45,
+    "implementation": "NvFlexGetParticles",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3eb90"
+  },
+  {
+    "export": "NvFlexGetPhases",
+    "ordinal": 46,
+    "implementation": "NvFlexGetPhases",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ecf0"
+  },
+  {
+    "export": "NvFlexGetRestParticles",
+    "ordinal": 47,
+    "implementation": "NvFlexGetRestParticles",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3eb20"
+  },
+  {
+    "export": "NvFlexGetRigids",
+    "ordinal": 48,
+    "implementation": "NvFlexGetRigids",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3dfc0"
+  },
+  {
+    "export": "NvFlexGetShapeBVH",
+    "ordinal": 49,
+    "implementation": "NvFlexGetShapeBVH",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x42290"
+  },
+  {
+    "export": "NvFlexGetSmoothParticles",
+    "ordinal": 50,
+    "implementation": "NvFlexGetSmoothParticles",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ec00"
+  },
+  {
+    "export": "NvFlexGetSolverDesc",
+    "ordinal": 51,
+    "implementation": "NvFlexGetSolverDesc",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3c2a0"
+  },
+  {
+    "export": "NvFlexGetSolverLibrary",
+    "ordinal": 52,
+    "implementation": "NvFlexGetSolverLibrary",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x3c2c0"
+  },
+  {
+    "export": "NvFlexGetSolvers",
+    "ordinal": 53,
+    "implementation": "NvFlexGetSolvers",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3c230"
+  },
+  {
+    "export": "NvFlexGetSprings",
+    "ordinal": 54,
+    "implementation": "NvFlexGetSprings",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3d330"
+  },
+  {
+    "export": "NvFlexGetTimers",
+    "ordinal": 55,
+    "implementation": "NvFlexGetTimers",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x42bb0"
+  },
+  {
+    "export": "NvFlexGetTriangleMeshBounds",
+    "ordinal": 56,
+    "implementation": "NvFlexGetTriangleMeshBounds",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x420b0"
+  },
+  {
+    "export": "NvFlexGetTriangleMeshes",
+    "ordinal": 57,
+    "implementation": "NvFlexGetTriangleMeshes",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41920"
+  },
+  {
+    "export": "NvFlexGetVelocities",
+    "ordinal": 58,
+    "implementation": "NvFlexGetVelocities",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3f040"
+  },
+  {
+    "export": "NvFlexGetVersion",
+    "ordinal": 59,
+    "implementation": "NvFlexGetVersion",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x37c30"
+  },
+  {
+    "export": "NvFlexInit",
+    "ordinal": 60,
+    "implementation": "NvFlexInit",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x35ba0"
+  },
+  {
+    "export": "NvFlexMakePhase",
+    "ordinal": 61,
+    "implementation": "DF_NvFlexMakePhase",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x29e30"
+  },
+  {
+    "export": "NvFlexMakePhaseWithChannels",
+    "ordinal": 62,
+    "implementation": "DF_NvFlexMakePhaseWithChannels",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x29e10"
+  },
+  {
+    "export": "NvFlexMakeShapeFlags",
+    "ordinal": 63,
+    "implementation": "DF_NvFlexMakeShapeFlags",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x29e60"
+  },
+  {
+    "export": "NvFlexMakeShapeFlagsWithChannels",
+    "ordinal": 64,
+    "implementation": "DF_NvFlexMakeShapeFlagsWithChannels",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x29e50"
+  },
+  {
+    "export": "NvFlexMap",
+    "ordinal": 65,
+    "implementation": "NvFlexMap",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x40160"
+  },
+  {
+    "export": "NvFlexRegisterD3DBuffer",
+    "ordinal": 66,
+    "implementation": "NvFlexRegisterD3DBuffer",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x40230"
+  },
+  {
+    "export": "NvFlexRegisterSolverCallback",
+    "ordinal": 67,
+    "implementation": "NvFlexRegisterSolverCallback",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x402e0"
+  },
+  {
+    "export": "NvFlexRestoreContext",
+    "ordinal": 68,
+    "implementation": "NvFlexRestoreContext",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x412a0"
+  },
+  {
+    "export": "NvFlexSetActive",
+    "ordinal": 69,
+    "implementation": "NvFlexSetActive",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ed60"
+  },
+  {
+    "export": "NvFlexSetActiveCount",
+    "ordinal": 70,
+    "implementation": "NvFlexSetActiveCount",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x3ee70"
+  },
+  {
+    "export": "NvFlexSetDebug",
+    "ordinal": 71,
+    "implementation": "NvFlexSetDebug",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x40350"
+  },
+  {
+    "export": "NvFlexSetDiffuseParticles",
+    "ordinal": 72,
+    "implementation": "NvFlexSetDiffuseParticles",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3f370"
+  },
+  {
+    "export": "NvFlexSetDynamicTriangles",
+    "ordinal": 73,
+    "implementation": "NvFlexSetDynamicTriangles",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3f4f0"
+  },
+  {
+    "export": "NvFlexSetInflatables",
+    "ordinal": 74,
+    "implementation": "NvFlexSetInflatables",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3e4c0"
+  },
+  {
+    "export": "NvFlexSetNormals",
+    "ordinal": 75,
+    "implementation": "NvFlexSetNormals",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3eef0"
+  },
+  {
+    "export": "NvFlexSetParams",
+    "ordinal": 76,
+    "implementation": "NvFlexSetParams",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3f980"
+  },
+  {
+    "export": "NvFlexSetParticles",
+    "ordinal": 77,
+    "implementation": "NvFlexSetParticles",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ea40"
+  },
+  {
+    "export": "NvFlexSetPhases",
+    "ordinal": 78,
+    "implementation": "NvFlexSetPhases",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3ec80"
+  },
+  {
+    "export": "NvFlexSetRestParticles",
+    "ordinal": 79,
+    "implementation": "NvFlexSetRestParticles",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3eab0"
+  },
+  {
+    "export": "NvFlexSetRigids",
+    "ordinal": 80,
+    "implementation": "NvFlexSetRigids",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3d350"
+  },
+  {
+    "export": "NvFlexSetShapes",
+    "ordinal": 81,
+    "implementation": "NvFlexSetShapes",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x40360"
+  },
+  {
+    "export": "NvFlexSetSolverDescDefaults",
+    "ordinal": 82,
+    "implementation": "NvFlexSetSolverDescDefaults",
+    "restored": true,
+    "implemented": true,
+    "rva": "0x37f60"
+  },
+  {
+    "export": "NvFlexSetSprings",
+    "ordinal": 83,
+    "implementation": "NvFlexSetSprings",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3c760"
+  },
+  {
+    "export": "NvFlexSetVelocities",
+    "ordinal": 84,
+    "implementation": "NvFlexSetVelocities",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3efd0"
+  },
+  {
+    "export": "NvFlexShutdown",
+    "ordinal": 85,
+    "implementation": "NvFlexShutdown",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x372a0"
+  },
+  {
+    "export": "NvFlexUnmap",
+    "ordinal": 86,
+    "implementation": "NvFlexUnmap",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x401b0"
+  },
+  {
+    "export": "NvFlexUnregisterD3DBuffer",
+    "ordinal": 87,
+    "implementation": "NvFlexUnregisterD3DBuffer",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x402a0"
+  },
+  {
+    "export": "NvFlexUnregisterOGLBuffer",
+    "ordinal": 88,
+    "implementation": "NvFlexUnregisterOGLBuffer",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x401f0"
+  },
+  {
+    "export": "NvFlexUpdateConvexMesh",
+    "ordinal": 89,
+    "implementation": "NvFlexUpdateConvexMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41530"
+  },
+  {
+    "export": "NvFlexUpdateDistanceField",
+    "ordinal": 90,
+    "implementation": "NvFlexUpdateDistanceField",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x3fe50"
+  },
+  {
+    "export": "NvFlexUpdateSolver",
+    "ordinal": 91,
+    "implementation": "NvFlexUpdateSolver",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x3c2d0"
+  },
+  {
+    "export": "NvFlexUpdateTriangleMesh",
+    "ordinal": 92,
+    "implementation": "NvFlexUpdateTriangleMesh",
+    "restored": false,
+    "implemented": false,
+    "rva": "0x41990"
+  },
+  {
+    "export": "NvFlexWait",
+    "ordinal": 93,
+    "implementation": "NvFlexWait",
+    "restored": false,
+    "implemented": true,
+    "rva": "0x422d0"
+  }
+]

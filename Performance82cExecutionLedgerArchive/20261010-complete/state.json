@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "phase": "archived",
+  "created": "2026-10-10T17:17:26.750260+08:00",
+  "updated": "2026-10-10T22:49:47+08:00",
+  "output_root": "I:/CodeX Project/KG3D_Cloth/Build/DisassemblyFleX-OpenFleX82c-Performance-20261010",
+  "active_jobs": [],
+  "next": "Read 00_CURRENT.md; inspect shared FlexDemo harness, freeze binaries/environment, pilot compatible DF/OF pairs; then instrument and run staged matrix.",
+  "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Performance-20261010\\report\\index.html",
+  "package": {
+    "path": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Performance-20261010\\DisassemblyFleX-OpenFleX82c-MeasuredPerformance-Report.zip",
+    "bytes": 77239971,
+    "sha256": "08b4efebf9d9268850cf6cc3f8b5a1708d1a1bf295d6ef6b95aaecad48a5d516",
+    "files": 6887,
+    "raw_evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Performance-20261010\\runs",
+    "scope": "Report and reproducibility-manifest bundle; raw frames/states/shader files retained outside archive at recorded original path."
+  },
+  "archive": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\Performance82cExecutionLedgerArchive\\20261010-complete",
+  "scope": "Benchmark completed with explicit compatibility failures and unmeasurable/unobserved boundaries; no universal equivalence/performance guarantee."
+}

@@ -1,0 +1,48 @@
+Shader source and exact instruction scheduling — 2026-10-10
+
+The project contains two corresponding textual forms for every core shader:
+  shaders/recovered/*.hlsl: compilable HLSL, preserving 32-bit register values.
+  shaders/machine/*.smasm: readable SM5 instruction schedule constraints.
+Neither directory contains an original DXBC blob or an extracted DLL payload.
+
+Why this is needed:
+FXC can alter register allocation, shared-memory accesses and floating-point
+evaluation order when lowering recovered HLSL. The first frontend-precision
+policy fixed fluid mismatches, but six otherwise repeatable official rigid
+scenes still differed. Using the original FXC version or replacing uint
+precision boundaries with float precision boundaries did not solve them.
+
+The preserved schedule mode is a source-driven constrained compilation path:
+1. tools/shader_lowering.py translates the textual instruction form to HLSL.
+2. Build checks its executable tokens against the delivered HLSL. A source
+   edit that changes only one form is rejected, not silently ignored.
+3. FXC compiles every delivered HLSL file to verify compilability and produce
+   resource reflection and signatures.
+4. tools/dxbc_assembler.py encodes every instruction and operand from textual
+   operands, using the official Microsoft token format. It reads no original
+   DXBC or DLL. It does not contain per-shader encoded token arrays.
+5. The newly encoded program replaces FXC's alternative instruction schedule;
+   the container checksum is calculated by the built Microsoft hash helper.
+6. D3DDisassemble roundtrip must reproduce every source instruction.
+
+The token specification is vendored with its MIT license and commit/hash:
+  tools/third_party/directx_tokens/provenance.json
+  https://github.com/microsoft/DirectX-Headers/blob/main/include/directx/D3D12TokenizedProgramFormat.hpp
+SM5 instruction reference:
+  https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/shader-model-5-assembly--directx-hlsl-
+
+Evidence (under Build/DisassemblyFleX-20261009/evidence):
+  assembler-roundtrip-v1/results.json: 84 / 84 disassembly roundtrips match.
+  hlsl-instruction-correspondence-v1.json: 84 / 84 HLSL bodies match lowering.
+  text-encoded-program-equality-v2.json: newly source-encoded instruction
+    program chunks are byte-identical to all 84 reference program chunks.
+    This comparison is a diagnostic oracle, not a build dependency.
+  demo-machine-ir-v1/results.json: previously stable mismatch scenes
+    11,31,54,55,56,62 now have all captured files byte-identical at 30 frames.
+
+The ordinary FXC path remains useful for freely edited HLSL. The preserved
+schedule mode additionally needs consistent edits to the paired instruction
+form; this limitation must be disclosed in the final Chinese report. This is
+reconstructed source, not a claim to possess NVIDIA's original high-level HLSL.
+GPU atomic scheduling can remain nondeterministic even with identical shader
+programs; remaining differences still need reference-repeat validation.

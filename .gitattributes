@@ -1,0 +1,3 @@
+# Recovery and validation records depend on exact file bytes.
+# Preserve existing line endings on add and checkout on every platform.
+* -text

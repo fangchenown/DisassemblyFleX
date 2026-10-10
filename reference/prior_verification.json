@@ -1,0 +1,29 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_DECOMPILATION_LIMITS",
+  "original_dll_unchanged": true,
+  "original_pdb_unchanged": true,
+  "cpp_functions_decompiled": 4202,
+  "cpp_export_entries_organized": 93,
+  "cpp_internal_functions_organized": 61,
+  "cpp_compileable_functions_verified": 14,
+  "cpp_oracle_comparisons": 40010,
+  "cpp_oracle_mismatches": 0,
+  "cpp_full_project_buildable": false,
+  "hlsl_instruction_level_sources": 84,
+  "hlsl_instruction_level_compile_successes": 84,
+  "hlsl_resource_and_threadgroup_interfaces_identical": 84,
+  "hlsl_readable_sources_compiled": 3,
+  "hlsl_runtime_tested_unique_shaders": 3,
+  "hlsl_runtime_cases_per_source_variant": 13,
+  "hlsl_runtime_bit_differences": 0,
+  "hlsl_runtime_backend": "D3D11 WARP",
+  "all_shader_inputs_or_vendor_extensions_runtime_proven": false,
+  "unimplemented_shader_instructions": 0,
+  "total_shader_instruction_records": 13504,
+  "cpp_decompiler_quality": {
+    "total_functions": 4202,
+    "files_with_warning_or_register_artifact": 887,
+    "warning_occurrences": 1164,
+    "note": "Automatic decompiler output requires manual reconstruction before use as a buildable DLL. This marker scan is not a semantic correctness test."
+  }
+}

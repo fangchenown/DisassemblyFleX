@@ -1,0 +1,27 @@
+[
+  {
+    "id": "F1",
+    "task": "复用生命周期设计与正式代码修复",
+    "status": "complete"
+  },
+  {
+    "id": "F2",
+    "task": "定向Context/多solver/异步与外部生命周期回归",
+    "status": "complete"
+  },
+  {
+    "id": "F3",
+    "task": "洁净正式构建与既有API/行为回归",
+    "status": "complete"
+  },
+  {
+    "id": "F4",
+    "task": "全场景FlexDemo性能及输出对照和长时间运行",
+    "status": "complete"
+  },
+  {
+    "id": "F5",
+    "task": "中文报告、新DLL源码交付与账本归档",
+    "status": "complete"
+  }
+]

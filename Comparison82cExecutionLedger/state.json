@@ -1,0 +1,10 @@
+{
+  "status": "ARCHIVED",
+  "phase": "COMPLETE",
+  "active_jobs": [],
+  "output_root": "I:/CodeX Project/KG3D_Cloth/Build/DisassemblyFleX-OpenFleX82c-Static-20261010",
+  "next": "None. Completed static study; do not resume earlier performance tasks.",
+  "updated": "2026-10-10T16:49:42+08:00",
+  "archive": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\Comparison82cExecutionLedgerArchive\\20261010-complete",
+  "completion": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Static-20261010\\COMPLETION.json"
+}

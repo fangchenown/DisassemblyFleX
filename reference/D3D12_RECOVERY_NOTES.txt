@@ -1,0 +1,100 @@
+D3D12 recovery checkpoint (2026-10-10, implementation not yet started)
+
+Use the exact virtual NvFlex::Context and NvFlex::Device interfaces already in
+src/dx/context. Keep D3D12 native resource/queue interoperability; do not route
+through the original core DLL or silently substitute a D3D11 backend.
+
+Recovered source roots: Build/NvFlexSourceRecovery-20261009/cpp/functions.
+Useful functions (prefix is VA):
+180056270_NvFlex___anonymous_namespace___ComputeRootSignature__ComputeRootSignature.cpp
+180056470_NvFlex__ContextD3D12__ContextD3D12.cpp
+18005c920_NvFlex__DeviceD3D12__DeviceD3D12.cpp
+180057460_NvFlex__BufferD3D12__BufferD3D12.cpp
+180057880_NvFlex__BufferD3D12__BufferD3D12.cpp (native import)
+180057970_NvFlex__BufferD3D12__BufferD3D12.cpp (view)
+180057ec0_NvFlex__ContextD3D12__map.cpp (buffer)
+180057260_NvFlex__ContextD3D12__map.cpp (constant)
+1800594f0_NvFlex__ComputeShaderD3D12__ComputeShaderD3D12.cpp
+180059770_NvFlex__ContextD3D12__dispatch.cpp
+180059bc0_NvFlex__ContextD3D12__dispatchIndirect.cpp
+18005a080_NvFlex__ContextD3D12__flush.cpp
+18005a600/18005a650_ContextD3D12 fenceSet/fenceWait
+18005a700 through 18005aa50 TimerPoolD3D12 constructor/begin/end/resolve/sync/get/reserve
+Use functions.csv for exact names. Decompiled 'this' fields are often shifted
+by the NvFlex::Context secondary-base offset; check disassembly/layouts when
+field names look impossible.
+
+Confirmed root signature: four parameters:
+0 root CBV b0, 1 SRV descriptor table t0..t31, 2 UAV table u0..u7,
+3 root CBV b1. One static linear clamp sampler s0. Visibility ALL, space0.
+Root table ranges use APPEND, root flags0. Sampler filter0x15, address3,
+comparison1, minLOD0, maxLOD FLT_MAX.
+Dispatch copies 40 descriptors into a fresh GPU-visible table; unused UAVs
+receive a null uint UAV; original skips copying unused SRVs. CB0/CB1 only
+update when nonnull; Density inherits previous CB0. GPU barriers transition
+SRVs to NON_PIXEL_SHADER_RESOURCE(0x40), UAVs to UAV(8), and insert UAV
+barriers when already in UAV state. Each dispatch emits a label marker.
+
+Device: create FL11_0 D3D12 device on selected adapter (or retain external).
+If allowed, use supplied render queue for runOnRenderContext. Async uses a
+supplied compute queue or creates COMPUTE; otherwise DIRECT. NVIDIA queries
+private QueryAsyncComputeHint and calls SetAsyncComputeControlData(4,4,true).
+Public NVAPI headers include D3D12 shader opcode support and extended PSO
+creation. Extension descriptor uses NV_SET_SHADER_EXTENSION_SLOT_DESC_VER,
+NV_PSO_SET_SHADER_EXTENSION_SLOT_AND_SPACE type, slot7 and registerSpace0.
+Original falls back to ordinary CreateComputePipelineState if NVAPI fails.
+Device.mD3D12Device must be true for the external Ext library client.
+
+Original buffers: DEFAULT resource with ALLOW_UNORDERED_ACCESS when flag1;
+initial GPU state COPY_DEST. Views only when flag2. Staging allocation when
+flag4 OR initial data exists. This is a CUSTOM heap derived from
+GetCustomHeapProperties(0, READBACK) with CPUPageProperty WRITE_BACK (3),
+allowing CPU writes and GPU COPY_SOURCE/COPY_DEST transitions. Do not use an
+ordinary READBACK heap as a GPU copy source. Structured/typed/raw views follow
+BufferDesc semantics already reconstructed for D3D11.
+Map buffer flushes pending commands for Read or ReadWrite. It maps staging,
+not the DEFAULT GPU resource. Download stamps a fence value; maps can return
+null before it completes. Upload/copyToDevice copy from staging with barriers.
+Initial data copies into stage and records upload. Constant map uses versioned
+UPLOAD buffers to prevent later CPU writes overwriting queued CBV data.
+Views must share resource-state tracking with their original resource.
+
+Original flush is blocking: Close, ExecuteCommandLists, Signal, event wait,
+Reset allocator/list, clear root-state/cache flags. Thus a first correct
+implementation can retain pending resources/descriptor heaps until a blocking
+flush completes. Do not release resources/PSOs referenced by an unsubmitted
+command list when API objects are freed.
+fenceSet directly signals the queue and arms an event; fenceWait waits on it.
+It does not submit the current command list (NvFlexWait alone is not flush).
+contextPush/Pop and startFrame are original no-ops. IMPORTANT CORRECTION after
+first runtime comparison: clearState calls native commandList->ClearState(0),
+but does NOT reset cached CBV resource pointers. Dispatch sets CBVs only when
+their resource pointer changes. Consequently later NVIDIA substeps can have
+unbound CB0 after the clear; original 3-substep D3D12 fluid output corresponds
+to the first substep and smoothing/aniso outputs remain initialized. Preserve
+this behavior and verify against the binary rather than silently fixing it.
+Graphics/compute queue synchronization uses a fence.
+
+TimerPool: timestamp pairs, query readback, frequency from command queue;
+resolve records ResolveQueryData, sync copies readback to host and grows the
+pool to requested capacity; get returns float(double(end-begin)/frequency)*1000.
+Read individual functions before implementing exact ready/unready semantics.
+
+Suggested implementation structure, not yet implemented: D3D12Context.hpp/.cpp,
+D3D12Resources.hpp/.cpp, D3D12Device.cpp. Resource state shared_ptr for aliases,
+CPU descriptor heap chunks plus per-submit GPU table chunks, pending COM refs
+for GPU lifetime, versioned constant buffers retained until flush.
+Then make NvFlexInit select DeviceD3D12 and link d3d12. Adapt context oracle to
+create/inspect D3D12 native resources. Run official FlexDemo --mode d3d12 in
+reference/candidate and retain all failing evidence. All tests stay under the
+shared GPU lock and have no windows or display dependency.
+
+D3D11 interop correction discovered during this work:
+NvFlexRegisterD3DBuffer stores type3, mBuffer=nullptr, ptr=native WITHOUT creating
+a shared wrapper or retaining the native resource. Source corrected for v6.
+Reference CopyToDevice(type16/native) does raw CopySubresourceRegion on compute
+context. A render-device source cannot be directly used on a separate compute
+device. The first interop harness did this and hung the original in fenceWait;
+v6 tests native inputs in render mode, host inputs + native outputs in async.
+CopyToNative on an async solver uses the buffer's render-device alias and NV
+signal/wait sync objects in both directions. Caller submits both contexts.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "C1",
+    "task": "两段对话、正式版本、源码与配置冻结",
+    "status": "complete",
+    "completed": "2026-10-10T16:49:42+08:00"
+  },
+  {
+    "id": "C2",
+    "task": "C++/shader/入口全量清点与解析覆盖审计",
+    "status": "complete",
+    "completed": "2026-10-10T16:49:42+08:00"
+  },
+  {
+    "id": "C3",
+    "task": "逐入口及逐函数/方法语义对应与实现差异",
+    "status": "complete",
+    "completed": "2026-10-10T16:49:42+08:00"
+  },
+  {
+    "id": "C4",
+    "task": "逐shader/宏变体/调度及行为性能影响",
+    "status": "complete",
+    "completed": "2026-10-10T16:49:42+08:00"
+  },
+  {
+    "id": "C5",
+    "task": "详细中文报告、全量附录、审计及归档",
+    "status": "complete",
+    "completed": "2026-10-10T16:49:42+08:00"
+  }
+]

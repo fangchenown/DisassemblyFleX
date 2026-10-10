@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETE",
+  "completed": "2026-10-10T16:49:42+08:00",
+  "static_only": true,
+  "implementation_modified": false,
+  "solver_or_flexdemo_runs": 0,
+  "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Static-20261010\\delivery\\index.html",
+  "package": {
+    "status": "PASS",
+    "archive": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-OpenFleX82c-Static-20261010\\DisassemblyFleX-OpenFleX82c-StaticComparison.zip",
+    "sha256": "b58045585f12f153cd75661a659a88fe4ff84c0d3357dc18b85777cb4784dd0c",
+    "bytes": 48868708,
+    "entries": 11192,
+    "verified_file_hashes": 11191,
+    "uncompressed_bytes": 217162018,
+    "time": "2026-10-10T16:49:42+08:00"
+  },
+  "validation": {
+    "status": "PASS",
+    "time": "2026-10-10T16:48:50+08:00",
+    "static_only": true,
+    "checks": {
+      "unique_ids": true,
+      "cpp_definitions": 6723,
+      "shader_functions": 790,
+      "compiled_records": 356,
+      "api_pairs": 93,
+      "extra_entries": 56,
+      "api_pair_definitions_resolved": true,
+      "all_api_specific_notes": true,
+      "all_84_df_stages_reviewed": true,
+      "literal_compile_entries_resolved": true,
+      "html_pages": 8655,
+      "local_links_checked": 585376,
+      "frozen_source_files_checked": 2232,
+      "dll_hashes_still_match": {
+        "DisassemblyFleX": true,
+        "OpenFleX": true
+      },
+      "javascript": [
+        {
+          "file": "cpp.html",
+          "rows": 6723,
+          "filters": true,
+          "pagination": true,
+          "escaping": true
+        },
+        {
+          "file": "shaders.html",
+          "rows": 790,
+          "filters": true,
+          "pagination": true,
+          "escaping": true
+        },
+        {
+          "file": "compiled.html",
+          "rows": 356,
+          "filters": true,
+          "pagination": true,
+          "escaping": true
+        }
+      ]
+    },
+    "errors": [],
+    "limitations": "Static completeness/link/source checks do not prove runtime equivalence or performance. Internal expression AST limitations are documented in boundary-audit.json."
+  },
+  "ledger_archive": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\Comparison82cExecutionLedgerArchive\\20261010-complete",
+  "limitations": [
+    "无数值/性能实测，无全输入等价结论。",
+    "逐项证据含自动语法提取与人工算法/入口审读；内部表达式AST局限详见boundary-audit。",
+    "可选/保留/Android/引擎代码分层，不将定义数当成实际DLL链接函数数。"
+  ]
+}
