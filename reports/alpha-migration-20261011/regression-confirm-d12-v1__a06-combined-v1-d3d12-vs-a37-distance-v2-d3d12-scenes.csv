@@ -1,0 +1,4 @@
+﻿scene,emit,name,n,left_ms_median,right_ms_median,paired_speedup_geomean,paired_speedup_ci95,decision,contract_equal,initial_state_byte_equal
+31,False,Game Mesh Rigid,8,1.037001898187037,1.0146639120409722,1.0197738579594664,"[0.9882239810391443, 1.052330991081607]",inconclusive-at-95pct,True,True
+33,False,Game Mesh Fluid,8,1.0527712501231483,1.0105456711555556,1.0328382509006393,"[0.998965505481504, 1.0678595473717718]",inconclusive-at-95pct,True,True
+44,False,Surface Tension Med,8,0.957969722375463,0.9599961804902778,0.9921413059330939,"[0.960984294064249, 1.0243084897626997]",inconclusive-at-95pct,True,True

@@ -1,0 +1,559 @@
+[
+  {
+    "id": "A001-01",
+    "version": "alpha0.1",
+    "title": "Skip provably empty triangle-mesh collision dispatch",
+    "status": "accepted-restricted-final-v2",
+    "candidate": "a01-empty-triangle-v3",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a01-empty-triangle-v3",
+    "donor": "history/alpha0.1/source/OpenFleX/src/d3d11/D3D11Backend.cpp:2148",
+    "donor_fact": "TriangleMeshCollision ShapeCount()==0 returns before collision dispatch.",
+    "adaptation": "DF uses a conservative shape.count && geometry.vertices.buffer prerequisite; contact counts clear, analytic shapes/planes, dynamic cloth triangle outputs, callbacks and all solver iterations remain.",
+    "numerical_change": false,
+    "shader_change": false,
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a01-empty-triangle-v1.patch",
+    "required_validation": [
+      "exact 84 shader containers",
+      "paired D3D11/D3D12 FlexDemo",
+      "empty/mesh/shape transitions and multiple solvers",
+      "API/physics regression"
+    ],
+    "previous_candidate": "a01-empty-triangle-v1",
+    "repair": "Original diagnostic oracle exposed changed timer-name multiplicity. Retain the original shader label address and begin/end timer for skipped passes; no fake dispatch or physics changes. Original failed receipts remain immutable.",
+    "rejected_scope": "v1/v2 unrestricted dispatch removal: D3D12 scene0 1200-frame repeated test widened observed variance beyond control, despite identical 84 shaders and passing API oracles. No minor-difference exception: ~1% gain is insufficient.",
+    "restriction": "Preserve original command stream with springs, rigids, inflatables, dynamic triangles or any diffuse capacity. Test only the remaining particle/fluid eligibility.",
+    "investigation": "a01-d12-scene0-investigation-v1",
+    "evidence_quality": [
+      "a01-v3-quality-d11-v1",
+      "a01-v3-quality-d12-v1"
+    ],
+    "evidence_performance": [
+      "a01-v3-screen-d11-v1",
+      "a02-screen-d12-v1"
+    ],
+    "decision_scope": "Restricted v3 passes current gates; D12 aggregate small positive, D11 statistically unresolved; final full-scene acceptance still required.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A002-01",
+    "version": "alpha0.2",
+    "title": "Batch D3D12 descriptor-copy submissions while preserving the table and barriers",
+    "status": "accepted-combined-final-v2",
+    "candidate": "a02-descriptor-batch-v1",
+    "base": "a01-empty-triangle-v3",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a02-descriptor-batch-v1",
+    "donor": "P11.06b resource binding/submission churn and P11.08a operation batching",
+    "adaptation": "DF-specific D3D12 adaptation of the historical batching idea, not a claim that OF alpha0.2 implements D3D12. 40 single-descriptor calls become one ranged copy with 40 explicit unit source ranges.",
+    "shader_change": false,
+    "numerical_change": false,
+    "invariants": [
+      "40 descriptor contents and order",
+      "same source non-shader-visible heaps",
+      "same per-resource transition and UAV-barrier order",
+      "same heap allocation, fences, native retention, root CBV behavior"
+    ],
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a02-descriptor-batch-v1.patch",
+    "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12device-copydescriptors",
+    "required_validation": [
+      "D3D12 pool/external-context/multi-solver oracle",
+      "native context/aliasing/readback",
+      "exact original 84 shaders",
+      "whole-frame paired tests including dense and empty scenes",
+      "check no CPU-cache regression; API call count alone is not a win"
+    ],
+    "evidence_quality": "a02-quality-d12-v1",
+    "evidence_performance": "a02-barrier-screen-d12-v1",
+    "decision_scope": "Combined descriptors+barriers vs A001v3 geo1.01288199 CI[1.00664688,1.01915572]; individual attribution intervals cross1, no standalone-win claim; final full-scene acceptance required.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A002-02",
+    "version": "alpha0.2",
+    "candidate": "a02-barrier-batch-v1",
+    "base": "a02-descriptor-batch-v1",
+    "title": "Preserve and batch per-bind D3D12 resource barriers",
+    "status": "accepted-combined-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a02-barrier-batch-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a02-barrier-batch-v1.patch",
+    "donor": "alpha0.2 P11 operation-batching principle; adapted to DF D3D12",
+    "numerical_change": false,
+    "shader_change": false,
+    "invariants": [
+      "same ordered transition/UAV descriptors",
+      "same state updates and alias order",
+      "same keep/lifetime calls",
+      "same clear/copy/indirect barriers outside bind",
+      "no barrier elimination"
+    ],
+    "reference": "https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12graphicscommandlist-resourcebarrier",
+    "required_validation": [
+      "original 84 DXBC exact",
+      "context/pool/callback/aliasing oracles",
+      "D3D12 debug output if available",
+      "FlexDemo quality and whole-frame paired timing"
+    ],
+    "evidence_quality": "a02-quality-d12-v1",
+    "evidence_performance": "a02-barrier-screen-d12-v1",
+    "decision_scope": "Combined descriptors+barriers vs A001v3 geo1.01288199 CI[1.00664688,1.01915572]; individual attribution intervals cross1, no standalone-win claim; final full-scene acceptance required.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A003-01",
+    "version": "alpha0.3",
+    "candidate": "a03-spring-extent-v1",
+    "base": "a02-barrier-batch-v1",
+    "title": "GPU-derived maximum spring endpoint bounds an otherwise empty dispatch tail",
+    "status": "accepted-restricted-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a03-spring-extent-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a03-spring-extent-v1.patch",
+    "donor": "alpha0.3 C03 work-bound audit, reinforced by alpha1.1/alpha2.0/alpha2.1/alpha2.3 exact-extent ideas",
+    "numerical_change": false,
+    "original_shader_change": false,
+    "new_auxiliary_shader": "Integer-only SpringDispatchArgs, separately compiled and manifested; not NVIDIA recovered code.",
+    "invariants": [
+      "maximum actual referenced particle, not activeCount",
+      "full 64-particle groups; original eight-lane reduction unchanged",
+      "empty rows have no global UAV writes in original 032/075 kernels",
+      "no CPU readback or wait",
+      "default direct launch for dense/small/unprepared/copy-invalidated topology"
+    ],
+    "required_validation": [
+      "84 original containers unchanged",
+      "helper integer code / args readback for low/high/sparse/invalid endpoint bounds",
+      "SetSprings replace/clear/grow and sparse-active high IDs",
+      "D3D11/D3D12 generic and NV original particle results",
+      "FlexDemo spare-capacity and ordinary scenes with same workload",
+      "startup/memory/whole-frame regression"
+    ],
+    "performance": {
+      "d11_geomean": 1.0306186690064099,
+      "d11_ci95": [
+        1.0231007950707534,
+        1.0381917852298104
+      ],
+      "d12_geomean": 1.0377102303535604,
+      "d12_ci95": [
+        1.0308340627231838,
+        1.04463226538684
+      ]
+    },
+    "scope": "Scenes64/65, six process pairs, 2400 frames; not global67 ranking.",
+    "quality": "16 focused exact whole-capacity output cases; target positions/velocities/phase/mass exact with and without emission; D11 normals differ at same 1.788e-7 self-repeat envelope; diffuse counts/lifetimes same, scene65 exact multiset, scene64 saturation selection varies within observed baseline distribution scale. Full final acceptance pending.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A003-02",
+    "version": "alpha0.3",
+    "candidate": "a03-planes-v1",
+    "base": "a03-spring-extent-v1",
+    "title": "Plane-only shape collision with the original live instruction sequence",
+    "status": "rejected-performance",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a03-planes-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a03-planes-v1.patch",
+    "donor": "alpha0.3 C09 plane-only specialization idea, applied to original DF shader 070 rather than OF equations",
+    "proof": {
+      "original_source_sha256": "8380f18dadd99bcd357d6e96b01df9e7cfe73cbc3c50d853df165a1cb983c7f8",
+      "condition": "uploaded kNumShapes==0; no callbacks; no shape instances",
+      "removed_branch_instructions": 1017,
+      "live_instructions_unchanged": true,
+      "thread_group": "128,1,1",
+      "temps": 3,
+      "removed_dead_indexable_stack": true
+    },
+    "numerical_change": false,
+    "original_shader_change": false,
+    "new_auxiliary_shader": "Derived original instructions, not a guessed plane solver; original84 general path retained.",
+    "required_validation": [
+      "original84 exact; aux assembly roundtrip and false-path sequence proof",
+      "direct GPU original-vs-specialized counts/planes/velocities across threshold/capacity cases",
+      "zero/nonzero shape transition and callback fallback",
+      "diagnostic labels unchanged",
+      "FlexDemo all output domains and complete-frame paired timing"
+    ],
+    "decision": "144 kernel exact gates, 14 regressions and FlexDemo quality passed; targeted8-pair confirmation found no aggregate gain and one D11 Holm-significant regression. Do not include in cumulative production base.",
+    "evidence_performance": [
+      "a03-planes-target-d11-v1",
+      "a03-planes-target-d12-v1"
+    ]
+  },
+  {
+    "id": "A006-01",
+    "version": "alpha0.6",
+    "candidate": "a06-shader-names-v1",
+    "base": "a03-spring-extent-v1",
+    "kind": "shader-names",
+    "title": "Transparent ordered-map lookup avoids temporary std::string allocation on every GetShader cache hit; fixed literals replace transient bounds/rigid shader-name concatenation. Preserve exact keys, vendor precedence and ordered shader destruction.",
+    "status": "accepted-cpu-efficiency-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a06-shader-names-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a06-shader-names-v1.patch",
+    "donor": "alpha0.6 CPU allocation/cache/LTCG audit; adapted to DF actual hot-path structures",
+    "numerical_change": false,
+    "shader_change": false,
+    "required_validation": [
+      "exact 84 shaders",
+      "ABI/export/KernelParams/callback/particle oracles",
+      "external D3D11/D3D12 lifecycle",
+      "whole-frame paired FlexDemo",
+      "separate CPU and shader claims"
+    ],
+    "decision": "Native/API/quality gates pass; instrumented thread cycles show CPU work reduction, while production completed-frame benefit remains small or unresolved. Combined candidate must pass final frame and quality gates.",
+    "cpu_evidence": [
+      "a06-cpu-counters-d11-v1",
+      "a06-cpu-counters-d12-v1"
+    ],
+    "quality_evidence": [
+      "a06-quality-d11-v1",
+      "a06-quality-d12-v1"
+    ],
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A006-02",
+    "version": "alpha0.6",
+    "candidate": "a06-retained-set-v1",
+    "base": "a03-spring-extent-v1",
+    "kind": "retained-set",
+    "title": "The private membership set is never iterated; unordered lookup preserves retained vector first-use order, AddRef count, fence retirement and destruction. No resource lifetime or barrier removed.",
+    "status": "accepted-cpu-efficiency-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a06-retained-set-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a06-retained-set-v1.patch",
+    "donor": "alpha0.6 CPU allocation/cache/LTCG audit; adapted to DF actual hot-path structures",
+    "numerical_change": false,
+    "shader_change": false,
+    "required_validation": [
+      "exact 84 shaders",
+      "ABI/export/KernelParams/callback/particle oracles",
+      "external D3D11/D3D12 lifecycle",
+      "whole-frame paired FlexDemo",
+      "separate CPU and shader claims"
+    ],
+    "decision": "Native/API/quality gates pass; instrumented thread cycles show CPU work reduction, while production completed-frame benefit remains small or unresolved. Combined candidate must pass final frame and quality gates.",
+    "cpu_evidence": [
+      "a06-cpu-counters-d11-v1",
+      "a06-cpu-counters-d12-v1"
+    ],
+    "quality_evidence": [
+      "a06-quality-d11-v1",
+      "a06-quality-d12-v1"
+    ],
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A006-03",
+    "version": "alpha0.6",
+    "candidate": "a06-ipo-v1",
+    "base": "a03-spring-extent-v1",
+    "kind": "ipo",
+    "title": "Release /GL + /LTCG, /Gy /Gw and linker folding while retaining /fp:precise, exact exports and all shader blobs. CPU parameter bytes and callback/API layout must pass unchanged.",
+    "status": "rejected-performance",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a06-ipo-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a06-ipo-v1.patch",
+    "donor": "alpha0.6 CPU allocation/cache/LTCG audit; adapted to DF actual hot-path structures",
+    "numerical_change": false,
+    "shader_change": false,
+    "required_validation": [
+      "exact 84 shaders",
+      "ABI/export/KernelParams/callback/particle oracles",
+      "external D3D11/D3D12 lifecycle",
+      "whole-frame paired FlexDemo",
+      "separate CPU and shader claims"
+    ],
+    "decision": "IPO changes showed no completed-frame or whole-frame CPU-cycle gain in either backend; no reason to add this compiler mode."
+  },
+  {
+    "id": "A006-04",
+    "version": "alpha0.6",
+    "candidate": "a06-bindings-v1",
+    "base": "a03-spring-extent-v1",
+    "title": "Callback-free D3D11 submission scope with proven-clear SRV ranges and invalidated CB/sampler bindings",
+    "status": "accepted-cpu-efficiency-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a06-bindings-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a06-bindings-v1.patch",
+    "donor": "alpha0.6 hazard-safe state batch; alpha0.8/2.0 boundary experiments inform conservative scope",
+    "numerical_change": false,
+    "shader_change": false,
+    "invariants": [
+      "first bind/unbind full32SRV; only known-null suffix omitted afterwards",
+      "all8UAV binds and unbinds preserved",
+      "root/second CB cache invalidated on map, unmap, copy, ClearState, context update and push/pop",
+      "sampler invalidated on all state resets",
+      "zero-particle and any solver-callback path preserve full original policy",
+      "public Context outside scope retains original policy",
+      "no descriptor/resource/callback/iteration removed"
+    ],
+    "required_validation": [
+      "native state validator build plus ordinary production build",
+      "large cloth and SDF highest slots",
+      "mutable CB payloads",
+      "borrowed/external context, callbacks, zero active, multiple solvers",
+      "all outputs and whole-frame FlexDemo"
+    ],
+    "decision": "Native/API/quality gates pass; instrumented thread cycles show CPU work reduction, while production completed-frame benefit remains small or unresolved. Combined candidate must pass final frame and quality gates.",
+    "cpu_evidence": [
+      "a06-cpu-counters-d11-v1",
+      "a06-cpu-counters-d12-v1"
+    ],
+    "quality_evidence": [
+      "a06-quality-d11-v1",
+      "a06-quality-d12-v1"
+    ],
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A021-01",
+    "version": "alpha2.1",
+    "candidate": "a21-substep-constants-v1",
+    "base": "a06-combined-v1",
+    "title": "Reuse identical substep constants across triangle and analytic collision",
+    "status": "rejected-performance",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a21-substep-constants-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a21-substep-constants-v1.patch",
+    "donor": "alpha2.1 W21-W23 and alpha2.3 exact-content CB reuse, adapted to DF single shared substep buffer",
+    "numerical_change": false,
+    "shader_change": false,
+    "invariants": [
+      "same eight uploaded fraction bytes",
+      "no callback between consumers",
+      "all collision dispatches and contact-count clears retained",
+      "constant is read-only to both shaders",
+      "D3D12 records both uses against its fence even when reusing the same version"
+    ],
+    "required_validation": [
+      "original84 shader identity",
+      "ABI/timers/callback/native context/CB pool regression",
+      "shape/mesh and multiple-substep cases",
+      "FlexDemo output contracts, rendering fields and both-backend timing",
+      "D3D12 constant-version memory effect"
+    ],
+    "decision": "Both20-scene4-pair completed-frame tests show no gain, with point estimates slightly slower. Keep original upload schedule; no additional complexity retained.",
+    "performance_evidence": [
+      "a21-screen-d11-v1",
+      "a21-screen-d12-v1"
+    ]
+  },
+  {
+    "id": "A024-01",
+    "version": "alpha2.4",
+    "candidate": "a24-spring-group-v1",
+    "base": "a06-combined-v1",
+    "title": "256-thread spring groups with unchanged eight-lane particle arithmetic",
+    "status": "rejected-no-benefit",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a24-spring-group-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a24-spring-group-v1.patch",
+    "donor": "alpha2.4 W33 exact independent-output group packing, adapted to DF original per-particle eight-lane TGSM reduction",
+    "numerical_change": false,
+    "original_shader_change": false,
+    "required_validation": [
+      "original84 unchanged and two derived instruction proofs",
+      "direct/indirect group agreement; sparse/high ID/replace/clear",
+      "whole-capacity bit-exact spring oracle",
+      "large-capacity original512 fallback policy",
+      "FlexDemo dense/spare cloth, render fields and complete-frame timing"
+    ],
+    "decision": "Both backend nine-scene four-pair completed-frame estimates are slightly slower and all 95% intervals include one. Direct spring oracle and regression passed, but no demonstrated benefit warrants derived-shader complexity.",
+    "performance_evidence": [
+      "a24-screen-d11-v1",
+      "a24-screen-d12-v1"
+    ],
+    "quality_evidence": [
+      "a24-quality-d11-v1",
+      "a24-quality-d12-v1",
+      "a24-spring-focused-v1"
+    ]
+  },
+  {
+    "id": "A037-01",
+    "version": "alpha3.7",
+    "candidate": "a37-distance-v2",
+    "base": "a37-distance-v1",
+    "title": "Phase acceptance unchanged; evaluate the same current-distance predicate before the same rest-space predicate. Preserve candidate iteration and bounded append order.",
+    "status": "rejected-final-conservative",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a37-distance-v2",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a37-distance-v2.patch",
+    "proof": {
+      "source_sha256": "85c33629e11f8573e958a29d9824605d9a1717238dae272eb9e0c83dce83d736",
+      "transformation": "Phase acceptance unchanged; evaluate the same current-distance predicate before the same rest-space predicate. Preserve candidate iteration and bounded append order.",
+      "original_instructions": 111,
+      "derived_instructions": 111,
+      "original_shaders_retained": 84,
+      "auxiliary_dxBC": "NeighborsDistanceFirst.dxbc"
+    },
+    "numerical_change": false,
+    "original_shader_change": false,
+    "required_validation": [
+      "direct original-vs-derived full row/count byte equality",
+      "phase/self/rest/current thresholds, wrapped hash aliases and nonidentity original map",
+      "zero/capacity/overflow/untouched-tail cases",
+      "API/callback/physics/whole-frame FlexDemo in both backends"
+    ],
+    "previous_trials": [
+      {
+        "id": "A037-01",
+        "version": "alpha3.7",
+        "candidate": "a37-distance-v1",
+        "base": "a06-combined-v1",
+        "title": "Phase acceptance unchanged; evaluate the same current-distance predicate before the same rest-space predicate. Preserve candidate iteration and bounded append order.",
+        "status": "rejected-unrestricted-scope",
+        "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a37-distance-v1",
+        "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a37-distance-v1.patch",
+        "proof": {
+          "source_sha256": "85c33629e11f8573e958a29d9824605d9a1717238dae272eb9e0c83dce83d736",
+          "transformation": "Phase acceptance unchanged; evaluate the same current-distance predicate before the same rest-space predicate. Preserve candidate iteration and bounded append order.",
+          "original_instructions": 111,
+          "derived_instructions": 111,
+          "original_shaders_retained": 84,
+          "auxiliary_dxBC": "NeighborsDistanceFirst.dxbc"
+        },
+        "numerical_change": false,
+        "original_shader_change": false,
+        "required_validation": [
+          "direct original-vs-derived full row/count byte equality",
+          "phase/self/rest/current thresholds, wrapped hash aliases and nonidentity original map",
+          "zero/capacity/overflow/untouched-tail cases",
+          "API/callback/physics/whole-frame FlexDemo in both backends"
+        ],
+        "decision": "Full20-scene speed intervals include1. Kernel rows/counts are bit-exact, but limited full-simulation cloth repeats do not establish non-widening of the baseline envelope; preserve original program on structural/diffuse workloads. This is a conservative eligibility restriction, not proof the integer neighbor outputs differ."
+      }
+    ],
+    "eligibility": "zero springs, inflatables, dynamic triangles and diffuse capacity",
+    "decision": "Final conservative rollback retained. Restricted neighbor change reproduced small D11 regressions and had weak overall gains. The rare Soft Rope tail was unresolved at rollback time; later32-repeat original/no-change controls reproduced its scale, so it is not asserted to be an A037 algorithm error. No derived floating-point program is active in v2.",
+    "rollback": "integrated-v2-removal.json"
+  },
+  {
+    "id": "A037-02",
+    "version": "alpha3.7",
+    "candidate": "a37-fullrow-v1",
+    "base": "a06-combined-v1",
+    "title": "Only on the existing capacity-test failure: publish the already saturated count and return. Original DF increments count only inside capacity and exposes no full-overflow statistic; unlike OF alpha7.1b, this loses no required overflow count. Non-full path gets no extra predicate.",
+    "status": "rejected-performance",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a37-fullrow-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a37-fullrow-v1.patch",
+    "proof": {
+      "source_sha256": "85c33629e11f8573e958a29d9824605d9a1717238dae272eb9e0c83dce83d736",
+      "transformation": "Only on the existing capacity-test failure: publish the already saturated count and return. Original DF increments count only inside capacity and exposes no full-overflow statistic; unlike OF alpha7.1b, this loses no required overflow count. Non-full path gets no extra predicate.",
+      "original_instructions": 111,
+      "derived_instructions": 114,
+      "original_shaders_retained": 84,
+      "auxiliary_dxBC": "NeighborsFullRow.dxbc"
+    },
+    "numerical_change": false,
+    "original_shader_change": false,
+    "required_validation": [
+      "direct original-vs-derived full row/count byte equality",
+      "phase/self/rest/current thresholds, wrapped hash aliases and nonidentity original map",
+      "zero/capacity/overflow/untouched-tail cases",
+      "API/callback/physics/whole-frame FlexDemo in both backends"
+    ],
+    "decision": "After clock-block replacement, full-row return regresses the D3D12 completed frame on many scenes. Profile1 CollideParticles mean: scene9 0.0953843->0.248203 ms;33 0.0455825->0.122339 ms;52 0.0459999->0.152866 ms. Correctness450 cases passed, but fewer logical loop reads did not improve GPU execution. Driver control-flow/reconvergence/register effects are hypotheses; no hardware stall/occupancy counter proof was collected.",
+    "performance_evidence": [
+      "a37-screen-d11-v1",
+      "a37-screen-d12-v1",
+      "a37-attribution-d12-v1"
+    ]
+  },
+  {
+    "id": "A039-01",
+    "version": "alpha3.9",
+    "candidate": "a39-dead-stream-v1",
+    "base": "a06-combined-v1",
+    "title": "Remove unread HalfSpringIndices allocation and binding",
+    "status": "accepted-memory-efficiency-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a39-dead-stream-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a39-dead-stream-v1.patch",
+    "numerical_change": false,
+    "original_shader_change": false,
+    "memory_saving": "4 * reserved half-spring capacity bytes per solver; all actual opposite/length/stiffness streams unchanged",
+    "required_validation": [
+      "original032/075 no t0 declaration/read",
+      "API/copy/lifecycle/resources",
+      "spring sparse/full-capacity byte oracle",
+      "FlexDemo springs plus whole-frame timing"
+    ],
+    "decision": "Both20-scene four-pair completed-frame CIs include1; no throughput claim. Remove only an uninitialized, unread stream; logical storage saving 4*reservedHalfSpringCapacity bytes, not measured peak driver VRAM. Full-capacity and14 regression gates passed; final cumulative validation required.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  },
+  {
+    "id": "A042-01",
+    "version": "alpha4.2",
+    "also_inspired_by": "alpha7.3 exact metadata packing",
+    "candidate": "a42-packed-springs-v1",
+    "base": "a39-dead-stream-v1",
+    "title": "Exact twelve-byte spring metadata, unchanged floating-point schedule",
+    "status": "rejected-cross-backend-performance",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a42-packed-springs-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a42-packed-springs-v1.patch",
+    "instruction_proof": [
+      {
+        "index": 32,
+        "original_sha256": "bfa7e44ed49cb83cc51a42e72b4735fcc0b62a945241a7339be5529029e1abf8",
+        "non_memory_arithmetic_unchanged": true
+      },
+      {
+        "index": 75,
+        "original_sha256": "bfa7e44ed49cb83cc51a42e72b4735fcc0b62a945241a7339be5529029e1abf8",
+        "non_memory_arithmetic_unchanged": true
+      }
+    ],
+    "numerical_change": false,
+    "original_shader_change": false,
+    "required_validation": [
+      "both generic/NV full-capacity outputs with mixed signed stiffness/high degree",
+      "source plus instruction arithmetic proof",
+      "API/resource regressions",
+      "FlexDemo long quality and completed-frame timings"
+    ],
+    "decision": "Incremental a39-vs-a42: D11 equal-scene ratio1.0033289108 CI[1.0000350531,1.0066336176], no scene separates after Holm; D12 ratio0.995048978 CI[0.9930046975,0.9970974670]. No reliable cross-backend gain warrants three derived shaders/layout complexity. Mixed-stiffness high-degree whole-capacity bytes and14 regressions passed; math was not the reason for rejection.",
+    "performance_evidence": [
+      "last-screen-d11-v1__a39-dead-stream-v1-vs-a42-packed-springs-v1-summary.json",
+      "last-screen-d12-v1__a39-dead-stream-v1-d3d12-vs-a42-packed-springs-v1-d3d12-summary.json"
+    ],
+    "quality_evidence": [
+      "a42-packed-springs-v1-spring-oracle",
+      "a42-packed-springs-v1-regressions"
+    ]
+  },
+  {
+    "id": "A082-01",
+    "version": "alpha8.2",
+    "candidate": "a82-radix-v1",
+    "base": "a06-combined-v1",
+    "title": "Stable two-byte radix prefix with original remaining passes",
+    "status": "accepted-restricted-final-v2",
+    "source": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\proposals\\a82-radix-v1",
+    "evidence": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\a82-radix-v1.patch",
+    "numerical_change": false,
+    "original_shader_change": false,
+    "required_validation": [
+      "both backend full buffers and physical sides",
+      "mixed lengths/bits/duplicate keys stable ordering",
+      "original84 hash",
+      "all API regressions",
+      "FlexDemo completed-frame and long quality"
+    ],
+    "decision": "20-scene equal-weight confidence intervals include1, so no general speedup claim. Aligned-count scenes25/27/64/65 show local gains (D11 coupling about1.5-1.7%, D12 about2%); original4bit fallback preserved outside exact eligibility. Requires full-simulation quality, fresh combined67-scene timing and emission/long checks before final acceptance.",
+    "quality_evidence": [
+      "a82-radix-v1-regressions-df-radix",
+      "diagnostics/radix-extended/df-candidate.json"
+    ],
+    "reference_limitation": "NVIDIA private D3D12 radix fixture aborts on NVIDIA self-control;162 extended cases use frozen DF and CPU stable-order reference. Other13 regression gates remain NVIDIA controls.",
+    "accepted_build": "alpha-migration-final-v2",
+    "final_evidence": "evidence/final-v2-reviewed-checks.json",
+    "accepted_at": "2026-10-11T08:51:21+08:00"
+  }
+]

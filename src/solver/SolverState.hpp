@@ -20,6 +20,11 @@ struct SolverStorage {
     std::vector<NvFlex::ConstantBuffer*> ownedConstants;
     std::unique_ptr<NvFlex::TimerPool> timers;
     std::unique_ptr<RadixSort> radix;
+    BufferSlot springDispatchArgs;
+    ConstantSlot springDispatchParams;
+    bool springDispatchReady=false;
+    unsigned springDispatchCapacity=0;
+    int springDispatchCount=0;
     std::array<NvFlexDetailTimer,256> details{};
     std::array<std::array<char,256>,256> detailNames{};
     ~SolverStorage(){for(auto p:ownedBuffers)delete p;for(auto p:ownedConstants)delete p;}

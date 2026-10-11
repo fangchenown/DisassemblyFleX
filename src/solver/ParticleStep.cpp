@@ -8,7 +8,7 @@
 namespace df {
 using Binding=std::pair<unsigned,NvFlex::Buffer*>;
 static NvFlex::Buffer* B(void* field){return Slot(field).buffer;}
-static void Pass(NvFlexSolver* solver,const char* shader,unsigned groups,std::initializer_list<Binding> reads,std::initializer_list<Binding> writes,bool root=true,NvFlex::ConstantBuffer* second=nullptr){
+static void Pass(NvFlexSolver* solver,const char* shader,unsigned groups,std::initializer_list<Binding> reads,std::initializer_list<Binding> writes,bool root=true,NvFlex::ConstantBuffer* second=nullptr,NvFlex::Buffer* indirect=nullptr){
     auto library=SolverLibrary(solver);auto& state=solver->state;auto& timers=solver->storage.timerState;
     NvFlex::DispatchParams p{};p.shader=GetShader(library,shader);p.gridDim={groups,1,1};
     if(root)p.rootConstantBuffer=Constant(state.mKernelParams).buffer;p.secondConstantBuffer=second;
@@ -16,7 +16,8 @@ static void Pass(NvFlexSolver* solver,const char* shader,unsigned groups,std::in
     for(auto binding:writes)if(binding.second)p.readWrite[binding.first]=binding.second->getResourceRW();
     if(std::strcmp(shader,"g_Flex_CollideShapes")==0&&library->geometry->sdfCount){for(unsigned i=0;i<16;++i)if(auto texture=library->geometry->textures[i])p.readOnly[15+i]=texture->getResource();}
     int timer=-1;if(timers.mEnabled){timer=timers.mTimerPool->begin();timers.mNameToTimerMapW.emplace(p.shader->m_desc.label,timer);}
-    library->mContext->dispatch(&p);
+    if(indirect){p.IndirectLaunchArgs=indirect;library->mContext->dispatchIndirect(&p);}
+    else library->mContext->dispatch(&p);
     if(library->amdDriverWorkaround&&std::strcmp(shader,"g_Flex_Predict")==0){library->mContext->flush();NvFlexWait(library);}
     if(timers.mEnabled)timers.mTimerPool->end(timer);
 }
@@ -35,12 +36,13 @@ void UpdateParticleSubstep(NvFlexSolver* solver,float dt,int substep,int numSubs
     auto& s=solver->state;auto library=SolverLibrary(solver);auto context=library->mContext;auto& radix=*solver->storage.radix;
     unsigned blocks=(unsigned(s.mNumParticles)+255u)/256u,boundsBlocks=(unsigned(s.mNumParticles)+127u)/128u;
     Pass(solver,"g_Flex_Predict",blocks,{{0,B(s.mActiveIndices)},{1,B(s.mPositions)},{2,B(s.mPhases)}},{{0,B(s.mNewPositions)},{1,B(s.mVelocities)}});
-    std::string suffix=library->enableExtensions&&library->shflSupported?"NV":"";
-    if(library->swizzleSupported)suffix="AMD";
-    std::string bounds="g_Flex_CalculateBounds"+suffix,group="g_Flex_CalculateBoundsGroup"+suffix,finalize="g_Flex_CalculateBoundsFinalize"+suffix;
-    Pass(solver,bounds.c_str(),boundsBlocks,{{0,B(s.mActiveIndices)},{1,B(s.mNewPositions)}},{{0,B(s.mBoundsLower)},{1,B(s.mBoundsUpper)},{2,B(s.mParticleBounds)}});
-    Pass(solver,group.c_str(),(boundsBlocks+127u)/128u,{{2,B(s.mBoundsLower)},{3,B(s.mBoundsUpper)}},{{0,B(s.mGroupBoundsLower)},{1,B(s.mGroupBoundsUpper)},{2,B(s.mParticleBounds)}});
-    Pass(solver,finalize.c_str(),1,{{2,B(s.mGroupBoundsLower)},{3,B(s.mGroupBoundsUpper)}},{{2,B(s.mParticleBounds)}});
+    const bool boundsNv=library->enableExtensions&&library->shflSupported;
+    const char* bounds=library->swizzleSupported?"g_Flex_CalculateBoundsAMD":boundsNv?"g_Flex_CalculateBoundsNV":"g_Flex_CalculateBounds";
+    const char* group=library->swizzleSupported?"g_Flex_CalculateBoundsGroupAMD":boundsNv?"g_Flex_CalculateBoundsGroupNV":"g_Flex_CalculateBoundsGroup";
+    const char* finalize=library->swizzleSupported?"g_Flex_CalculateBoundsFinalizeAMD":boundsNv?"g_Flex_CalculateBoundsFinalizeNV":"g_Flex_CalculateBoundsFinalize";
+    Pass(solver,bounds,boundsBlocks,{{0,B(s.mActiveIndices)},{1,B(s.mNewPositions)}},{{0,B(s.mBoundsLower)},{1,B(s.mBoundsUpper)},{2,B(s.mParticleBounds)}});
+    Pass(solver,group,(boundsBlocks+127u)/128u,{{2,B(s.mBoundsLower)},{3,B(s.mBoundsUpper)}},{{0,B(s.mGroupBoundsLower)},{1,B(s.mGroupBoundsUpper)},{2,B(s.mParticleBounds)}});
+    Pass(solver,finalize,1,{{2,B(s.mGroupBoundsLower)},{3,B(s.mGroupBoundsUpper)}},{{2,B(s.mParticleBounds)}});
     Pass(solver,"g_Flex_CalculateParticleHash",radix.capacity()/256u,{{0,B(s.mActiveIndices)},{1,B(s.mNewPositions)},{2,B(s.mParticleBounds)}},{{0,radix.front.key},{1,radix.front.value}});
     if(s.mNumParticles){auto& timers=solver->storage.timerState;int timer=-1;if(timers.mEnabled){timer=timers.mTimerPool->begin();timers.mNameToTimerMapW.emplace(L"SortCellIndices",timer);}radix.sort(unsigned(s.mNumParticles),24,&timers);if(timer>=0)timers.mTimerPool->end(timer);}
     Pass(solver,"g_Flex_CreateGrid",blocks,{{0,radix.front.key}},{{0,library->cellBucketStarts},{1,library->cellBucketEnds}});
@@ -54,8 +56,26 @@ void UpdateParticleSubstep(NvFlexSolver* solver,float dt,int substep,int numSubs
     unsigned clear[4]{};context->clearUnorderedAccessViewUint(B(s.mStaticContactCounts),clear);if(clearTimer>=0)frameTimers.mTimerPool->end(clearTimer);
     auto second=Constant(s.mSubstepParams).buffer;float fraction=1.0f/float(numSubsteps);float values[2]={float(substep)*fraction,float(substep+1)*fraction};auto& shape=Shapes(solver);auto& geometry=*library->geometry;
     auto uploadSubstep=[&](){std::memcpy(context->map(second),values,sizeof(values));context->unmap(second);};
+    // Alpha0.1 eligibility idea: no triangle mesh collision can be produced
+    // without shape instances or library triangle vertex storage. Keep the
+    // contact-count clear above and the analytic shape/plane pass below.
+    // Removing even an empty GPU dispatch can change scheduling of later
+    // floating-point atomics. Keep the original command stream for constraint
+    // and diffuse workloads; the small saving is not worth widening numerical
+    // variability. The remaining particle/fluid path has no such accumulators.
+    const bool preserveAtomicSchedule=s.mNumSprings || s.mNumRigids ||
+        s.mNumInflatables || s.mDynamicNumTris || s.mMaxDiffuseParticles;
+    if(preserveAtomicSchedule || (shape.count && geometry.vertices.buffer)){
     uploadSubstep();
     Pass(solver,"g_Flex_CollideTriangles",blocks,{{0,geometry.vertices.buffer},{1,geometry.indices.buffer},{2,geometry.nodeLower.buffer},{3,geometry.nodeUpper.buffer},{4,geometry.rootNodes.buffer},{17,geometry.vertices.buffer?geometry.meshTable.buffer:nullptr},{5,B(s.mSortedPositions)},{6,B(s.mSortedNewPositions)},{7,B(s.mSortedPhases)},{8,shape.count?shape.prevPositions.buffer:nullptr},{9,shape.count?shape.prevRotations.buffer:nullptr},{10,shape.count?shape.flags.buffer:nullptr},{11,shape.count?shape.positions.buffer:nullptr},{12,shape.count?shape.rotations.buffer:nullptr},{13,shape.count?shape.geometry.buffer:nullptr},{14,shape.count?shape.bvh.root.buffer:nullptr},{15,shape.count?shape.bvh.lower.buffer:nullptr},{16,shape.count?shape.bvh.upper.buffer:nullptr}},{{0,B(s.mStaticContactCounts)},{1,B(s.mStaticContactPlanes)},{2,B(s.mStaticContactVelocities)}},true,second);
+    }else if(frameTimers.mEnabled){
+        // Preserve the original detail-timer label identity and ordering when
+        // this pass is empty. Timing records the skipped pass, not fake work.
+        const auto shader=GetShader(library,"g_Flex_CollideTriangles");
+        const int timer=frameTimers.mTimerPool->begin();
+        frameTimers.mNameToTimerMapW.emplace(shader->m_desc.label,timer);
+        frameTimers.mTimerPool->end(timer);
+    }
     uploadSubstep();
     Pass(solver,"g_Flex_CollideShapes",boundsBlocks,{{12,geometry.convexCount?geometry.convexTable.buffer:nullptr},{13,geometry.convexCount?geometry.convexPlanes.buffer:nullptr},{14,geometry.sdfCount?geometry.sdfTable.buffer:nullptr},{0,shape.count?shape.geometry.buffer:nullptr},{1,shape.count?shape.positions.buffer:nullptr},{2,shape.count?shape.rotations.buffer:nullptr},{3,shape.count?shape.prevPositions.buffer:nullptr},{4,shape.count?shape.prevRotations.buffer:nullptr},{5,shape.count?shape.flags.buffer:nullptr},{6,B(s.mSortedPositions)},{7,B(s.mSortedNewPositions)},{8,B(s.mSortedPhases)},{9,shape.count?shape.bvh.root.buffer:nullptr},{10,shape.count?shape.bvh.lower.buffer:nullptr},{11,shape.count?shape.bvh.upper.buffer:nullptr}},{{0,B(s.mStaticContactCounts)},{1,B(s.mStaticContactPlanes)},{2,B(s.mStaticContactVelocities)}},true,second);
     if(s.mParams.shockPropagation>0)Pass(solver,"g_Flex_ContinuousShockPropagation",blocks,{{0,B(s.mParticleBounds)}},{{0,B(s.mSortedNewPositions)}});
@@ -66,7 +86,12 @@ void UpdateParticleSubstep(NvFlexSolver* solver,float dt,int substep,int numSubs
         const char* density=s.mDesc.featureMode==eNvFlexFeatureModeSimpleSolids?"g_Flex_SolveDensitiesNonFluid":s.mParams.surfaceTension<=0?"g_Flex_SolveDensities":"g_Flex_SolveDensitiesSurfaceTension";
         Pass(solver,density,blocks,{{0,B(s.mParticleNeighbors)},{1,B(s.mParticleNeighborCounts)},{2,B(s.mSortedNewPositions)},{3,B(s.mSortedPhases)},{4,B(s.mDensities)},{5,B(s.mNormals)},{6,B(s.mSortedPositions)},{7,B(s.mSortedNormals)}},{{0,B(s.mDeltas)}});
         if(s.mNumSprings){const char* spring=library->enableExtensions&&library->fp32AtomicSupported?"g_Flex_SolveSpringsNV":"g_Flex_SolveSprings";
-            Pass(solver,spring,unsigned(s.mMaxParticles*8+511)/512,{{0,B(s.mHalfSpringIndices)},{1,B(s.mHalfSpringOpposites)},{2,B(s.mHalfSpringLengths)},{3,B(s.mHalfSpringStiffness)},{4,B(s.mHalfSpringParticleBegin)},{5,B(s.mHalfSpringParticleEnd)},{6,B(s.mReverseLookup)},{7,B(s.mSortedNewPositions)}},{{0,B(s.mDeltas)}});}
+            auto& storage=solver->storage;
+            const bool useExtent=storage.springDispatchReady &&
+                storage.springDispatchCapacity==unsigned(s.mMaxParticles) &&
+                storage.springDispatchCount==s.mNumSprings &&
+                unsigned(s.mMaxParticles)/2u>=unsigned(s.mNumParticles);
+            Pass(solver,spring,unsigned(s.mMaxParticles*8+511)/512,{{1,B(s.mHalfSpringOpposites)},{2,B(s.mHalfSpringLengths)},{3,B(s.mHalfSpringStiffness)},{4,B(s.mHalfSpringParticleBegin)},{5,B(s.mHalfSpringParticleEnd)},{6,B(s.mReverseLookup)},{7,B(s.mSortedNewPositions)}},{{0,B(s.mDeltas)}},true,nullptr,useExtent?storage.springDispatchArgs.buffer:nullptr);}
         if(s.mNumInflatables){
             const char* volume=library->enableExtensions&&library->shflSupported?"g_Flex_CalculateInflatableVolumeNV":library->swizzleSupported?"g_Flex_CalculateInflatableVolumeAMD":"g_Flex_CalculateInflatableVolume";
             const char* solve=library->enableExtensions&&library->fp32AtomicSupported?"g_Flex_SolveInflatableVolumeNV":"g_Flex_SolveInflatableVolume";
@@ -75,9 +100,14 @@ void UpdateParticleSubstep(NvFlexSolver* solver,float dt,int substep,int numSubs
             if(library->amdDriverWorkaround){context->flush();NvFlexWait(library);}
         }
         if(s.mNumRigids){
-            bool plastic=B(s.mRigidPlasticThresholds)&&B(s.mRigidPlasticCreeps);std::string name=plastic?"g_Flex_SolveShapesPlasticDeformation":"g_Flex_SolveShapes";
-            if(library->enableExtensions&&library->shflSupported&&library->fp32AtomicSupported){int average=s.mNumRigidIndices/s.mNumRigids;if(average<=32)name+="32NV";else if(average>127)name+="128NV";else name+="NV";}
-            Pass(solver,name.c_str(),unsigned(s.mNumRigids),{{0,B(s.mRigidOffsets)},{1,B(s.mRigidIndices)},{2,B(s.mRigidCoefficients)},{3,plastic?B(s.mRigidPlasticThresholds):nullptr},{4,plastic?B(s.mRigidPlasticCreeps):nullptr},{5,B(s.mReverseLookup)},{6,B(s.mSortedPositions)},{7,B(s.mRigidLocalNormals)}},{{0,B(s.mDeltas)},{1,B(s.mRigidLocalPositions)},{2,B(s.mSortedNewPositions)},{3,B(s.mRigidRotations)},{4,B(s.mRigidTranslations)},{5,B(s.mNormals)}});
+            bool plastic=B(s.mRigidPlasticThresholds)&&B(s.mRigidPlasticCreeps);
+            const char* name=plastic?"g_Flex_SolveShapesPlasticDeformation":"g_Flex_SolveShapes";
+            if(library->enableExtensions&&library->shflSupported&&library->fp32AtomicSupported){
+                int average=s.mNumRigidIndices/s.mNumRigids;
+                if(plastic)name=average<=32?"g_Flex_SolveShapesPlasticDeformation32NV":average>127?"g_Flex_SolveShapesPlasticDeformation128NV":"g_Flex_SolveShapesPlasticDeformationNV";
+                else name=average<=32?"g_Flex_SolveShapes32NV":average>127?"g_Flex_SolveShapes128NV":"g_Flex_SolveShapesNV";
+            }
+            Pass(solver,name,unsigned(s.mNumRigids),{{0,B(s.mRigidOffsets)},{1,B(s.mRigidIndices)},{2,B(s.mRigidCoefficients)},{3,plastic?B(s.mRigidPlasticThresholds):nullptr},{4,plastic?B(s.mRigidPlasticCreeps):nullptr},{5,B(s.mReverseLookup)},{6,B(s.mSortedPositions)},{7,B(s.mRigidLocalNormals)}},{{0,B(s.mDeltas)},{1,B(s.mRigidLocalPositions)},{2,B(s.mSortedNewPositions)},{3,B(s.mRigidRotations)},{4,B(s.mRigidTranslations)},{5,B(s.mNormals)}});
         }
         Pass(solver,"g_Flex_ApplyDeltas",blocks,{{0,B(s.mDeltas)}},{{0,B(s.mSortedNewPositions)}});
         Pass(solver,"g_Flex_SolveContactsSequential",blocks,{{0,B(s.mStaticContactCounts)},{1,B(s.mStaticContactPlanes)},{2,B(s.mSortedPositions)},{3,B(s.mStaticContactVelocities)}},{{0,B(s.mSortedNewPositions)}});

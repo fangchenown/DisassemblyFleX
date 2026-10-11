@@ -1,3 +1,8 @@
+# DisassemblyFleX alpha历史优化迁移 — ACTIVE / GO
+
+当前恢复：[AlphaMigrationExecutionLedger/00_CURRENT.md](AlphaMigrationExecutionLedger/00_CURRENT.md)。
+本任务输出：../Build/DisassemblyFleX-AlphaMigration-20261010/。以下各旧任务保持归档状态。
+
 # DisassemblyFleX / OpenFleX alpha8.2c 实际性能比较 — ARCHIVED / COMPLETE
 
 中文报告：[index.html](../Build/DisassemblyFleX-OpenFleX82c-Performance-20261010/report/index.html)。

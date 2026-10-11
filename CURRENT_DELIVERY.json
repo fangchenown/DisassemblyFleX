@@ -1,8 +1,18 @@
 {
-  "task": "D3D12 performance repair",
-  "build": "final-v2",
-  "dll": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\delivery\\NvFlexReleaseD3D_x64.dll",
-  "sha256": "0407fe58026c9d8dc93c36d5adf42d554bb3e660fe1f79eafd666d9a3e81e357",
-  "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\delivery\\REPORT_CN.txt",
-  "validation": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\evidence\\FINAL_VALIDATION.json"
+  "task": "OpenFleX alpha-history optimization migration",
+  "build": "alpha-migration-final-v2",
+  "dll": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\delivery\\NvFlexReleaseD3D_x64.dll",
+  "sha256": "5ff395ca3e8b10cf2c3799000e31787c78550a572bda180274de82dd09befb7d",
+  "report": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\ALPHA_MIGRATION_REPORT_CN.html",
+  "validation": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\evidence\\FINAL_VALIDATION.json",
+  "tag": "perf-alpha-migration-20261011",
+  "publication_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\publication\\git-publication.json",
+  "previous_delivery": {
+    "task": "D3D12 performance repair",
+    "build": "final-v2",
+    "dll": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\delivery\\NvFlexReleaseD3D_x64.dll",
+    "sha256": "0407fe58026c9d8dc93c36d5adf42d554bb3e660fe1f79eafd666d9a3e81e357",
+    "report": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\delivery\\REPORT_CN.txt",
+    "validation": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleXPerformanceFix-20261010\\evidence\\FINAL_VALIDATION.json"
+  }
 }

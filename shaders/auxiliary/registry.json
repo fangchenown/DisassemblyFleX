@@ -1,0 +1,32 @@
+[
+  {
+    "name": "df_BuildSpringDispatchArgs",
+    "source": "SpringDispatchArgs.hlsl",
+    "label": "BuildSpringDispatchArgs",
+    "kind": "authored-integer-helper"
+  },
+  {
+    "name": "df_Radix8Histogram",
+    "source": "Radix8Histogram.hlsl",
+    "original_index": 80,
+    "kind": "authored-integer-helper"
+  },
+  {
+    "name": "df_Radix8Scan",
+    "source": "Radix8Scan.hlsl",
+    "original_index": 81,
+    "kind": "authored-integer-helper"
+  },
+  {
+    "name": "df_Radix8ScanSums",
+    "source": "Radix8ScanSums.hlsl",
+    "original_index": 81,
+    "kind": "authored-integer-helper"
+  },
+  {
+    "name": "df_Radix8Scatter",
+    "source": "Radix8Scatter.hlsl",
+    "original_index": 83,
+    "kind": "authored-integer-helper"
+  }
+]

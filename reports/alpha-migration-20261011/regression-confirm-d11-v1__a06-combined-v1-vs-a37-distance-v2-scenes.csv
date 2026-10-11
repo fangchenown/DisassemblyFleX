@@ -1,0 +1,3 @@
+﻿scene,emit,name,n,left_ms_median,right_ms_median,paired_speedup_geomean,paired_speedup_ci95,decision,contract_equal,initial_state_byte_equal
+17,False,Shape Collision,8,0.6207320603562501,0.623889606519213,0.9945368843003418,"[0.9928130235323072, 0.9962637382764401]",left-faster,True,True
+31,False,Game Mesh Rigid,8,1.144913657462963,1.1492398840092592,0.996817805125595,"[0.9955298813373427, 0.9981073951096247]",left-faster,True,True

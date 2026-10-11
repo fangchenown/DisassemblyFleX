@@ -18,6 +18,7 @@ void copyConstant(NvFlexSolver* dst,void* target,NvFlexSolver* src,void* source)
 }
 // DF_IMPLEMENTED: NvFlexCopySolver
 extern "C" void NvFlexCopySolver(NvFlexSolver* destination,NvFlexSolver* source){
+    destination->storage.springDispatchReady=false;
     auto& dst=destination->state;auto& src=source->state;
     copyConstant(destination,dst.mKernelParams,source,src.mKernelParams);
 #define BUFFER(field) copyBuffer(destination,dst.field,source,src.field)

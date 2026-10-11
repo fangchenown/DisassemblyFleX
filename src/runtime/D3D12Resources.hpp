@@ -2,7 +2,7 @@
 #include "D3D12Context.hpp"
 #include "dx/context/Format.h"
 #include <array>
-#include <set>
+#include <unordered_set>
 #include <vector>
 namespace df {
 struct Resource12 {
@@ -80,7 +80,7 @@ struct Context12State {
     size_t gpuHeapIndex=size_t(-1);
     D3D12_CPU_DESCRIPTOR_HANDLE nullRead{},nullWrite{};
     ResourcePtr12 rootConstant,secondConstant;
-    std::vector<ComPtr<IUnknown>> retained;std::set<IUnknown*> retainedSet;
+    std::vector<ComPtr<IUnknown>> retained;std::unordered_set<IUnknown*> retainedSet;
     struct RetiredBatch {PendingUses12 pending;std::vector<ComPtr<IUnknown>> resources;};
     std::vector<RetiredBatch> retired;
     ~Context12State(){if(event)CloseHandle(event);}
@@ -91,6 +91,7 @@ struct Context12State {
     ResourcePtr12 buffer(UINT64 bytes,D3D12_HEAP_TYPE heap,bool staging=false,bool uav=false);
     D3D12_CPU_DESCRIPTOR_HANDLE cpu();
     std::pair<D3D12_CPU_DESCRIPTOR_HANDLE,D3D12_GPU_DESCRIPTOR_HANDLE> gpu(unsigned count);
+    bool prepareTransition(const ResourcePtr12&,D3D12_RESOURCE_STATES,bool,D3D12_RESOURCE_BARRIER&);
     void transition(const ResourcePtr12&,D3D12_RESOURCE_STATES,bool uavBarrier=false);
     void copy(const ResourcePtr12& dst,UINT64 dstOffset,const ResourcePtr12& src,UINT64 srcOffset,UINT64 bytes);
     void bind(const NvFlex::DispatchParams*);

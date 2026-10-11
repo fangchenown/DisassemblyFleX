@@ -33,13 +33,17 @@ std::pair<D3D12_CPU_DESCRIPTOR_HANDLE,D3D12_GPU_DESCRIPTOR_HANDLE> Context12Stat
     auto& entry=gpuHeaps[gpuHeapIndex];entry.pending.record(completion.Get(),nextFence);
     auto heap=entry.native.Get();commands->SetDescriptorHeaps(1,&heap);auto cpu=heap->GetCPUDescriptorHandleForHeapStart();auto gpu=heap->GetGPUDescriptorHandleForHeapStart();cpu.ptr+=SIZE_T(gpuUsed)*descriptorSize;gpu.ptr+=UINT64(gpuUsed)*descriptorSize;gpuUsed+=count;return {cpu,gpu};
 }
-void Context12State::transition(const ResourcePtr12& resource,D3D12_RESOURCE_STATES target,bool uavBarrier){
-    if(!resource)return;keep(resource);if(resource->fixedState)return;
-    D3D12_RESOURCE_BARRIER barrier{};
+bool Context12State::prepareTransition(const ResourcePtr12& resource,D3D12_RESOURCE_STATES target,bool uavBarrier,D3D12_RESOURCE_BARRIER& barrier){
+    if(!resource)return false;keep(resource);if(resource->fixedState)return false;
+    barrier={};
     if(resource->state!=target){barrier.Type=D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;barrier.Transition={resource->native.Get(),D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES,resource->state,target};resource->state=target;}
     else if(target==D3D12_RESOURCE_STATE_UNORDERED_ACCESS&&uavBarrier){barrier.Type=D3D12_RESOURCE_BARRIER_TYPE_UAV;barrier.UAV.pResource=resource->native.Get();}
-    else return;
-    commands->ResourceBarrier(1,&barrier);dirty=true;
+    else return false;
+    return true;
+}
+void Context12State::transition(const ResourcePtr12& resource,D3D12_RESOURCE_STATES target,bool uavBarrier){
+    D3D12_RESOURCE_BARRIER barrier{};
+    if(prepareTransition(resource,target,uavBarrier,barrier)){commands->ResourceBarrier(1,&barrier);dirty=true;}
 }
 void Context12State::copy(const ResourcePtr12& dst,UINT64 offset,const ResourcePtr12& src,UINT64 start,UINT64 bytes){
     if(!bytes)return;if(!dst||!src)throw std::runtime_error("Missing D3D12 copy resource");transition(dst,D3D12_RESOURCE_STATE_COPY_DEST);transition(src,D3D12_RESOURCE_STATE_COPY_SOURCE);commands->CopyBufferRegion(dst->native.Get(),offset,src->native.Get(),start,bytes);dirty=true;
@@ -70,9 +74,22 @@ void ContextD3D12::updateContext(const NvFlexContextDesc* opaque){
 }
 void Context12State::bind(const NvFlex::DispatchParams* p){
     auto shader=static_cast<Shader12*>(p->shader);commands->SetComputeRootSignature(root.Get());commands->SetPipelineState(shader->pipeline.Get());keep(shader->pipeline.Get());
-    auto table=gpu(40);auto destination=table.first;
-    for(unsigned i=0;i<32;++i){auto read=static_cast<Read12*>(p->readOnly[i]);device->CopyDescriptorsSimple(1,destination,read?read->descriptor:nullRead,D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);destination.ptr+=descriptorSize;if(read)transition(read->resource,D3D12_RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE);}
-    for(unsigned i=0;i<8;++i){auto write=static_cast<Write12*>(p->readWrite[i]);device->CopyDescriptorsSimple(1,destination,write?write->descriptor:nullWrite,D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);destination.ptr+=descriptorSize;if(write)transition(write->resource,D3D12_RESOURCE_STATE_UNORDERED_ACCESS,true);}
+    // D3D12 defines a barrier array as the same individual calls in order.
+    // Keep all transition and UAV dependencies, including aliased views.
+    D3D12_RESOURCE_BARRIER barriers[40]{};UINT barrierCount=0;
+    auto bindTransition=[&](const ResourcePtr12& resource,D3D12_RESOURCE_STATES target,bool uav=false){
+        if(prepareTransition(resource,target,uav,barriers[barrierCount]))++barrierCount;
+    };
+    auto table=gpu(40);
+    // Keep the original 32 SRV + 8 UAV table layout and resource-transition
+    // sequence. Only combine the CPU descriptor-copy submissions.
+    D3D12_CPU_DESCRIPTOR_HANDLE sources[40]{};
+    UINT sizes[40];std::fill_n(sizes,40,1u);
+    for(unsigned i=0;i<32;++i){auto read=static_cast<Read12*>(p->readOnly[i]);sources[i]=read?read->descriptor:nullRead;if(read)bindTransition(read->resource,D3D12_RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE);}
+    for(unsigned i=0;i<8;++i){auto write=static_cast<Write12*>(p->readWrite[i]);sources[32+i]=write?write->descriptor:nullWrite;if(write)bindTransition(write->resource,D3D12_RESOURCE_STATE_UNORDERED_ACCESS,true);}
+    const UINT destinationSize=40;
+    device->CopyDescriptors(1,&table.first,&destinationSize,40,sources,sizes,D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+    if(barrierCount){commands->ResourceBarrier(barrierCount,barriers);dirty=true;}
     commands->SetComputeRootDescriptorTable(1,table.second);table.second.ptr+=UINT64(descriptorSize)*32;commands->SetComputeRootDescriptorTable(2,table.second);
     if(p->rootConstantBuffer){auto constant=static_cast<Constant12*>(p->rootConstantBuffer);constant->recordUse(completion.Get(),nextFence);auto current=constant->current;if(current!=rootConstant){rootConstant=current;keep(current);commands->SetComputeRootConstantBufferView(0,current->native->GetGPUVirtualAddress());}}
     if(p->secondConstantBuffer){auto constant=static_cast<Constant12*>(p->secondConstantBuffer);constant->recordUse(completion.Get(),nextFence);auto current=constant->current;if(current!=secondConstant){secondConstant=current;keep(current);commands->SetComputeRootConstantBufferView(3,current->native->GetGPUVirtualAddress());}}

@@ -1,0 +1,41 @@
+{
+  "suite": "final-primary-d11-v2",
+  "left": "control-v0",
+  "right": "alpha-migration-final-v2",
+  "scenes": 67,
+  "runs": 804,
+  "frames": 964800,
+  "measured_frames": 868320,
+  "equal_scene_geomean": 1.00698287018665,
+  "equal_scene_geomean_ci95": [
+    1.0055629165780617,
+    1.0084048289092071
+  ],
+  "equal_frame_total_left_ms": 55.756655045385195,
+  "equal_frame_total_right_ms": 55.49440180567547,
+  "decisions": {
+    "inconclusive-at-95pct": 42,
+    "right-faster": 24,
+    "left-faster": 1
+  },
+  "all_contracts_equal": true,
+  "all_initial_params_equal": true,
+  "all_endpoint_finite": true,
+  "suspend_exclusions": 0,
+  "ci_method": "two-sided t interval on paired process-level log ratios; n independent process pairs per scene; scene-wise intervals are unadjusted for multiple comparisons",
+  "performance_only": true,
+  "replaced_runs": 0,
+  "replacement_mapping": {},
+  "original_clock_flags": [],
+  "failed_pairs": [],
+  "excluded_scenes": [],
+  "failed_runs": [],
+  "clock_excluded_pairs": [],
+  "balanced_repeat_panels": true,
+  "metric": "complete frame",
+  "holm_decisions": {
+    "not-separated-after-Holm": 63,
+    "right-faster": 4
+  },
+  "selected_arm_runs": 536
+}

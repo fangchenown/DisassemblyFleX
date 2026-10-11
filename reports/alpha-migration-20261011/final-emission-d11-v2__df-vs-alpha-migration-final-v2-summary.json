@@ -1,0 +1,40 @@
+{
+  "suite": "final-emission-d11-v2",
+  "left": "df",
+  "right": "alpha-migration-final-v2",
+  "scenes": 5,
+  "runs": 40,
+  "frames": 72000,
+  "measured_frames": 64800,
+  "equal_scene_geomean": 1.0094215153679966,
+  "equal_scene_geomean_ci95": [
+    1.008638902002903,
+    1.0102047359709017
+  ],
+  "equal_frame_total_left_ms": 8.409140864410494,
+  "equal_frame_total_right_ms": 8.331564629651234,
+  "decisions": {
+    "right-faster": 4,
+    "inconclusive-at-95pct": 1
+  },
+  "all_contracts_equal": true,
+  "all_initial_params_equal": true,
+  "all_endpoint_finite": true,
+  "suspend_exclusions": 0,
+  "ci_method": "two-sided t interval on paired process-level log ratios; n independent process pairs per scene; scene-wise intervals are unadjusted for multiple comparisons",
+  "performance_only": true,
+  "replaced_runs": 0,
+  "replacement_mapping": {},
+  "original_clock_flags": [],
+  "failed_pairs": [],
+  "excluded_scenes": [],
+  "failed_runs": [],
+  "clock_excluded_pairs": [],
+  "balanced_repeat_panels": true,
+  "metric": "complete frame",
+  "holm_decisions": {
+    "right-faster": 4,
+    "not-separated-after-Holm": 1
+  },
+  "selected_arm_runs": 40
+}

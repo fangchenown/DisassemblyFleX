@@ -61,6 +61,10 @@ public:
     void eventMarker(const wchar_t*) override;
     void contextPush() override;
     void contextPop() override;
+    // Internal, nested-safe submission scope. Public Context calls outside it
+    // keep the original full binding policy. No COM object is cached/owned.
+    void beginSolverBatch();
+    void endSolverBatch();
 #if ENABLE_AFTERMATH_SUPPORT
     int setEventMarkerAftermath(void*,unsigned) override;
     int getDataAftermath(GFSDK_Aftermath_ContextData*,GFSDK_Aftermath_Status*) override;
@@ -70,6 +74,11 @@ private:
     std::vector<std::unique_ptr<SavedState>> saved;
     void bind(const NvFlex::DispatchParams*);
     void unbindResources();
+    unsigned solverBatchDepth=0,lastReadSpan=32;
+    bool resourcesKnownClear=false,samplerKnown=false,constantKnown[2]{};
+    ID3D11Buffer* boundConstants[2]{};
+    void invalidateBindings();
+    void invalidateConstant(ID3D11Buffer*);
 };
 class DeviceD3D11 final : public NvFlex::Device {
 public:

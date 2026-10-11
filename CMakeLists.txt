@@ -49,8 +49,18 @@ add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/generated/NvFlexShaders.generated
   COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/build_shaders.py"
     --source "${CMAKE_CURRENT_SOURCE_DIR}/shaders/recovered" --instruction-source "${CMAKE_CURRENT_SOURCE_DIR}/shaders/machine" --schedule "${DISASSEMBLYFLEX_SHADER_SCHEDULE}" --output "${CMAKE_BINARY_DIR}/generated" --compiler "${DISASSEMBLYFLEX_SHADER_COMPILER_DLL}" --fp-policy "${DISASSEMBLYFLEX_SHADER_FP_POLICY}" --hash-helper "$<TARGET_FILE:DisassemblyDxbcHash>" --relaxed-shaders "${DISASSEMBLYFLEX_RELAXED_SHADERS}"
   DEPENDS ${restored_shaders} ${restored_shader_instructions} tools/build_shaders.py tools/dxbc_tools.py tools/dxbc_precision.py tools/dxbc_assembler.py tools/shader_lowering.py tools/third_party/directx_tokens/D3D12TokenizedProgramFormat.hpp DisassemblyDxbcHash VERBATIM)
+file(GLOB auxiliary_shader_sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/shaders/auxiliary/*.hlsl" "${CMAKE_CURRENT_SOURCE_DIR}/shaders/auxiliary/*.smasm")
+add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/generated/NvFlexAuxShaders.generated.cpp"
+  "${CMAKE_BINARY_DIR}/generated/NvFlexAuxShaders.generated.hpp" "${CMAKE_BINARY_DIR}/generated/aux_shader_manifest.json"
+  COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/build_aux_shaders.py"
+    --source "${CMAKE_CURRENT_SOURCE_DIR}/shaders/auxiliary/SpringDispatchArgs.hlsl"
+    --output "${CMAKE_BINARY_DIR}/generated" --compiler "${DISASSEMBLYFLEX_SHADER_COMPILER_DLL}"
+    --hash-helper "$<TARGET_FILE:DisassemblyDxbcHash>"
+  DEPENDS ${auxiliary_shader_sources} shaders/auxiliary/registry.json tools/build_aux_shaders.py
+    tools/dxbc_tools.py tools/dxbc_assembler.py tools/shader_lowering.py DisassemblyDxbcHash VERBATIM)
 file(GLOB_RECURSE restored_sources CONFIGURE_DEPENDS src/*.cpp)
 add_library(NvFlexReconstructed SHARED ${restored_sources}
+  "${CMAKE_BINARY_DIR}/generated/NvFlexAuxShaders.generated.cpp"
   "${CMAKE_BINARY_DIR}/generated/NvFlexShaders.generated.cpp"
   "${CMAKE_BINARY_DIR}/generated/UnrestoredApi.cpp"
   "${CMAKE_BINARY_DIR}/generated/NvFlex.def")
@@ -66,6 +76,10 @@ add_custom_command(TARGET NvFlexReconstructed POST_BUILD COMMAND "${CMAKE_COMMAN
 target_compile_features(NvFlexReconstructed PRIVATE cxx_std_17)
 target_compile_definitions(NvFlexReconstructed PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
 set_target_properties(NvFlexReconstructed PROPERTIES OUTPUT_NAME NvFlexReleaseD3D_x64)
+option(DISASSEMBLYFLEX_VALIDATE_BINDINGS "Diagnostic native-state checks; never use for performance measurements" OFF)
+if(DISASSEMBLYFLEX_VALIDATE_BINDINGS)
+  target_compile_definitions(NvFlexReconstructed PRIVATE DF_VALIDATE_BINDINGS=1)
+endif()
 if(MSVC)
   target_compile_options(NvFlexReconstructed PRIVATE /W4 /permissive- /fp:precise)
 endif()
@@ -112,3 +126,18 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/TraceContext.generated.hpp")
   target_compile_definitions(DisassemblyReferenceTrace PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
   target_include_directories(DisassemblyReferenceTrace PRIVATE include src "${DISASSEMBLYFLEX_WORKSPACE}/FleX")
 endif()
+
+add_executable(DisassemblySpringExtentOracle tests/spring_extent_oracle.cpp)
+target_compile_features(DisassemblySpringExtentOracle PRIVATE cxx_std_17)
+target_compile_definitions(DisassemblySpringExtentOracle PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
+target_include_directories(DisassemblySpringExtentOracle PRIVATE include src "${DISASSEMBLYFLEX_WORKSPACE}/FleX")
+
+add_executable(DisassemblyNeighborKernelOracle tests/neighbor_kernel_oracle.cpp)
+target_compile_features(DisassemblyNeighborKernelOracle PRIVATE cxx_std_17)
+target_compile_definitions(DisassemblyNeighborKernelOracle PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
+target_include_directories(DisassemblyNeighborKernelOracle PRIVATE include src "${DISASSEMBLYFLEX_WORKSPACE}/FleX")
+
+add_executable(DisassemblyRadixExtendedOracle tests/radix_extended_oracle.cpp)
+target_compile_features(DisassemblyRadixExtendedOracle PRIVATE cxx_std_17)
+target_compile_definitions(DisassemblyRadixExtendedOracle PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
+target_include_directories(DisassemblyRadixExtendedOracle PRIVATE include src "${DISASSEMBLYFLEX_WORKSPACE}/FleX")

@@ -1,0 +1,138 @@
+{
+  "suite": "final-emission-d11-v2",
+  "left": "df",
+  "right": "alpha-migration-final-v2",
+  "scope": "Read-only postclassification by actual counts, not performance outcome. Original six-scene space-toggle panel and its statistics remain unchanged. Scene Initialize keeps its own default emitter state; DEMO_EMIT sends space and toggles it.",
+  "scenes": [
+    {
+      "scene": 39,
+      "name": "Adhesion",
+      "kind": "actual-particle-growth",
+      "particle_ranges": [
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ]
+      ]
+    },
+    {
+      "scene": 40,
+      "name": "Goo Gun",
+      "kind": "actual-particle-growth",
+      "particle_ranges": [
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ],
+        [
+          94,
+          65536
+        ]
+      ]
+    },
+    {
+      "scene": 64,
+      "name": "Fluid Cloth Coupling Water",
+      "kind": "actual-particle-growth",
+      "particle_ranges": [
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ]
+      ]
+    },
+    {
+      "scene": 65,
+      "name": "Fluid Cloth Coupling Goo",
+      "kind": "actual-particle-growth",
+      "particle_ranges": [
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ],
+        [
+          3072,
+          45372
+        ]
+      ]
+    },
+    {
+      "scene": 66,
+      "name": "Bunny Bath Dam",
+      "kind": "actual-particle-growth",
+      "particle_ranges": [
+        [
+          30177,
+          79235
+        ],
+        [
+          30177,
+          79235
+        ],
+        [
+          30177,
+          79235
+        ],
+        [
+          30177,
+          79235
+        ]
+      ]
+    }
+  ],
+  "growth_only": {
+    "scenes": [
+      39,
+      40,
+      64,
+      65,
+      66
+    ],
+    "repeat_blocks": 4,
+    "equal_scene_geomean": 1.0094215153679966,
+    "equal_scene_geomean_ci95": [
+      1.008638902002903,
+      1.0102047359709017
+    ]
+  }
+}

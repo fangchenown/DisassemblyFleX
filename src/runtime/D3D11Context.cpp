@@ -19,6 +19,7 @@ struct ContextD3D11::SavedState {
 };
 ContextD3D11::~ContextD3D11(){if(renderDevice){NvInterop(0xda5b591e,device.Get(),computeFinished);NvInterop(0xda5b591e,device.Get(),graphicsFinished);}}
 void ContextD3D11::updateContext(const NvFlexContextDesc* opaque){
+    invalidateBindings();
     // This backend's private descriptor is 40 bytes (PDB layout), distinct
     // from the 72-byte D3D12 descriptor with the same source type name.
     struct Desc {ID3D11Device* device;ID3D11Device* renderDevice;ID3D11DeviceContext* immediate;ID3D11DeviceContext* renderContext;bool async;};static_assert(sizeof(Desc)==40);
@@ -52,17 +53,58 @@ NvFlex::ComputeShader* ContextD3D11::createComputeShader(const NvFlex::ComputeSh
     if(desc->NvAPI_Slot!=~0u)NvAPI_D3D11_SetNvShaderExtnSlot(device.Get(),~0u);
     Check(hr,"CreateComputeShader");return out.release();
 }
+void ContextD3D11::invalidateBindings(){resourcesKnownClear=false;samplerKnown=false;lastReadSpan=32;for(unsigned i=0;i<2;++i){constantKnown[i]=false;boundConstants[i]=nullptr;}}
+void ContextD3D11::invalidateConstant(ID3D11Buffer* buffer){if(solverBatchDepth)for(unsigned i=0;i<2;++i)if(boundConstants[i]==buffer)constantKnown[i]=false;}
+void ContextD3D11::beginSolverBatch(){++solverBatchDepth;invalidateBindings();}
+void ContextD3D11::endSolverBatch(){if(solverBatchDepth)--solverBatchDepth;invalidateBindings();}
 void ContextD3D11::bind(const NvFlex::DispatchParams* params){
     auto shader=static_cast<Shader*>(params->shader);immediate->CSSetShader(shader->shader.Get(),nullptr,0);
     ID3D11ShaderResourceView* reads[32]{};ID3D11UnorderedAccessView* writes[8]{};
-    for(unsigned i=0;i<32;++i)if(params->readOnly[i])reads[i]=static_cast<ReadView*>(params->readOnly[i])->view.Get();
+    unsigned readSpan=solverBatchDepth&&resourcesKnownClear?0u:32u;
+    for(unsigned i=0;i<32;++i)if(params->readOnly[i]){reads[i]=static_cast<ReadView*>(params->readOnly[i])->view.Get();readSpan=std::max(readSpan,i+1);}
     for(unsigned i=0;i<8;++i)if(params->readWrite[i])writes[i]=static_cast<WriteView*>(params->readWrite[i])->view.Get();
-    immediate->CSSetShaderResources(0,32,reads);immediate->CSSetUnorderedAccessViews(0,8,writes,nullptr);
-    if(params->rootConstantBuffer){auto cb=static_cast<ConstantBuffer*>(params->rootConstantBuffer)->buffer.Get();immediate->CSSetConstantBuffers(0,1,&cb);}
-    if(params->secondConstantBuffer){auto cb=static_cast<ConstantBuffer*>(params->secondConstantBuffer)->buffer.Get();immediate->CSSetConstantBuffers(1,1,&cb);}
-    auto sampler=linearSampler.Get();immediate->CSSetSamplers(0,1,&sampler);
+    if(readSpan)immediate->CSSetShaderResources(0,readSpan,reads);
+    // Keep all eight UAV binds/unbinds, including the reserved NV extension
+    // slot and every read/write hazard boundary from the original runtime.
+    immediate->CSSetUnorderedAccessViews(0,8,writes,nullptr);lastReadSpan=readSpan;
+    auto constant=[&](unsigned slot,NvFlex::ConstantBuffer* input){
+        if(!input)return;auto cb=static_cast<ConstantBuffer*>(input)->buffer.Get();
+        if(!solverBatchDepth||!constantKnown[slot]||boundConstants[slot]!=cb)immediate->CSSetConstantBuffers(slot,1,&cb);
+        if(solverBatchDepth){boundConstants[slot]=cb;constantKnown[slot]=true;}
+    };
+    constant(0,params->rootConstantBuffer);constant(1,params->secondConstantBuffer);
+    auto sampler=linearSampler.Get();if(!solverBatchDepth||!samplerKnown)immediate->CSSetSamplers(0,1,&sampler);samplerKnown=solverBatchDepth!=0;
+#if defined(DF_VALIDATE_BINDINGS)
+    if(solverBatchDepth){
+        bool mismatch=false;ID3D11ShaderResourceView* actualReads[32]{};immediate->CSGetShaderResources(0,32,actualReads);
+        for(unsigned i=0;i<32;++i){
+            if(actualReads[i]!=reads[i]){
+                bool alias=false;if(reads[i]){ComPtr<ID3D11Resource> resource;reads[i]->GetResource(&resource);for(auto write:writes)if(write){ComPtr<ID3D11Resource> output;write->GetResource(&output);alias=alias||resource.Get()==output.Get();}}
+                if(!(actualReads[i]==nullptr&&alias))mismatch=true;
+            }
+            if(actualReads[i])actualReads[i]->Release();
+        }
+        ID3D11UnorderedAccessView* actualWrites[8]{};immediate->CSGetUnorderedAccessViews(0,8,actualWrites);
+        for(unsigned i=0;i<8;++i){mismatch=mismatch||actualWrites[i]!=writes[i];if(actualWrites[i])actualWrites[i]->Release();}
+        for(unsigned i=0;i<2;++i)if(constantKnown[i]){ComPtr<ID3D11Buffer> actual;immediate->CSGetConstantBuffers(i,1,&actual);mismatch=mismatch||actual.Get()!=boundConstants[i];}
+        ComPtr<ID3D11SamplerState> actualSampler;immediate->CSGetSamplers(0,1,&actualSampler);mismatch=mismatch||actualSampler.Get()!=sampler;
+        if(mismatch)throw std::runtime_error("D3D11 solver binding state differs from submitted resources");
+    }
+#endif
 }
-void ContextD3D11::unbindResources(){ID3D11ShaderResourceView* reads[32]{};ID3D11UnorderedAccessView* writes[8]{};immediate->CSSetShaderResources(0,32,reads);immediate->CSSetUnorderedAccessViews(0,8,writes,nullptr);}
+void ContextD3D11::unbindResources(){
+    ID3D11ShaderResourceView* reads[32]{};ID3D11UnorderedAccessView* writes[8]{};
+    unsigned readSpan=solverBatchDepth?lastReadSpan:32u;
+    if(readSpan)immediate->CSSetShaderResources(0,readSpan,reads);
+    immediate->CSSetUnorderedAccessViews(0,8,writes,nullptr);resourcesKnownClear=solverBatchDepth!=0;
+#if defined(DF_VALIDATE_BINDINGS)
+    if(solverBatchDepth){
+        bool mismatch=false;immediate->CSGetShaderResources(0,32,reads);immediate->CSGetUnorderedAccessViews(0,8,writes);
+        for(auto p:reads)if(p){mismatch=true;p->Release();}for(auto p:writes)if(p){mismatch=true;p->Release();}
+        if(mismatch)throw std::runtime_error("D3D11 solver hazard boundary retains a resource binding");
+    }
+#endif
+}
 void ContextD3D11::dispatch(const NvFlex::DispatchParams* params){bind(params);immediate->Dispatch(params->gridDim.x,params->gridDim.y,params->gridDim.z);unbindResources();}
 void ContextD3D11::dispatchIndirect(const NvFlex::DispatchParams* params){bind(params);auto b=static_cast<Buffer*>(params->IndirectLaunchArgs);immediate->DispatchIndirect(b->handle(NvFlex::eDefaultBuffer),0);unbindResources();}
 NvFlex::Fence* ContextD3D11::createFence(){auto out=std::make_unique<Fence>();D3D11_QUERY_DESC desc{D3D11_QUERY_EVENT,0};Check(device->CreateQuery(&desc,&out->query),"Create event fence");return out.release();}
@@ -70,17 +112,18 @@ void ContextD3D11::fenceSet(NvFlex::Fence* fence){immediate->End(static_cast<Fen
 void ContextD3D11::fenceWait(NvFlex::Fence* fence){BOOL complete=FALSE;immediate->Flush();HRESULT hr;while((hr=immediate->GetData(static_cast<Fence*>(fence)->query.Get(),&complete,sizeof(complete),0))==S_FALSE)SwitchToThread();Check(hr,"Wait event fence");}
 void ContextD3D11::startFrame(){}
 void ContextD3D11::flush(){immediate->Flush();}
-void ContextD3D11::clearState(){immediate->ClearState();}
+void ContextD3D11::clearState(){immediate->ClearState();invalidateBindings();resourcesKnownClear=solverBatchDepth!=0;}
 void ContextD3D11::computeWaitForGraphics(){if(renderContext){renderContext->End(renderCompletion.Get());while(renderContext->GetData(renderCompletion.Get(),nullptr,0,0)!=S_OK)SwitchToThread();}}
 void ContextD3D11::pixBeginEvent(const wchar_t* text){ComPtr<ID3DUserDefinedAnnotation> annotation;if(SUCCEEDED(immediate.As(&annotation)))annotation->BeginEvent(text);}
 void ContextD3D11::pixEndEvent(){ComPtr<ID3DUserDefinedAnnotation> annotation;if(SUCCEEDED(immediate.As(&annotation)))annotation->EndEvent();}
 void ContextD3D11::eventMarker(const wchar_t* text){ComPtr<ID3DUserDefinedAnnotation> annotation;if(SUCCEEDED(immediate.As(&annotation)))annotation->SetMarker(text);}
 void ContextD3D11::contextPush(){
+    invalidateBindings();
     auto state=std::make_unique<SavedState>();immediate->CSGetConstantBuffers(0,8,state->constants);immediate->CSGetSamplers(0,8,state->samplers);immediate->CSGetShaderResources(0,16,state->reads);immediate->CSGetUnorderedAccessViews(0,8,state->writes);immediate->CSGetShader(&state->shader,nullptr,nullptr);
     immediate->RSSetState(nullptr);immediate->OMSetBlendState(nullptr,nullptr,~0u);immediate->OMSetDepthStencilState(nullptr,0);immediate->CSSetShader(nullptr,nullptr,0);
     immediate->VSSetShader(nullptr,nullptr,0);immediate->PSSetShader(nullptr,nullptr,0);immediate->GSSetShader(nullptr,nullptr,0);immediate->HSSetShader(nullptr,nullptr,0);immediate->DSSetShader(nullptr,nullptr,0);saved.push_back(std::move(state));
 }
-void ContextD3D11::contextPop(){if(saved.empty())throw std::runtime_error("Unbalanced contextPop");auto state=std::move(saved.back());saved.pop_back();immediate->CSSetConstantBuffers(0,8,state->constants);immediate->CSSetSamplers(0,8,state->samplers);immediate->CSSetShaderResources(0,16,state->reads);immediate->CSSetUnorderedAccessViews(0,8,state->writes,nullptr);immediate->CSSetShader(state->shader,nullptr,0);}
+void ContextD3D11::contextPop(){invalidateBindings();if(saved.empty())throw std::runtime_error("Unbalanced contextPop");auto state=std::move(saved.back());saved.pop_back();immediate->CSSetConstantBuffers(0,8,state->constants);immediate->CSSetSamplers(0,8,state->samplers);immediate->CSSetShaderResources(0,16,state->reads);immediate->CSSetUnorderedAccessViews(0,8,state->writes,nullptr);immediate->CSSetShader(state->shader,nullptr,0);}
 #if ENABLE_AFTERMATH_SUPPORT
 int ContextD3D11::setEventMarkerAftermath(void* marker,unsigned size){return int(GFSDK_Aftermath_DX11_SetEventMarker(immediate.Get(),marker,size));}
 int ContextD3D11::getDataAftermath(GFSDK_Aftermath_ContextData* data,GFSDK_Aftermath_Status* status){auto context=immediate.Get();return int(GFSDK_Aftermath_DX11_GetData(1,&context,data,status));}

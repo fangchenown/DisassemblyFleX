@@ -1,0 +1,39 @@
+{
+  "suite": "final-affinity-d11-v2",
+  "left": "df",
+  "right": "alpha-migration-final-v2",
+  "scenes": 2,
+  "runs": 32,
+  "frames": 76800,
+  "measured_frames": 69120,
+  "equal_scene_geomean": 0.9966082354055008,
+  "equal_scene_geomean_ci95": [
+    0.9941777392264469,
+    0.9990446734915631
+  ],
+  "equal_frame_total_left_ms": 1.7730635184807868,
+  "equal_frame_total_right_ms": 1.778065416485648,
+  "decisions": {
+    "inconclusive-at-95pct": 1,
+    "left-faster": 1
+  },
+  "all_contracts_equal": true,
+  "all_initial_params_equal": true,
+  "all_endpoint_finite": true,
+  "suspend_exclusions": 0,
+  "ci_method": "two-sided t interval on paired process-level log ratios; n independent process pairs per scene; scene-wise intervals are unadjusted for multiple comparisons",
+  "performance_only": true,
+  "replaced_runs": 0,
+  "replacement_mapping": {},
+  "original_clock_flags": [],
+  "failed_pairs": [],
+  "excluded_scenes": [],
+  "failed_runs": [],
+  "clock_excluded_pairs": [],
+  "balanced_repeat_panels": true,
+  "metric": "complete frame",
+  "holm_decisions": {
+    "not-separated-after-Holm": 2
+  },
+  "selected_arm_runs": 32
+}

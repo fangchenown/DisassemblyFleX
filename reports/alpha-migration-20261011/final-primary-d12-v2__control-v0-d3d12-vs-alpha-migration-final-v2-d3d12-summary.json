@@ -1,0 +1,46 @@
+{
+  "suite": "final-primary-d12-v2",
+  "left": "control-v0-d3d12",
+  "right": "alpha-migration-final-v2-d3d12",
+  "scenes": 67,
+  "runs": 804,
+  "frames": 964800,
+  "measured_frames": 868320,
+  "equal_scene_geomean": 1.043672324931067,
+  "equal_scene_geomean_ci95": [
+    1.0342748768166572,
+    1.0531551585005843
+  ],
+  "equal_frame_total_left_ms": 54.37124921365834,
+  "equal_frame_total_right_ms": 52.50437111303053,
+  "decisions": {
+    "right-faster": 48,
+    "inconclusive-at-95pct": 19
+  },
+  "all_contracts_equal": true,
+  "all_initial_params_equal": true,
+  "all_endpoint_finite": true,
+  "suspend_exclusions": 0,
+  "ci_method": "two-sided t interval on paired process-level log ratios; n independent process pairs per scene; scene-wise intervals are unadjusted for multiple comparisons",
+  "performance_only": true,
+  "replaced_runs": 3,
+  "replacement_mapping": {
+    "final-primary-d12-v2-s41-e0-r2-control-v0-d3d12": "final-primary-d12-v2-clock-s41-e0-r2-control-v0-d3d12",
+    "final-primary-d12-v2-s41-e0-r2-alpha-migration-final-v2-d3d12": "final-primary-d12-v2-clock-s41-e0-r2-alpha-migration-final-v2-d3d12",
+    "final-primary-d12-v2-s41-e0-r2-df12": "final-primary-d12-v2-clock-s41-e0-r2-df12"
+  },
+  "original_clock_flags": [
+    "final-primary-d12-v2-s41-e0-r2-control-v0-d3d12"
+  ],
+  "failed_pairs": [],
+  "excluded_scenes": [],
+  "failed_runs": [],
+  "clock_excluded_pairs": [],
+  "balanced_repeat_panels": true,
+  "metric": "complete frame",
+  "holm_decisions": {
+    "not-separated-after-Holm": 58,
+    "right-faster": 9
+  },
+  "selected_arm_runs": 536
+}

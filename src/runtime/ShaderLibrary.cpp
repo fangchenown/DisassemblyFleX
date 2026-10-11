@@ -1,10 +1,11 @@
 #include "ShaderLibrary.hpp"
 #include "NvFlexShaders.generated.hpp"
+#include "NvFlexAuxShaders.generated.hpp"
 #include <stdexcept>
 namespace df {
 NvFlex::ComputeShader* GetShader(NvFlexLibrary* library,const char* name){
     auto found=library->shaders.find(name);if(found!=library->shaders.end())return found->second;
-    auto code=FindShaderCode(name);if(!code)throw std::runtime_error(std::string("Unknown recovered shader: ")+name);
+    auto code=FindShaderCode(name);if(!code)code=FindAuxiliaryShaderCode(name);if(!code)throw std::runtime_error(std::string("Unknown recovered shader: ")+name);
     if(code->vendorEncoding==1&&library->mDevice->mGpuVendorId!=VENDOR_ID_NVIDIA)
         throw std::runtime_error(std::string("NVIDIA shader selected on a different vendor: ")+name);
     if(code->vendorEncoding==2&&library->mDevice->mGpuVendorId!=VENDOR_ID_AMD)

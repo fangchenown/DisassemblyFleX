@@ -18,7 +18,15 @@ RadixSort::RadixSort(NvFlexLibrary* owner,unsigned blocks):library(owner),maxBlo
     // Labels and bytecode come from the recovered HLSL registry.
     for(auto name:{"g_RadixSortBlockCS","g_RadixSort1CS","g_RadixSort2CS","g_RadixSort3CS"})GetShader(library,name);
 }
-RadixSort::~RadixSort(){for(auto p:owned)delete p;delete constants;}
+RadixSort::~RadixSort(){for(auto p:wide)delete p;for(auto p:owned)delete p;delete constants;}
+bool RadixSort::reserveWide(unsigned keys){
+    if(wideCapacity>=keys)return true;
+    NvFlex::Buffer* next[4]{};
+    try{for(unsigned i=0;i<4;++i){NvFlex::BufferDesc d{};d.dim=i<2?keys:keys/1024;d.stride=4;d.bufferType=3;d.format=eNvFlexFormat_r32_uint;
+        next[i]=library->mContext->createBuffer(&d);if(!next[i])throw std::bad_alloc();}}
+    catch(...){for(auto p:next)delete p;return false;}
+    for(unsigned i=0;i<4;++i){delete wide[i];wide[i]=next[i];}wideCapacity=keys;return true;
+}
 void RadixSort::upload(unsigned blocks,unsigned pass,unsigned keys){
     std::array<unsigned,6> words{blocks,1,1,pass,blocks*16,keys};auto ptr=library->mContext->map(constants);std::memcpy(ptr,words.data(),sizeof(words));library->mContext->unmap(constants);
 }
@@ -31,7 +39,27 @@ void RadixSort::sort(unsigned keys,unsigned bits,void* timerControl){
         upload(1,0,keys);NvFlex::DispatchParams p{};p.shader=GetShader(library,"g_RadixSortBlockCS");p.gridDim={1,1,1};p.rootConstantBuffer=constants;
         p.readOnly[0]=front.key4->getResource();p.readOnly[1]=front.value4->getResource();p.readWrite[0]=back.key4->getResourceRW();p.readWrite[1]=back.value4->getResourceRW();dispatch(&p);std::swap(front,back);return;
     }
-    for(unsigned pass=0;pass<bits;pass+=4){
+    unsigned firstPass=0;
+    // Replace exactly four low-nibble passes by two stable byte passes.
+    // The original remaining passes restore the same physical front/back data,
+    // counter parity, final low-20/28-bit back side and untouched tail bytes.
+    // Other lengths/bit counts retain the original kernels and dispatches.
+    if(keys%1024==0 && keys<=1048576 && (bits==24 || bits==32) && reserveWide(keys)){
+        for(unsigned shift:{0u,8u}){
+            upload(blocks,shift,keys);NvFlex::DispatchParams p{};p.rootConstantBuffer=constants;
+            p.shader=GetShader(library,"df_Radix8Histogram");p.gridDim={blocks*4,1,1};
+            p.readOnly[0]=front.key->getResource();p.readWrite[0]=wide[0]->getResourceRW();dispatch(&p);
+            p={};p.rootConstantBuffer=constants;p.shader=GetShader(library,"df_Radix8Scan");p.gridDim={blocks,1,1};
+            p.readOnly[0]=wide[0]->getResource();p.readWrite[0]=wide[1]->getResourceRW();p.readWrite[1]=wide[2]->getResourceRW();dispatch(&p);
+            p={};p.rootConstantBuffer=constants;p.shader=GetShader(library,"df_Radix8ScanSums");p.gridDim={1,1,1};
+            p.readOnly[0]=wide[2]->getResource();p.readWrite[0]=wide[3]->getResourceRW();dispatch(&p);
+            p={};p.rootConstantBuffer=constants;p.shader=GetShader(library,"df_Radix8Scatter");p.gridDim={blocks*4,1,1};
+            p.readOnly[0]=front.key->getResource();p.readOnly[1]=front.value->getResource();p.readOnly[2]=wide[1]->getResource();p.readOnly[3]=wide[3]->getResource();
+            p.readWrite[0]=back.key->getResourceRW();p.readWrite[1]=back.value->getResourceRW();dispatch(&p);std::swap(front,back);
+        }
+        firstPass=16;
+    }
+    for(unsigned pass=firstPass;pass<bits;pass+=4){
         upload(blocks,pass,keys);NvFlex::DispatchParams p{};p.shader=GetShader(library,"g_RadixSort1CS");p.gridDim={blocks,1,1};p.rootConstantBuffer=constants;
         p.readOnly[0]=front.key4->getResource();p.readWrite[0]=countersFront.scalar->getResourceRW();dispatch(&p);
         p={};p.shader=GetShader(library,"g_RadixSort2CS");p.gridDim={2,1,1};p.rootConstantBuffer=constants;

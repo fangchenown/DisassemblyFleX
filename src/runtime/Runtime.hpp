@@ -17,7 +17,7 @@ struct NvFlexLibrary {
     bool amdDriverWorkaround=false;
     AGSContext* agsContext=nullptr;
     std::vector<NvFlexSolver*> solvers;
-    std::map<std::string,NvFlex::ComputeShader*> shaders;
+    std::map<std::string,NvFlex::ComputeShader*,std::less<>> shaders;
     NvFlex::Buffer* cellBucketStarts=nullptr;
     NvFlex::Buffer* cellBucketEnds=nullptr;
     df::GeometryStorage* geometry=nullptr;

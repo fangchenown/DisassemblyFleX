@@ -32,5 +32,7 @@ private:
     NvFlexLibrary* library;unsigned maxBlocks;NvFlex::ConstantBuffer* constants=nullptr;
     std::vector<NvFlex::Buffer*> owned;
     void upload(unsigned blocks,unsigned pass,unsigned keys);
+    bool reserveWide(unsigned keys);
+    NvFlex::Buffer* wide[4]{};unsigned wideCapacity=0;
 };
 }

@@ -1,0 +1,487 @@
+[
+  {
+    "scene": 39,
+    "emit": true,
+    "name": "Adhesion",
+    "n": 4,
+    "left": "df12",
+    "right": "alpha-migration-final-v2-d3d12",
+    "left_ms_median": 0.9797630249114198,
+    "right_ms_median": 1.0010598146160494,
+    "paired_speedup_geomean": 0.9946406532911783,
+    "paired_speedup_ci95": [
+      0.931758355073288,
+      1.0617667379024331
+    ],
+    "decision": "inconclusive-at-95pct",
+    "all_pair_directions_same": false,
+    "contract_equal": true,
+    "params_initial_equal": true,
+    "initial_state_byte_equal": true,
+    "windowless": true,
+    "endpoint_finite": true,
+    "suspend_excluded_repeats": [],
+    "pairs": [
+      {
+        "repeat": 0,
+        "left_ms": 0.9995162344685186,
+        "right_ms": 0.994717592267284,
+        "speedup_left_over_right": 1.0048241251974814,
+        "logratio": 0.004812526393285712,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r0-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r0-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 42.651,
+        "right_init_ms": 40.8245
+      },
+      {
+        "repeat": 1,
+        "left_ms": 0.9757528398141976,
+        "right_ms": 1.019782222248148,
+        "speedup_left_over_right": 0.956824720539954,
+        "logratio": -0.04413505943479658,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r1-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r1-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 41.6009,
+        "right_init_ms": 44.2768
+      },
+      {
+        "repeat": 2,
+        "left_ms": 0.9819629632697531,
+        "right_ms": 0.9360406174364198,
+        "speedup_left_over_right": 1.0490602063392325,
+        "logratio": 0.04789472179886585,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r2-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r2-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 43.4472,
+        "right_init_ms": 45.1316
+      },
+      {
+        "repeat": 3,
+        "left_ms": 0.9775630865530864,
+        "right_ms": 1.007402036964815,
+        "speedup_left_over_right": 0.9703802957341343,
+        "logratio": -0.03006722686128157,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r3-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s39-e1-r3-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 44.5367,
+        "right_init_ms": 43.5123
+      }
+    ],
+    "scope": "same FlexDemo contract; trajectories and actual neighbor/contact work may differ",
+    "scene_ms": {
+      "df12": 0.005076265451092593,
+      "alpha-migration-final-v2-d3d12": 0.005722839671274692
+    },
+    "api_ms": {
+      "df12": 0.16533645069228395,
+      "alpha-migration-final-v2-d3d12": 0.1936558024058642
+    },
+    "wait_ms": {
+      "df12": 0.8092497531688272,
+      "alpha-migration-final-v2-d3d12": 0.8016136726706791
+    },
+    "p_unadjusted": 0.81037796236879,
+    "p_holm": 1.0,
+    "holm_decision": "not-separated-after-Holm"
+  },
+  {
+    "scene": 40,
+    "emit": true,
+    "name": "Goo Gun",
+    "n": 4,
+    "left": "df12",
+    "right": "alpha-migration-final-v2-d3d12",
+    "left_ms_median": 1.0042408641564815,
+    "right_ms_median": 1.009010956896605,
+    "paired_speedup_geomean": 1.0024670227414119,
+    "paired_speedup_ci95": [
+      0.9376772085279284,
+      1.0717335587815973
+    ],
+    "decision": "inconclusive-at-95pct",
+    "all_pair_directions_same": false,
+    "contract_equal": true,
+    "params_initial_equal": true,
+    "initial_state_byte_equal": true,
+    "windowless": true,
+    "endpoint_finite": true,
+    "suspend_excluded_repeats": [],
+    "pairs": [
+      {
+        "repeat": 0,
+        "left_ms": 1.003169259210494,
+        "right_ms": 1.0410431483104938,
+        "speedup_left_over_right": 0.9636192897849957,
+        "logratio": -0.03705898998496332,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r0-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r0-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 112.147,
+        "right_init_ms": 107.558
+      },
+      {
+        "repeat": 1,
+        "left_ms": 1.022155061787037,
+        "right_ms": 0.9664493208611111,
+        "speedup_left_over_right": 1.0576395882572422,
+        "logratio": 0.056039621579282196,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r1-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r1-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 106.122,
+        "right_init_ms": 103.568
+      },
+      {
+        "repeat": 2,
+        "left_ms": 1.0035632098895062,
+        "right_ms": 1.0279714198253087,
+        "speedup_left_over_right": 0.9762559449950949,
+        "logratio": -0.02403048822312623,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r2-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r2-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 108.766,
+        "right_init_ms": 107.975
+      },
+      {
+        "repeat": 3,
+        "left_ms": 1.0049185184234568,
+        "right_ms": 0.9900504939679012,
+        "speedup_left_over_right": 1.0150174405711045,
+        "logratio": 0.014905795174801974,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r3-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s40-e1-r3-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 104.265,
+        "right_init_ms": 100.665
+      }
+    ],
+    "scope": "same FlexDemo contract; trajectories and actual neighbor/contact work may differ",
+    "scene_ms": {
+      "df12": 0.0052190741191234565,
+      "alpha-migration-final-v2-d3d12": 0.005628364083842593
+    },
+    "api_ms": {
+      "df12": 0.16648750005432097,
+      "alpha-migration-final-v2-d3d12": 0.18391663589537038
+    },
+    "wait_ms": {
+      "df12": 0.8331639814074074,
+      "alpha-migration-final-v2-d3d12": 0.8194659569234568
+    },
+    "p_unadjusted": 0.9139881216458251,
+    "p_holm": 1.0,
+    "holm_decision": "not-separated-after-Holm"
+  },
+  {
+    "scene": 64,
+    "emit": true,
+    "name": "Fluid Cloth Coupling Water",
+    "n": 4,
+    "left": "df12",
+    "right": "alpha-migration-final-v2-d3d12",
+    "left_ms_median": 1.6073447223796296,
+    "right_ms_median": 1.5519319752592593,
+    "paired_speedup_geomean": 1.0249267421007378,
+    "paired_speedup_ci95": [
+      0.9573810821246912,
+      1.097237919452033
+    ],
+    "decision": "inconclusive-at-95pct",
+    "all_pair_directions_same": false,
+    "contract_equal": true,
+    "params_initial_equal": true,
+    "initial_state_byte_equal": true,
+    "windowless": true,
+    "endpoint_finite": true,
+    "suspend_excluded_repeats": [],
+    "pairs": [
+      {
+        "repeat": 0,
+        "left_ms": 1.5870235799197532,
+        "right_ms": 1.644684135493827,
+        "speedup_left_over_right": 0.9649412587318714,
+        "logratio": -0.03568805127635726,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r0-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r0-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 74.2468,
+        "right_init_ms": 69.867
+      },
+      {
+        "repeat": 1,
+        "left_ms": 1.6032932100123456,
+        "right_ms": 1.559017654351852,
+        "speedup_left_over_right": 1.0283996499570756,
+        "logratio": 0.028003856033300186,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r1-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r1-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 66.9253,
+        "right_init_ms": 72.3081
+      },
+      {
+        "repeat": 2,
+        "left_ms": 1.6326923457098765,
+        "right_ms": 1.5314856174938272,
+        "speedup_left_over_right": 1.0660840213319582,
+        "logratio": 0.06399214189832689,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r2-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r2-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 67.9772,
+        "right_init_ms": 71.9375
+      },
+      {
+        "repeat": 3,
+        "left_ms": 1.6113962347469135,
+        "right_ms": 1.5448462961666667,
+        "speedup_left_over_right": 1.0430786795718006,
+        "logratio": 0.042176609004560946,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r3-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s64-e1-r3-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 66.9455,
+        "right_init_ms": 65.3192
+      }
+    ],
+    "scope": "same FlexDemo contract; trajectories and actual neighbor/contact work may differ",
+    "scene_ms": {
+      "df12": 0.004208765487348765,
+      "alpha-migration-final-v2-d3d12": 0.0046579011474320985
+    },
+    "api_ms": {
+      "df12": 0.3082011419929013,
+      "alpha-migration-final-v2-d3d12": 0.2902526232867284
+    },
+    "wait_ms": {
+      "df12": 1.2945178396728396,
+      "alpha-migration-final-v2-d3d12": 1.2651871297746915
+    },
+    "p_unadjusted": 0.33373905464941983,
+    "p_holm": 1.0,
+    "holm_decision": "not-separated-after-Holm"
+  },
+  {
+    "scene": 65,
+    "emit": true,
+    "name": "Fluid Cloth Coupling Goo",
+    "n": 4,
+    "left": "df12",
+    "right": "alpha-migration-final-v2-d3d12",
+    "left_ms_median": 1.6765303394537037,
+    "right_ms_median": 1.6309319444907406,
+    "paired_speedup_geomean": 1.0288153815377683,
+    "paired_speedup_ci95": [
+      0.9787406172375706,
+      1.0814520932789518
+    ],
+    "decision": "inconclusive-at-95pct",
+    "all_pair_directions_same": false,
+    "contract_equal": true,
+    "params_initial_equal": true,
+    "initial_state_byte_equal": true,
+    "windowless": true,
+    "endpoint_finite": true,
+    "suspend_excluded_repeats": [],
+    "pairs": [
+      {
+        "repeat": 0,
+        "left_ms": 1.6684193211234568,
+        "right_ms": 1.6793409875617284,
+        "speedup_left_over_right": 0.9934964569321153,
+        "logratio": -0.006524783245124541,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r0-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r0-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 69.2458,
+        "right_init_ms": 66.8915
+      },
+      {
+        "repeat": 1,
+        "left_ms": 1.6875932101049382,
+        "right_ms": 1.5819148765185185,
+        "speedup_left_over_right": 1.0668040582682912,
+        "logratio": 0.06466731746949048,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r1-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r1-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 69.6213,
+        "right_init_ms": 65.7547
+      },
+      {
+        "repeat": 2,
+        "left_ms": 1.6687783950061728,
+        "right_ms": 1.5999310494506174,
+        "speedup_left_over_right": 1.0430314453733467,
+        "logratio": 0.04213132453189852,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r2-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r2-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 80.874,
+        "right_init_ms": 65.1169
+      },
+      {
+        "repeat": 3,
+        "left_ms": 1.6842822839012346,
+        "right_ms": 1.6619328395308641,
+        "speedup_left_over_right": 1.0134478625361776,
+        "logratio": 0.013358242603137447,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r3-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s65-e1-r3-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 66.8471,
+        "right_init_ms": 71.1519
+      }
+    ],
+    "scope": "same FlexDemo contract; trajectories and actual neighbor/contact work may differ",
+    "scene_ms": {
+      "df12": 0.004209228600314814,
+      "alpha-migration-final-v2-d3d12": 0.004422746962175926
+    },
+    "api_ms": {
+      "df12": 0.3121254936524691,
+      "alpha-migration-final-v2-d3d12": 0.29217391964969136
+    },
+    "wait_ms": {
+      "df12": 1.3625190740709876,
+      "alpha-migration-final-v2-d3d12": 1.3310359877438271
+    },
+    "p_unadjusted": 0.16767419409650733,
+    "p_holm": 0.6706967763860293,
+    "holm_decision": "not-separated-after-Holm"
+  },
+  {
+    "scene": 66,
+    "emit": true,
+    "name": "Bunny Bath Dam",
+    "n": 4,
+    "left": "df12",
+    "right": "alpha-migration-final-v2-d3d12",
+    "left_ms_median": 2.061562746780864,
+    "right_ms_median": 2.0039267902962963,
+    "paired_speedup_geomean": 1.0159600997666582,
+    "paired_speedup_ci95": [
+      0.9922428335457517,
+      1.0402442722911187
+    ],
+    "decision": "inconclusive-at-95pct",
+    "all_pair_directions_same": true,
+    "contract_equal": true,
+    "params_initial_equal": true,
+    "initial_state_byte_equal": true,
+    "windowless": true,
+    "endpoint_finite": true,
+    "suspend_excluded_repeats": [],
+    "pairs": [
+      {
+        "repeat": 0,
+        "left_ms": 2.0694916048765433,
+        "right_ms": 2.0052110494876545,
+        "speedup_left_over_right": 1.0320567530312148,
+        "logratio": 0.03155365879459897,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r0-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r0-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 317.26,
+        "right_init_ms": 314.474
+      },
+      {
+        "repeat": 1,
+        "left_ms": 2.0774220987469136,
+        "right_ms": 2.0650422841296296,
+        "speedup_left_over_right": 1.0059949448553311,
+        "logratio": 0.0059770466702214805,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r1-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r1-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 322.348,
+        "right_init_ms": 307.941
+      },
+      {
+        "repeat": 2,
+        "left_ms": 1.9888007409753086,
+        "right_ms": 1.9874839505555555,
+        "speedup_left_over_right": 1.0006625414104022,
+        "logratio": 0.0006623220267371402,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r2-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r2-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 315.772,
+        "right_init_ms": 316.607
+      },
+      {
+        "repeat": 3,
+        "left_ms": 2.053633888685185,
+        "right_ms": 2.002642531104938,
+        "speedup_left_over_right": 1.0254620366781648,
+        "logratio": 0.02514327851611895,
+        "contract_equal": true,
+        "params_equal": true,
+        "initial_state_byte_equal": true,
+        "left_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r3-df12\\receipt.json",
+        "right_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\runs\\final-emission-d12-v2-s66-e1-r3-alpha-migration-final-v2-d3d12\\receipt.json",
+        "left_init_ms": 310.08,
+        "right_init_ms": 316.22
+      }
+    ],
+    "scope": "same FlexDemo contract; trajectories and actual neighbor/contact work may differ",
+    "scene_ms": {
+      "df12": 0.006764752978765432,
+      "alpha-migration-final-v2-d3d12": 0.006629320942126543
+    },
+    "api_ms": {
+      "df12": 0.39447996941913577,
+      "alpha-migration-final-v2-d3d12": 0.3417078395604938
+    },
+    "wait_ms": {
+      "df12": 1.6601522222469136,
+      "alpha-migration-final-v2-d3d12": 1.6607012964166668
+    },
+    "p_unadjusted": 0.12263059313628345,
+    "p_holm": 0.6131529656814173,
+    "holm_decision": "not-separated-after-Holm"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "M0",
+    "task": "冻结基线、环境、协议与全部alpha版本清单",
+    "status": "complete",
+    "evidence": [
+      "evidence/baselines.json",
+      "evidence/source-baseline.json",
+      "evidence/inputs.json",
+      "evidence/hardware.json",
+      "history/version-inventory.json",
+      "history/early-source-recoveries.json"
+    ]
+  },
+  {
+    "id": "M1",
+    "task": "按真实版本顺序读取优化证据、源码差异并建立逐项迁移账",
+    "status": "complete"
+  },
+  {
+    "id": "M2",
+    "task": "按版本顺序实现/检验候选并维护累计可回退底座",
+    "status": "complete"
+  },
+  {
+    "id": "M3",
+    "task": "全量FlexDemo/正确性/资源/ABI/长期与性能终验",
+    "status": "complete",
+    "evidence": [
+      "evidence/final-v2-reviewed-checks.json",
+      "jobs/final-validation-v2-pipeline.json"
+    ]
+  },
+  {
+    "id": "M4",
+    "task": "正式源码与DLL交付、详细中文报告、证据完整性核验",
+    "status": "complete",
+    "evidence": [
+      "ALPHA_MIGRATION_REPORT_CN.html",
+      "ALPHA_MIGRATION_REPORT_CN.txt",
+      "evidence/report-structure-validation.json",
+      "evidence/alpha-migration-final-v2-implementation-audit.json"
+    ]
+  },
+  {
+    "id": "M5",
+    "task": "账本归档、git commit/tag/push与远程身份核验",
+    "status": "in_progress"
+  }
+]

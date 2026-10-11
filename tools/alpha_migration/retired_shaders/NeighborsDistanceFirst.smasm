@@ -1,0 +1,113 @@
+// Derived from original shader058; ordered rows and capacity semantics retained.
+cs_5_0
+dcl_globalFlags refactoringAllowed
+dcl_constantbuffer CB0[31], immediateIndexed
+dcl_resource_structured t0, 4
+dcl_resource_structured t1, 4
+dcl_resource_buffer (uint,uint,uint,uint) t2
+dcl_resource_structured t3, 16
+dcl_resource_structured t4, 16
+dcl_resource_structured t5, 4
+dcl_resource_structured t6, 12
+dcl_uav_structured u0, 4
+dcl_uav_structured u1, 4
+dcl_input vThreadID.x
+dcl_temps 10
+dcl_thread_group 256, 1, 1
+ilt r0.x, vThreadID.x, cb0[23].x
+if_nz r0.x
+ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed) r0.xyz, vThreadID.x, l(0x00000000), t3.xyzx
+ld_structured_indexable(structured_buffer, stride=12)(mixed,mixed,mixed,mixed) r1.xyz, l(0x00000000), l(0x00000000), t6.xyzx
+add r1.xyz, r0.xyzx, -r1.xyzx
+mul r1.xyz, r1.xyzx, cb0[24].zzzz
+ftoi r1.xyz, r1.xyzx
+iadd r2.xyzw, r1.xxyy, l(0xffffffff, 0x00000001, 0xffffffff, 0x00000001)
+iadd r1.xy, r1.zzzz, l(0xffffffff, 0x00000001, 0x00000000, 0x00000000)
+ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed) r0.w, vThreadID.x, l(0x00000000), t5.xxxx
+and r3.xyz, r0.wwww, l(0x00200000, 0x000fffff, 0x00100000, 0x00000000)
+if_nz r3.x
+ld_indexable(buffer)(uint,uint,uint,uint) r0.w, vThreadID.xxxx, t2.yzwx
+ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed) r4.xyz, r0.w, l(0x00000000), t4.xyzx
+endif
+iadd r5.z, vThreadID.x, l(0x00000001)
+ine r1.zw, r3.xxxz, l(0x00000000, 0x00000000, 0x00000000, 0x00000000)
+mov r3.z, vThreadID.x
+mov r3.x, l(0x00000000)
+mov r0.w, r1.x
+loop
+ilt r3.w, r1.y, r0.w
+breakc_nz r3.w
+bfi r3.w, l(0x00000007), l(0x0000000e), r0.w, l(0x00000000)
+mov r6.xy, r3.zxzz
+mov r4.w, r2.z
+loop
+ilt r5.w, r2.w, r4.w
+breakc_nz r5.w
+bfi r5.w, l(0x00000007), l(0x00000007), r4.w, l(0x00000000)
+iadd r5.w, r3.w, r5.w
+mov r6.zw, r6.xxxy
+mov r7.x, r2.x
+loop
+ilt r7.y, r2.y, r7.x
+breakc_nz r7.y
+bfi r7.y, l(0x00000007), l(0x00000000), r7.x, r5.w
+ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed) r7.z, r7.y, l(0x00000000), t0.xxxx
+ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed) r7.y, r7.y, l(0x00000000), t1.xxxx
+mov r8.yz, r6.zzwz
+mov r8.x, r7.z
+loop
+ige r7.w, r8.x, r7.y
+breakc_nz r7.w
+ieq r7.w, r8.x, vThreadID.x
+if_nz r7.w
+mov r5.xy, r8.yzyy
+mov r8.xyz, r5.zxyz
+continue
+endif
+ld_structured_indexable(structured_buffer, stride=4)(mixed,mixed,mixed,mixed) r5.x, r8.x, l(0x00000000), t5.xxxx
+and r5.x, r5.x, l(0x000fffff)
+ieq r5.x, r3.y, r5.x
+not r5.y, r5.x
+or r5.y, r1.w, r5.y
+if_nz r5.y
+and r5.y, r1.z, r5.x
+ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed) r9.xyz, r8.x, l(0x00000000), t3.xyzx
+add r9.xyz, r0.xyzx, -r9.xyzx
+dp3 r5.x, r9.xyzx, r9.xyzx
+lt r5.x, r5.x, cb0[25].x
+if_nz r5.x
+if_nz r5.y
+ld_indexable(buffer)(uint,uint,uint,uint) r5.x, r8.xxxx, t2.xyzw
+ld_structured_indexable(structured_buffer, stride=16)(mixed,mixed,mixed,mixed) r9.xyz, r5.x, l(0x00000000), t4.xyzx
+add r9.xyz, r4.xyzx, -r9.xyzx
+dp3 r5.x, r9.xyzx, r9.xyzx
+lt r5.x, r5.x, cb0[8].z
+if_nz r5.x
+iadd r9.z, r8.x, l(0x00000001)
+mov r9.xy, r8.yzyy
+mov r8.xyz, r9.zxyz
+continue
+endif
+endif
+ilt r5.x, r8.z, cb0[30].w
+if_nz r5.x
+store_structured u0.x, r8.y, l(0x00000000), r8.x
+iadd r8.y, r8.y, cb0[23].y
+iadd r8.z, r8.z, l(0x00000001)
+endif
+endif
+endif
+iadd r8.x, r8.x, l(0x00000001)
+endloop
+mov r6.zw, r8.yyyz
+iadd r7.x, r7.x, l(0x00000001)
+endloop
+mov r6.xy, r6.zwzz
+iadd r4.w, r4.w, l(0x00000001)
+endloop
+mov r3.xz, r6.yyxy
+iadd r0.w, r0.w, l(0x00000001)
+endloop
+store_structured u1.x, vThreadID.x, l(0x00000000), r3.x
+endif
+ret

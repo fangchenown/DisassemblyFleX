@@ -102,9 +102,9 @@ NvFlex::ConstantBuffer* ContextD3D11::createConstantBuffer(const NvFlex::Constan
     bd.Usage=desc->uploadAccess?D3D11_USAGE_DYNAMIC:D3D11_USAGE_DEFAULT;bd.CPUAccessFlags=desc->uploadAccess?D3D11_CPU_ACCESS_WRITE:0;
     Check(device->CreateBuffer(&bd,nullptr,&out->buffer),"Create constant buffer");return out.release();
 }
-void* ContextD3D11::map(NvFlex::ConstantBuffer* buffer){D3D11_MAPPED_SUBRESOURCE mapped{};Check(immediate->Map(static_cast<ConstantBuffer*>(buffer)->buffer.Get(),0,D3D11_MAP_WRITE_DISCARD,0,&mapped),"Map constant buffer");return mapped.pData;}
-void ContextD3D11::unmap(NvFlex::ConstantBuffer* buffer){immediate->Unmap(static_cast<ConstantBuffer*>(buffer)->buffer.Get(),0);}
-void ContextD3D11::copy(NvFlex::ConstantBuffer* dst,NvFlex::Buffer* src){immediate->CopyResource(static_cast<ConstantBuffer*>(dst)->buffer.Get(),static_cast<Buffer*>(src)->handle(NvFlex::eDefaultBuffer));}
+void* ContextD3D11::map(NvFlex::ConstantBuffer* buffer){invalidateConstant(static_cast<ConstantBuffer*>(buffer)->buffer.Get());D3D11_MAPPED_SUBRESOURCE mapped{};Check(immediate->Map(static_cast<ConstantBuffer*>(buffer)->buffer.Get(),0,D3D11_MAP_WRITE_DISCARD,0,&mapped),"Map constant buffer");return mapped.pData;}
+void ContextD3D11::unmap(NvFlex::ConstantBuffer* buffer){invalidateConstant(static_cast<ConstantBuffer*>(buffer)->buffer.Get());immediate->Unmap(static_cast<ConstantBuffer*>(buffer)->buffer.Get(),0);}
+void ContextD3D11::copy(NvFlex::ConstantBuffer* dst,NvFlex::Buffer* src){invalidateConstant(static_cast<ConstantBuffer*>(dst)->buffer.Get());immediate->CopyResource(static_cast<ConstantBuffer*>(dst)->buffer.Get(),static_cast<Buffer*>(src)->handle(NvFlex::eDefaultBuffer));}
 NvFlex::Buffer* ContextD3D11::createBuffer(const NvFlex::BufferDesc* desc,void* external){return new Buffer(this,*desc,(desc->bufferType==NvFlex::eShared)?static_cast<ID3D11Buffer*>(external):nullptr);}
 NvFlex::Buffer* ContextD3D11::createBufferView(NvFlex::Buffer* original,const NvFlex::BufferViewDesc* desc){
     auto source=static_cast<Buffer*>(original);auto view=std::make_unique<Buffer>(this,NvFlex::BufferDesc{});
