@@ -1,7 +1,10 @@
-# DisassemblyFleX alpha历史优化迁移 — ACTIVE / GO
+# DisassemblyFleX alpha历史优化迁移 — ARCHIVED / COMPLETE
 
-当前恢复：[AlphaMigrationExecutionLedger/00_CURRENT.md](AlphaMigrationExecutionLedger/00_CURRENT.md)。
-本任务输出：../Build/DisassemblyFleX-AlphaMigration-20261010/。以下各旧任务保持归档状态。
+中文报告：[HTML](ALPHA_MIGRATION_REPORT_CN.html)／[文本](ALPHA_MIGRATION_REPORT_CN.txt)。
+完整账本：[归档](AlphaMigrationExecutionLedgerArchive/20261011-complete/00_CURRENT.md)。
+最终DLL及哈希：[CURRENT_DELIVERY.json](CURRENT_DELIVERY.json)。标签：`perf-alpha-migration-20261011`。
+最终归档提交/标签/远端HEAD核验：[发布回执](../Build/DisassemblyFleX-AlphaMigration-20261010/publication/git-publication.json)，其PASS为最终完成门；未PASS时仅续做发布核验。
+115个版本、391条历史记录、9类保留/7类拒绝；原84个shader与5个纯整数辅助，无数值近似例外。所有旧归档保留。
 
 # DisassemblyFleX / OpenFleX alpha8.2c 实际性能比较 — ARCHIVED / COMPLETE
 

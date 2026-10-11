@@ -1,0 +1,20 @@
+{
+  "task": "DisassemblyFleX alpha-history optimization migration",
+  "status": "complete",
+  "phase": "archived",
+  "started": "2026-10-10T23:40:45+08:00",
+  "updated": "2026-10-11T09:05:50+08:00",
+  "baseline_head": "51cac80f7bb0f466869da573ae9422f0885a9672",
+  "output": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010",
+  "current_version": "final-v2-integer-only",
+  "current_candidate": "alpha-migration-final-v2",
+  "active_jobs": [],
+  "remote": "https://github.com/fangchenown/DisassemblyFleX.git",
+  "push_authorized": true,
+  "tag": "perf-alpha-migration-20261011",
+  "history_review_cursor": "alpha8.2c",
+  "history_next": null,
+  "source_commit_verified": "c025d1cbc3954b50dce9837e548432041caff755",
+  "archive": "I:\\CodeX Project\\KG3D_Cloth\\DisassemblyFleX\\AlphaMigrationExecutionLedgerArchive\\20261011-complete",
+  "final_publication_receipt": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\publication\\git-publication.json"
+}

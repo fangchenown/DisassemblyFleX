@@ -45,6 +45,8 @@
   {
     "id": "M5",
     "task": "账本归档、git commit/tag/push与远程身份核验",
-    "status": "in_progress"
+    "status": "complete",
+    "source_commit_verified": "c025d1cbc3954b50dce9837e548432041caff755",
+    "final_archive_tag_confirmation": "I:\\CodeX Project\\KG3D_Cloth\\Build\\DisassemblyFleX-AlphaMigration-20261010\\publication\\git-publication.json"
   }
 ]
